@@ -2,14 +2,11 @@
 
 This directory contains the RHiDE-MR implementation. RHiDE stands for **Resource-adaptive Hierarchical Distributed Learning on the Edge**.
 
-RHiDE uses split federated learning across IoT devices and edge servers. The model is divided at a selected layer: the device runs the first part and the edge server runs the remaining layers. If a device cannot train with its available resources, its raw data can be sent to the edge for processing.
-
-**RHiDE-MR plans resource use over multiple training rounds.** In addition to the resource constraints used by RHiDE-ET, it considers remaining device energy and planned future participation. This helps avoid using too much battery energy in one round and can allow devices to participate in more rounds.
+**RHiDE-MR plans resource use over multiple training rounds.** In addition to the resource constraints used by RHiDE-ET, it considers remaining device energy and planned future participation. This helps avoid using too much battery energy in one round and can allow devices to participate in more planned rounds.
 
 ## Installation
 
-Run the commands from the relevant ET or MR model directory.
-
+Run the commands from the relevant directory.
 
 python -m pip install -r requirements.txt
 
@@ -49,7 +46,7 @@ The VGG16 preparation commands above are only for CIFAR-10; they are not used to
 
 ## Configuration directories
 
-The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current ET or MR directory.
+The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current  directory.
 
 - `train.yaml`: model training and dataset settings.
 - `federated.yaml`: device and edge-server setup, including their associations.
@@ -67,9 +64,7 @@ For XEventNet, the generation script is:
 
 python3 scripts/generate_yamls_xeventnet_paper.py --scenarios scenarios_xeventnet.csv --outdir outxev
 
-Use the VGG16 scenario-generation script and its matching CSV for VGG16. 
-
-Homogeneous scenarios use the same resource realization across devices. Heterogeneous scenarios assign different resource values to devices and/or edge servers. After generation, point the experiment configuration to the YAML files for the scenario you want to run.
+Use the VGG16 scenario-generation script and its matching CSV for VGG16. Homogeneous scenarios use the same resource realization across devices. Heterogeneous scenarios assign different resource values to devices and/or edge servers. After generation, point the experiment configuration to the YAML files for the scenario you want to run.
 
 
 ## Scenario configuration files
@@ -79,14 +74,13 @@ The `outvgg/` and `outxevent/` directories contain the generated configurations 
 - `energy_latency.yaml`: device-wise parameters, including resource limits and per-split computation, communication, memory, and timing values.
 - `federated.yaml`: edge-wise parameters, including edge memory and energy budgets, device-to-edge assignments, and edge priorities. It also records the edge associated with each device.
 
-The scenario-generation scripts create these files from the matching scenario CSV. The CSV specifies each scenario and its resource settings. Use the matching generator and CSV for VGG16 or XEventNet. Homogeneous scenarios use consistent resource settings across devices; heterogeneous scenarios introduce controlled differences between devices and/or edges.
+The scenario-generation scripts create these files from the matching scenario.csv. The CSV specifies each scenario and its resource settings. Use the matching generator and CSV for VGG16 or XEventNet. Homogeneous scenarios use consistent resource settings across devices; heterogeneous scenarios introduce controlled differences between devices and/or edges.
 
 ## Running all scenarios
 
 To run all generated VGG16 scenarios in one go, use:
 
 python run_all_scenarios_vgg16.py --scenarios-dir outvgg --configs-dir configs_vgg16 --rounds 20 --extra "--seed 1"
-
 
 This runner processes the scenario directorys under `outvgg` using the configurations in `configs_vgg16`. For XEventNet, use its corresponding all-scenarios runner and configuration directory if available in the repository, and check its command-line arguments before running it.
 

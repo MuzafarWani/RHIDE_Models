@@ -2,8 +2,6 @@
 
 This directory contains the RHiDE-ET implementation. RHiDE stands for **Resource-adaptive Hierarchical Distributed Learning on the Edge**.
 
-RHiDE uses split federated learning across IoT devices and edge servers. The model is divided at a selected layer: the device runs the first part and the edge server runs the remaining layers. If a device cannot train with its available resources, its raw data can be sent to the edge for processing.
-
 **RHiDE-ET optimizes each training round independently.** It selects the split point, decides which devices participate, and considers raw-data transfer while keeping resource constraints feasible. It considers device and edge energy, device and edge memory, communication, and execution time.
 
 ## Installation
@@ -46,7 +44,7 @@ Place the WRF output files and their labels under the model's `data/` directory.
 
 ## Configuration directories
 
-The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current ET or MR directory.
+The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current  directory.
 
 - `train.yaml`: model training and dataset settings.
 - `federated.yaml`: device and edge-server setup, including their associations.
