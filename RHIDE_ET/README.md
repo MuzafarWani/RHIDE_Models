@@ -1,6 +1,6 @@
 # RHiDE-ET
 
-This folder contains the RHiDE-ET implementation. RHiDE stands for **Resource-adaptive Hierarchical Distributed Learning on the Edge**.
+This directory contains the RHiDE-ET implementation. RHiDE stands for **Resource-adaptive Hierarchical Distributed Learning on the Edge**.
 
 RHiDE uses split federated learning across IoT devices and edge servers. The model is divided at a selected layer: the device runs the first part and the edge server runs the remaining layers. If a device cannot train with its available resources, its raw data can be sent to the edge for processing.
 
@@ -17,7 +17,7 @@ The project uses TensorFlow/Keras for model training, FedML for federated learni
 
 ## Models and datasets
 
-All datasets should be placed in the `data/` directory in the root of the relevant model folder. Keep the training and test data in the locations expected by the data-loading scripts.
+All datasets should be placed in the `data/` directory in the root of the relevant model directory. Keep the training and test data in the locations expected by the data-loading scripts.
 
 ### VGG16
 
@@ -46,7 +46,7 @@ Place the WRF output files and their labels under the model's `data/` directory.
 
 ## Configuration directories
 
-The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current ET or MR folder.
+The `configs_vgg16/` and corresponding XEventNet configuration directories contain YAML files for each experiment. Use the configuration files from the current ET or MR directory.
 
 - `train.yaml`: model training and dataset settings.
 - `federated.yaml`: device and edge-server setup, including their associations.
@@ -85,6 +85,6 @@ To run all generated VGG16 scenarios in one go, use:
 
 python run_all_scenarios_vgg16.py --scenarios-dir outvgg --configs-dir configs_vgg16 --rounds 20 --extra "--seed 1"
 
-This runner processes the scenario folders under `outvgg` using the configurations in `configs_vgg16`. For XEventNet, use its corresponding all-scenarios runner and configuration directory if available in the repository, and check its command-line arguments before running it.
+This runner processes the scenario directorys under `outvgg` using the configurations in `configs_vgg16`. For XEventNet, use its corresponding all-scenarios runner and configuration directory if available in the repository, and check its command-line arguments before running it.
 
 
