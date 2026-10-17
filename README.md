@@ -44,9 +44,7 @@ The scenarios also vary the energy and memory available at the edge servers. Mos
 
 ## Repository Structure
 
-The repository contains separate directories for the two RHiDE models.
-
-Each model directory contains the source code, configuration files, scripts, and experiment files for that model.
+The repository contains separate directories for the two RHiDE models. Each model directory contains the source code, configuration files, and scripts for that model.
 
 
 ## Installation and Running the Models
