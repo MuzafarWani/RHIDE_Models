@@ -61,7 +61,7 @@ Check dataset paths and resource values before running an experiment.
 
 ## Generating scenario YAML files
 
-The scenario-generation scripts create scenario-specific YAML files from a scenario CSV. The CSV describes the scenario name, number of devices and edges, resource ranges, and whether the scenario is heterogeneous.
+The scenario-generation scripts create scenario-specific YAML files from a scenario.csv. The CSV describes the scenario name, number of devices and edges, resource ranges, and whether the scenario is heterogeneous.
 
 For XEventNet, the generation script is:
 
@@ -69,9 +69,7 @@ For XEventNet, the generation script is:
 python3 scripts/generate_yamls_xeventnet_paper.py --scenarios scenarios_xeventnet.csv --outdir outxev
 
 
-Use the VGG16 scenario-generation script and its matching CSV for VGG16. Adjust paths if those files are stored in another directory in your checkout.
-
-Homogeneous scenarios use the same resource realization across devices. Heterogeneous scenarios assign different resource values to devices and/or edge servers. After generation, point the experiment configuration to the YAML files for the scenario you want to run.
+Use the VGG16 scenario-generation script and its matching CSV for VGG16. Homogeneous scenarios use the same resource parameter values across devices. Heterogeneous scenarios assign different resource values to devices and/or edge servers. After generation, point the experiment configuration to the YAML files for the scenario you want to run.
 
 
 ## Scenario configuration files
@@ -86,7 +84,6 @@ The scenario-generation scripts create these files from the matching scenario CS
 ## Running all scenarios
 
 To run all generated VGG16 scenarios in one go, use:
-
 
 python run_all_scenarios_vgg16.py --scenarios-dir outvgg --configs-dir configs_vgg16 --rounds 20 --extra "--seed 1"
 
