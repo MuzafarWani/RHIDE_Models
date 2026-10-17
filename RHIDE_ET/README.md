@@ -42,9 +42,7 @@ XEventNet is used to predict extreme weather events from Weather Research and Fo
 - **Training:** Use labelled WRF output data, where the weather events are labelled for training.
 - **Inference/testing:** Use WRF output files as input to the model.
 
-Place the WRF output files and their labels under the model's `data/` directory. Make sure the paths and data format match the settings expected by the XEventNet data-loading scripts.
-
-The VGG16 preparation commands above are only for CIFAR-10; they are not used to prepare XEventNet's WRF data.
+Place the WRF output files and their labels under the model's `data/` directory. Make sure the paths and data format match the settings expected by the XEventNet data-loading scripts. The VGG16 preparation commands above are only for CIFAR-10; they are not used to prepare XEventNet's WRF data.
 
 ## Configuration directories
 
@@ -57,7 +55,7 @@ The `configs_vgg16/` and corresponding XEventNet configuration directories conta
 - `solver.yaml`: optimization settings for the Gurobi-based solver.
 - `rl.yaml`: reinforcement-learning settings for adaptive aggregation.
 
-Check dataset paths and resource values before running an experiment.
+
 
 ## Generating scenario YAML files
 
@@ -74,12 +72,12 @@ Use the VGG16 scenario-generation script and its matching CSV for VGG16. Homogen
 
 ## Scenario configuration files
 
-The `outvgg/` and `outxevent/` directories contain the generated configurations for the scenarios in the paper. Each scenario has its own folder (for example, `S1/`, `S2/`, ..., `S12/`) containing two files:
+The `outvgg/` and `outxevent/` directories contain the generated configurations for the scenarios in the paper. Each scenario has its own directory (for example, `S1/`, `S2/`, ..., `S12/`) containing two files:
 
 - `energy_latency.yaml`: device-wise parameters, including resource limits and per-split computation, communication, memory, and timing values.
 - `federated.yaml`: edge-wise parameters, including edge memory and energy budgets, device-to-edge assignments, and edge priorities. It also records the edge associated with each device.
 
-The scenario-generation scripts create these files from the matching scenario CSV. The CSV specifies each scenario and its resource settings. Use the matching generator and CSV for VGG16 or XEventNet. Homogeneous scenarios use consistent resource settings across devices; heterogeneous scenarios introduce controlled differences between devices and/or edges.
+The scenario-generation scripts create these files from the matching scenario.csv. The CSV specifies each scenario and its resource settings. Use the matching generator and CSV for VGG16 or XEventNet. Homogeneous scenarios use consistent resource settings across devices; heterogeneous scenarios introduce controlled differences between devices and/or edges.
 
 ## Running all scenarios
 
