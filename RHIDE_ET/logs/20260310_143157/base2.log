@@ -1,0 +1,1359 @@
+2026-03-10 14:33:00.995870: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-10 14:33:00.995997: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-10 14:33:01.002193: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-10 14:33:01.029728: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-10 14:33:01.718364: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+[VGG16] Global model built
+
+[DEBUG] Edge RAM capacities loaded from federated.yaml:
+  Edge e0: ram_edge_s = 221836200000
+  Edge e1: ram_edge_s = 221836200000
+
+[DEBUG] Solver weights: lambda=1.0, eta=40.0, xi=1.0
+
+[VGG16][Round 0]
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 20 rows, 100 columns and 110 nonzeros
+Model fingerprint: 0x174379fb
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [2e+00, 4e+00]
+  QRHS range       [3e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 18 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Found heuristic solution: objective -34.0000000
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -42.0000000
+
+Explored 1 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -42 -34 0 
+No other solutions better than -42
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.200000000000e+01, best bound -4.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -42.0, 'active_devices': 0, 'total_energy_J': 113.59727119999998, 'total_latency_s': 649.127264, 'total_upload_bytes': 22719454240.0, 'total_batches': 28, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 8.1140908, 'd2': 16.2281816, 'd3': 16.2281816, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 12.1711362, 'd8': 16.2281816, 'd9': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 46.36623314285714, 'd2': 92.73246628571428, 'd3': 92.73246628571428, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 69.54934971428571, 'd8': 92.73246628571428, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 1622818160.0, 'd2': 3245636320.0, 'd3': 3245636320.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 2434227240.0, 'd8': 3245636320.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 0] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 271.886, 'd1': 271.886, 'd2': 263.772, 'd3': 263.772, 'd4': 271.886, 'd5': 267.829, 'd6': 271.886, 'd7': 267.829, 'd8': 263.772, 'd9': 271.886}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 0] completed
+
+[VGG16][Round 1]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 22 rows, 100 columns and 112 nonzeros
+Model fingerprint: 0xdd74be28
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [3e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 20 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -47.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -47 
+No other solutions better than -47
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.700000000000e+01, best bound -4.700000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -47.0, 'active_devices': 0, 'total_energy_J': 125.7684074, 'total_latency_s': 718.6766137142856, 'total_upload_bytes': 25153681480.0, 'total_batches': 31, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}, 'energy_J': {'d0': 8.1140908, 'd1': 16.2281816, 'd2': 24.3422724, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 16.2281816, 'd7': 12.1711362, 'd8': 8.1140908, 'd9': 12.1711362}, 'latency_s': {'d0': 46.36623314285714, 'd1': 92.73246628571428, 'd2': 139.09869942857142, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 92.73246628571428, 'd7': 69.54934971428571, 'd8': 46.36623314285714, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 3245636320.0, 'd2': 4868454480.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 3245636320.0, 'd7': 2434227240.0, 'd8': 1622818160.0, 'd9': 2434227240.0}, 'reasons': {}}
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 1] RL selected aggregation period O_e = 16
+[cloud][round 1] model_delta = inf, tau_cloud = 0.05
+[cloud][round 1] Aggregating 2 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 1] Broadcasting new global model to all edges
+[cloud] Broadcasting new global model to all edges
+[battery] {'d0': 263.772, 'd1': 255.658, 'd2': 239.43, 'd3': 255.658, 'd4': 263.772, 'd5': 255.658, 'd6': 255.658, 'd7': 255.658, 'd8': 255.658, 'd9': 259.715}
+[edge-load] {'e0': 0, 'e1': 0}
+[edge:e0] applied new global model from cloud (ts=1773133394.2703598)
+[VGG16][Round 1] completed
+
+[VGG16][Round 2]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0x314a2c30
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -56.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -56 
+No other solutions better than -56
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.600000000000e+01, best bound -5.600000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -56.0, 'active_devices': 0, 'total_energy_J': 146.0536344, 'total_latency_s': 834.5921965714285, 'total_upload_bytes': 29210726880.0, 'total_batches': 36, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 2, 'd2': 6, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 4}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 6, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 8.1140908, 'd1': 8.1140908, 'd2': 24.3422724, 'd3': 16.2281816, 'd4': 24.3422724, 'd5': 16.2281816, 'd6': 8.1140908, 'd7': 16.2281816, 'd8': 8.1140908, 'd9': 16.2281816}, 'latency_s': {'d0': 46.36623314285714, 'd1': 46.36623314285714, 'd2': 139.09869942857142, 'd3': 92.73246628571428, 'd4': 139.09869942857142, 'd5': 92.73246628571428, 'd6': 46.36623314285714, 'd7': 92.73246628571428, 'd8': 46.36623314285714, 'd9': 92.73246628571428}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 1622818160.0, 'd2': 4868454480.0, 'd3': 3245636320.0, 'd4': 4868454480.0, 'd5': 3245636320.0, 'd6': 1622818160.0, 'd7': 3245636320.0, 'd8': 1622818160.0, 'd9': 3245636320.0}, 'reasons': {}}
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 255.658, 'd1': 247.544, 'd2': 215.087, 'd3': 239.43, 'd4': 239.43, 'd5': 239.43, 'd6': 247.544, 'd7': 239.43, 'd8': 247.544, 'd9': 243.487}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 2] completed
+
+[VGG16][Round 3]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0x16dfc65d
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -55.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -55 
+No other solutions better than -55
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.500000000000e+01, best bound -5.500000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -55.0, 'active_devices': 0, 'total_energy_J': 141.996589, 'total_latency_s': 811.4090799999999, 'total_upload_bytes': 28399317800.0, 'total_batches': 35, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 6, 'd2': 4, 'd3': 2, 'd4': 6, 'd5': 3, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}, 'batches_used': {'d0': 2, 'd1': 6, 'd2': 4, 'd3': 2, 'd4': 6, 'd5': 3, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 8.1140908, 'd1': 24.3422724, 'd2': 16.2281816, 'd3': 8.1140908, 'd4': 24.3422724, 'd5': 12.1711362, 'd6': 16.2281816, 'd7': 8.1140908, 'd8': 12.1711362, 'd9': 12.1711362}, 'latency_s': {'d0': 46.36623314285714, 'd1': 139.09869942857142, 'd2': 92.73246628571428, 'd3': 46.36623314285714, 'd4': 139.09869942857142, 'd5': 69.54934971428571, 'd6': 92.73246628571428, 'd7': 46.36623314285714, 'd8': 69.54934971428571, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 4868454480.0, 'd2': 3245636320.0, 'd3': 1622818160.0, 'd4': 4868454480.0, 'd5': 2434227240.0, 'd6': 3245636320.0, 'd7': 1622818160.0, 'd8': 2434227240.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 3] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 247.544, 'd1': 223.201, 'd2': 198.859, 'd3': 231.315, 'd4': 215.087, 'd5': 227.258, 'd6': 231.315, 'd7': 231.315, 'd8': 235.373, 'd9': 231.315}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 3] completed
+
+[VGG16][Round 4]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0xdf57606d
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -52.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -52 
+No other solutions better than -52
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.200000000000e+01, best bound -5.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -52.0, 'active_devices': 0, 'total_energy_J': 129.8254528, 'total_latency_s': 741.8597302857141, 'total_upload_bytes': 25965090560.0, 'total_batches': 32, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 6, 'd1': 6, 'd2': 2, 'd3': 2, 'd4': 4, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 3, 'd9': 2}, 'batches_used': {'d0': 6, 'd1': 6, 'd2': 2, 'd3': 2, 'd4': 4, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 24.3422724, 'd1': 24.3422724, 'd2': 8.1140908, 'd3': 8.1140908, 'd4': 16.2281816, 'd5': 8.1140908, 'd6': 8.1140908, 'd7': 12.1711362, 'd8': 12.1711362, 'd9': 8.1140908}, 'latency_s': {'d0': 139.09869942857142, 'd1': 139.09869942857142, 'd2': 46.36623314285714, 'd3': 46.36623314285714, 'd4': 92.73246628571428, 'd5': 46.36623314285714, 'd6': 46.36623314285714, 'd7': 69.54934971428571, 'd8': 69.54934971428571, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 4868454480.0, 'd1': 4868454480.0, 'd2': 1622818160.0, 'd3': 1622818160.0, 'd4': 3245636320.0, 'd5': 1622818160.0, 'd6': 1622818160.0, 'd7': 2434227240.0, 'd8': 2434227240.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 4] RL selected aggregation period O_e = 1
+[cloud][round 4] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 4] Aggregation SKIPPED (rounds_since_agg=0, O_e=1, delta=0.000000 < tau_cloud)
+[battery] {'d0': 223.201, 'd1': 198.859, 'd2': 190.745, 'd3': 223.201, 'd4': 198.859, 'd5': 219.144, 'd6': 223.201, 'd7': 219.144, 'd8': 223.201, 'd9': 223.201}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 4] completed
+
+[VGG16][Round 5]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0xf073c3c3
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -54.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -54 
+No other solutions better than -54
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.400000000000e+01, best bound -5.400000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -54.0, 'active_devices': 0, 'total_energy_J': 146.0536344, 'total_latency_s': 834.5921965714285, 'total_upload_bytes': 29210726880.0, 'total_batches': 36, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 6, 'd1': 2, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}, 'batches_used': {'d0': 6, 'd1': 2, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}, 'energy_J': {'d0': 24.3422724, 'd1': 8.1140908, 'd2': 24.3422724, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 16.2281816, 'd7': 16.2281816, 'd8': 16.2281816, 'd9': 12.1711362}, 'latency_s': {'d0': 139.09869942857142, 'd1': 46.36623314285714, 'd2': 139.09869942857142, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 92.73246628571428, 'd7': 92.73246628571428, 'd8': 92.73246628571428, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 4868454480.0, 'd1': 1622818160.0, 'd2': 4868454480.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 3245636320.0, 'd7': 3245636320.0, 'd8': 3245636320.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 5] RL selected aggregation period O_e = 1
+[cloud][round 5] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 5] Aggregating 1 edge updates using FedAvg (trigger: cadence)
+[cloud][round 5] Broadcasting new global model to all edges
+[cloud] Broadcasting new global model to all edges
+[battery] {'d0': 198.859, 'd1': 190.745, 'd2': 166.403, 'd3': 215.087, 'd4': 190.745, 'd5': 206.973, 'd6': 206.973, 'd7': 202.916, 'd8': 206.973, 'd9': 211.03}
+[edge-load] {'e0': 0, 'e1': 0}
+[edge:e0] applied new global model from cloud (ts=1773133397.8462799)
+[VGG16][Round 5] completed
+
+[VGG16][Round 6]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 20 rows, 100 columns and 110 nonzeros
+Model fingerprint: 0xcb48156f
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [2e+00, 4e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 18 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Found heuristic solution: objective -33.0000000
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -37.0000000
+
+Explored 1 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -37 -33 0 
+No other solutions better than -37
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.700000000000e+01, best bound -3.700000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -37.0, 'active_devices': 0, 'total_energy_J': 101.42613499999999, 'total_latency_s': 579.5779142857143, 'total_upload_bytes': 20285227000.0, 'total_batches': 25, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 2, 'd9': 4}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 16.2281816, 'd1': 8.1140908, 'd2': 8.1140908, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 8.1140908, 'd8': 8.1140908, 'd9': 16.2281816}, 'latency_s': {'d0': 92.73246628571428, 'd1': 46.36623314285714, 'd2': 46.36623314285714, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 46.36623314285714, 'd8': 46.36623314285714, 'd9': 92.73246628571428}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 1622818160.0, 'd2': 1622818160.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 1622818160.0, 'd8': 1622818160.0, 'd9': 3245636320.0}, 'reasons': {}}
+[cloud][round 6] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 182.631, 'd1': 182.631, 'd2': 158.289, 'd3': 206.973, 'd4': 182.631, 'd5': 194.802, 'd6': 198.859, 'd7': 194.802, 'd8': 198.859, 'd9': 194.802}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 6] completed
+
+[VGG16][Round 7]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 20 rows, 100 columns and 110 nonzeros
+Model fingerprint: 0x65dedab3
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [2e+00, 3e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 18 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 12 rows, 19 columns, 47 nonzeros
+Found heuristic solution: objective -30.0000000
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -32.0000000
+
+Explored 1 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -32 -30 0 
+No other solutions better than -32
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.200000000000e+01, best bound -3.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -32.0, 'active_devices': 0, 'total_energy_J': 89.2549988, 'total_latency_s': 510.02856457142855, 'total_upload_bytes': 17850999760.0, 'total_batches': 22, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 3, 'd7': 2, 'd8': 3, 'd9': 2}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 3, 'd7': 2, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 8.1140908, 'd2': 8.1140908, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 8.1140908, 'd6': 12.1711362, 'd7': 8.1140908, 'd8': 12.1711362, 'd9': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 46.36623314285714, 'd2': 46.36623314285714, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 46.36623314285714, 'd6': 69.54934971428571, 'd7': 46.36623314285714, 'd8': 69.54934971428571, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 1622818160.0, 'd2': 1622818160.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 1622818160.0, 'd6': 2434227240.0, 'd7': 1622818160.0, 'd8': 2434227240.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 7] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 174.517, 'd1': 174.517, 'd2': 150.175, 'd3': 198.859, 'd4': 174.517, 'd5': 186.688, 'd6': 186.688, 'd7': 186.688, 'd8': 186.688, 'd9': 186.688}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 7] completed
+
+[VGG16][Round 8]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 22 rows, 100 columns and 112 nonzeros
+Model fingerprint: 0x817dadfd
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 20 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -52.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -52 
+No other solutions better than -52
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.200000000000e+01, best bound -5.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -52.0, 'active_devices': 0, 'total_energy_J': 137.93954359999998, 'total_latency_s': 788.2259634285714, 'total_upload_bytes': 27587908720.0, 'total_batches': 34, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 2, 'd8': 4, 'd9': 4}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 2, 'd8': 4, 'd9': 4}, 'energy_J': {'d0': 16.2281816, 'd1': 8.1140908, 'd2': 8.1140908, 'd3': 16.2281816, 'd4': 24.3422724, 'd5': 16.2281816, 'd6': 8.1140908, 'd7': 8.1140908, 'd8': 16.2281816, 'd9': 16.2281816}, 'latency_s': {'d0': 92.73246628571428, 'd1': 46.36623314285714, 'd2': 46.36623314285714, 'd3': 92.73246628571428, 'd4': 139.09869942857142, 'd5': 92.73246628571428, 'd6': 46.36623314285714, 'd7': 46.36623314285714, 'd8': 92.73246628571428, 'd9': 92.73246628571428}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 1622818160.0, 'd2': 1622818160.0, 'd3': 3245636320.0, 'd4': 4868454480.0, 'd5': 3245636320.0, 'd6': 1622818160.0, 'd7': 1622818160.0, 'd8': 3245636320.0, 'd9': 3245636320.0}, 'reasons': {}}
+[cloud][round 8] RL selected aggregation period O_e = 4
+[cloud][round 8] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 8] Aggregation SKIPPED (rounds_since_agg=0, O_e=4, delta=0.000000 < tau_cloud)
+[battery] {'d0': 158.289, 'd1': 166.403, 'd2': 142.06, 'd3': 182.631, 'd4': 150.175, 'd5': 170.46, 'd6': 178.574, 'd7': 178.574, 'd8': 170.46, 'd9': 170.46}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 8] completed
+
+[VGG16][Round 9]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0xd5392105
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [1e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -61.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -61 
+No other solutions better than -61
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -6.100000000000e+01, best bound -6.100000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -61.0, 'active_devices': 0, 'total_energy_J': 158.2247706, 'total_latency_s': 904.1415462857142, 'total_upload_bytes': 31644954120.0, 'total_batches': 39, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 6, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 4, 'd5': 4, 'd6': 4, 'd7': 3, 'd8': 3, 'd9': 3}, 'batches_used': {'d0': 6, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 4, 'd5': 4, 'd6': 4, 'd7': 3, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 24.3422724, 'd1': 16.2281816, 'd2': 24.3422724, 'd3': 8.1140908, 'd4': 16.2281816, 'd5': 16.2281816, 'd6': 16.2281816, 'd7': 12.1711362, 'd8': 12.1711362, 'd9': 12.1711362}, 'latency_s': {'d0': 139.09869942857142, 'd1': 92.73246628571428, 'd2': 139.09869942857142, 'd3': 46.36623314285714, 'd4': 92.73246628571428, 'd5': 92.73246628571428, 'd6': 92.73246628571428, 'd7': 69.54934971428571, 'd8': 69.54934971428571, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 4868454480.0, 'd1': 3245636320.0, 'd2': 4868454480.0, 'd3': 1622818160.0, 'd4': 3245636320.0, 'd5': 3245636320.0, 'd6': 3245636320.0, 'd7': 2434227240.0, 'd8': 2434227240.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 9] RL selected aggregation period O_e = 1
+[cloud][round 9] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 9] Aggregating 2 edge updates using FedAvg (trigger: cadence)
+[cloud][round 9] Broadcasting new global model to all edges
+[cloud] Broadcasting new global model to all edges
+[battery] {'d0': 133.946, 'd1': 150.175, 'd2': 117.718, 'd3': 174.517, 'd4': 133.946, 'd5': 154.232, 'd6': 162.346, 'd7': 166.403, 'd8': 158.289, 'd9': 158.289}
+[edge-load] {'e0': 0, 'e1': 0}
+[edge:e0] applied new global model from cloud (ts=1773133402.408561)
+[VGG16][Round 9] completed
+
+[VGG16][Round 10]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 22 rows, 100 columns and 112 nonzeros
+Model fingerprint: 0x07ca7d1b
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [1e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 20 rows and 90 columns
+Presolve time: 0.01s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -57.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -57 
+No other solutions better than -57
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.700000000000e+01, best bound -5.700000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -57.0, 'active_devices': 0, 'total_energy_J': 150.1106798, 'total_latency_s': 857.775313142857, 'total_upload_bytes': 30022135960.0, 'total_batches': 37, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 4, 'd2': 2, 'd3': 6, 'd4': 4, 'd5': 4, 'd6': 3, 'd7': 4, 'd8': 4, 'd9': 2}, 'batches_used': {'d0': 4, 'd1': 4, 'd2': 2, 'd3': 6, 'd4': 4, 'd5': 4, 'd6': 3, 'd7': 4, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 16.2281816, 'd1': 16.2281816, 'd2': 8.1140908, 'd3': 24.3422724, 'd4': 16.2281816, 'd5': 16.2281816, 'd6': 12.1711362, 'd7': 16.2281816, 'd8': 16.2281816, 'd9': 8.1140908}, 'latency_s': {'d0': 92.73246628571428, 'd1': 92.73246628571428, 'd2': 46.36623314285714, 'd3': 139.09869942857142, 'd4': 92.73246628571428, 'd5': 92.73246628571428, 'd6': 69.54934971428571, 'd7': 92.73246628571428, 'd8': 92.73246628571428, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 3245636320.0, 'd2': 1622818160.0, 'd3': 4868454480.0, 'd4': 3245636320.0, 'd5': 3245636320.0, 'd6': 2434227240.0, 'd7': 3245636320.0, 'd8': 3245636320.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 10] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 117.718, 'd1': 133.946, 'd2': 109.604, 'd3': 150.175, 'd4': 117.718, 'd5': 138.003, 'd6': 150.175, 'd7': 150.175, 'd8': 142.06, 'd9': 150.175}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 10] completed
+
+[VGG16][Round 11]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0x08c38d58
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [1e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -60.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -60 
+No other solutions better than -60
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -6.000000000000e+01, best bound -6.000000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -60.0, 'active_devices': 0, 'total_energy_J': 146.05363439999996, 'total_latency_s': 834.5921965714285, 'total_upload_bytes': 29210726880.0, 'total_batches': 36, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 4, 'd2': 4, 'd3': 6, 'd4': 6, 'd5': 2, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 2}, 'batches_used': {'d0': 4, 'd1': 4, 'd2': 4, 'd3': 6, 'd4': 6, 'd5': 2, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 2}, 'energy_J': {'d0': 16.2281816, 'd1': 16.2281816, 'd2': 16.2281816, 'd3': 24.3422724, 'd4': 24.3422724, 'd5': 8.1140908, 'd6': 8.1140908, 'd7': 16.2281816, 'd8': 8.1140908, 'd9': 8.1140908}, 'latency_s': {'d0': 92.73246628571428, 'd1': 92.73246628571428, 'd2': 92.73246628571428, 'd3': 139.09869942857142, 'd4': 139.09869942857142, 'd5': 46.36623314285714, 'd6': 46.36623314285714, 'd7': 92.73246628571428, 'd8': 46.36623314285714, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 3245636320.0, 'd2': 3245636320.0, 'd3': 4868454480.0, 'd4': 4868454480.0, 'd5': 1622818160.0, 'd6': 1622818160.0, 'd7': 3245636320.0, 'd8': 1622818160.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 11] RL selected aggregation period O_e = 2
+[cloud][round 11] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 11] Aggregation SKIPPED (rounds_since_agg=0, O_e=2, delta=0.000000 < tau_cloud)
+[battery] {'d0': 101.49, 'd1': 117.718, 'd2': 93.376, 'd3': 125.832, 'd4': 93.376, 'd5': 129.889, 'd6': 142.06, 'd7': 133.946, 'd8': 133.946, 'd9': 142.06}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 11] completed
+
+[VGG16][Round 12]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 22 rows, 100 columns and 112 nonzeros
+Model fingerprint: 0x05c089a5
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [9e+01, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 20 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -46.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -46 
+No other solutions better than -46
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.600000000000e+01, best bound -4.600000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -46.0, 'active_devices': 0, 'total_energy_J': 121.71136200000001, 'total_latency_s': 695.493497142857, 'total_upload_bytes': 24342272400.0, 'total_batches': 30, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 2, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 16.2281816, 'd1': 8.1140908, 'd2': 24.3422724, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 8.1140908, 'd6': 16.2281816, 'd7': 8.1140908, 'd8': 12.1711362, 'd9': 12.1711362}, 'latency_s': {'d0': 92.73246628571428, 'd1': 46.36623314285714, 'd2': 139.09869942857142, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 46.36623314285714, 'd6': 92.73246628571428, 'd7': 46.36623314285714, 'd8': 69.54934971428571, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 1622818160.0, 'd2': 4868454480.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 1622818160.0, 'd6': 3245636320.0, 'd7': 1622818160.0, 'd8': 2434227240.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 12] RL selected aggregation period O_e = 4
+[cloud][round 12] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 12] Aggregation SKIPPED (rounds_since_agg=1, O_e=4, delta=0.000000 < tau_cloud)
+[battery] {'d0': 85.262, 'd1': 109.604, 'd2': 69.034, 'd3': 117.718, 'd4': 85.262, 'd5': 121.775, 'd6': 125.832, 'd7': 125.832, 'd8': 121.775, 'd9': 129.889}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 12] completed
+
+[VGG16][Round 13]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0x16021831
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [7e+01, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -59.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -59 
+No other solutions better than -59
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.900000000000e+01, best bound -5.900000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -59.0, 'active_devices': 0, 'total_energy_J': 150.11067979999996, 'total_latency_s': 857.7753131428572, 'total_upload_bytes': 30022135960.0, 'total_batches': 37, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 6, 'd2': 6, 'd3': 4, 'd4': 4, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 2, 'd9': 2}, 'batches_used': {'d0': 2, 'd1': 6, 'd2': 6, 'd3': 4, 'd4': 4, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 2, 'd9': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 24.3422724, 'd2': 24.3422724, 'd3': 16.2281816, 'd4': 16.2281816, 'd5': 12.1711362, 'd6': 16.2281816, 'd7': 16.2281816, 'd8': 8.1140908, 'd9': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 139.09869942857142, 'd2': 139.09869942857142, 'd3': 92.73246628571428, 'd4': 92.73246628571428, 'd5': 69.54934971428571, 'd6': 92.73246628571428, 'd7': 92.73246628571428, 'd8': 46.36623314285714, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 4868454480.0, 'd2': 4868454480.0, 'd3': 3245636320.0, 'd4': 3245636320.0, 'd5': 2434227240.0, 'd6': 3245636320.0, 'd7': 3245636320.0, 'd8': 1622818160.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 13] RL selected aggregation period O_e = 4
+[cloud][round 13] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 13] Aggregation SKIPPED (rounds_since_agg=2, O_e=4, delta=0.000000 < tau_cloud)
+[battery] {'d0': 77.148, 'd1': 85.262, 'd2': 44.691, 'd3': 101.49, 'd4': 69.034, 'd5': 109.604, 'd6': 109.604, 'd7': 109.604, 'd8': 113.661, 'd9': 121.775}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 13] completed
+
+[VGG16][Round 14]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0xb785f7fb
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [4e+01, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -58.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -58 
+No other solutions better than -58
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.800000000000e+01, best bound -5.800000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -58.0, 'active_devices': 0, 'total_energy_J': 146.05363440000002, 'total_latency_s': 834.5921965714284, 'total_upload_bytes': 29210726880.0, 'total_batches': 36, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 6, 'd2': 6, 'd3': 4, 'd4': 4, 'd5': 2, 'd6': 3, 'd7': 4, 'd8': 3, 'd9': 2}, 'batches_used': {'d0': 2, 'd1': 6, 'd2': 6, 'd3': 4, 'd4': 4, 'd5': 2, 'd6': 3, 'd7': 4, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 24.3422724, 'd2': 24.3422724, 'd3': 16.2281816, 'd4': 16.2281816, 'd5': 8.1140908, 'd6': 12.1711362, 'd7': 16.2281816, 'd8': 12.1711362, 'd9': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 139.09869942857142, 'd2': 139.09869942857142, 'd3': 92.73246628571428, 'd4': 92.73246628571428, 'd5': 46.36623314285714, 'd6': 69.54934971428571, 'd7': 92.73246628571428, 'd8': 69.54934971428571, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 4868454480.0, 'd2': 4868454480.0, 'd3': 3245636320.0, 'd4': 3245636320.0, 'd5': 1622818160.0, 'd6': 2434227240.0, 'd7': 3245636320.0, 'd8': 2434227240.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 14] No edge updates received (rounds_since_agg=3)
+[battery] {'d0': 69.034, 'd1': 60.92, 'd2': 20.349, 'd3': 85.262, 'd4': 52.805, 'd5': 101.49, 'd6': 97.433, 'd7': 93.376, 'd8': 101.49, 'd9': 113.661}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 14] completed
+
+[VGG16][Round 15]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 22 rows, 100 columns and 112 nonzeros
+Model fingerprint: 0x5ca80d0f
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 4e+00]
+  QRHS range       [2e+01, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 20 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -46.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -46 
+No other solutions better than -46
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.600000000000e+01, best bound -4.600000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -46.0, 'active_devices': 0, 'total_energy_J': 129.8254528, 'total_latency_s': 741.8597302857142, 'total_upload_bytes': 25965090560.0, 'total_batches': 32, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 4, 'd1': 2, 'd2': 4, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 4, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}, 'energy_J': {'d0': 16.2281816, 'd1': 8.1140908, 'd2': 16.2281816, 'd3': 8.1140908, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 16.2281816, 'd7': 16.2281816, 'd8': 16.2281816, 'd9': 12.1711362}, 'latency_s': {'d0': 92.73246628571428, 'd1': 46.36623314285714, 'd2': 92.73246628571428, 'd3': 46.36623314285714, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 92.73246628571428, 'd7': 92.73246628571428, 'd8': 92.73246628571428, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 3245636320.0, 'd1': 1622818160.0, 'd2': 3245636320.0, 'd3': 1622818160.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 3245636320.0, 'd7': 3245636320.0, 'd8': 3245636320.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 15] RL selected aggregation period O_e = 4
+[cloud][round 15] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 15] Aggregation SKIPPED (rounds_since_agg=3, O_e=4, delta=0.000000 < tau_cloud)
+[battery] {'d0': 52.805, 'd1': 52.805, 'd2': 4.121, 'd3': 77.148, 'd4': 44.691, 'd5': 89.319, 'd6': 81.205, 'd7': 77.148, 'd8': 85.262, 'd9': 101.49}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 15] completed
+
+[VGG16][Round 16]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 30 rows, 100 columns and 120 nonzeros
+Model fingerprint: 0x9477fd8f
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [4e+00, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 28 rows and 90 columns
+Presolve time: 0.01s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -62.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -62 
+No other solutions better than -62
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -6.200000000000e+01, best bound -6.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -62.0, 'active_devices': 0, 'total_energy_J': 150.11067979999996, 'total_latency_s': 857.7753131428572, 'total_upload_bytes': 30022135960.0, 'total_batches': 37, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 6, 'd1': 6, 'd2': 1, 'd3': 6, 'd4': 6, 'd5': 2, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 2}, 'batches_used': {'d0': 6, 'd1': 6, 'd2': 1, 'd3': 6, 'd4': 6, 'd5': 2, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 2}, 'energy_J': {'d0': 24.3422724, 'd1': 24.3422724, 'd2': 4.0570454, 'd3': 24.3422724, 'd4': 24.3422724, 'd5': 8.1140908, 'd6': 8.1140908, 'd7': 16.2281816, 'd8': 8.1140908, 'd9': 8.1140908}, 'latency_s': {'d0': 139.09869942857142, 'd1': 139.09869942857142, 'd2': 23.18311657142857, 'd3': 139.09869942857142, 'd4': 139.09869942857142, 'd5': 46.36623314285714, 'd6': 46.36623314285714, 'd7': 92.73246628571428, 'd8': 46.36623314285714, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 4868454480.0, 'd1': 4868454480.0, 'd2': 811409080.0, 'd3': 4868454480.0, 'd4': 4868454480.0, 'd5': 1622818160.0, 'd6': 1622818160.0, 'd7': 3245636320.0, 'd8': 1622818160.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 16] No edge updates received (rounds_since_agg=4)
+[battery] {'d0': 28.463, 'd1': 28.463, 'd2': 0.064, 'd3': 52.805, 'd4': 20.349, 'd5': 81.205, 'd6': 73.091, 'd7': 60.92, 'd8': 77.148, 'd9': 93.376}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 16] completed
+
+[VGG16][Round 17]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 24 rows, 100 columns and 114 nonzeros
+Model fingerprint: 0x5d0d0844
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 22 rows and 90 columns
+Presolve time: 0.01s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -39.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -39 
+No other solutions better than -39
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.900000000000e+01, best bound -3.900000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -39.0, 'active_devices': 0, 'total_energy_J': 109.5402258, 'total_latency_s': 625.9441474285713, 'total_upload_bytes': 21908045160.0, 'total_batches': 27, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 2, 'd1': 4, 'd2': 0, 'd3': 4, 'd4': 2, 'd5': 4, 'd6': 2, 'd7': 2, 'd8': 4, 'd9': 3}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 0, 'd3': 4, 'd4': 2, 'd5': 4, 'd6': 2, 'd7': 2, 'd8': 4, 'd9': 3}, 'energy_J': {'d0': 8.1140908, 'd1': 16.2281816, 'd2': 0.0, 'd3': 16.2281816, 'd4': 8.1140908, 'd5': 16.2281816, 'd6': 8.1140908, 'd7': 8.1140908, 'd8': 16.2281816, 'd9': 12.1711362}, 'latency_s': {'d0': 46.36623314285714, 'd1': 92.73246628571428, 'd2': 0.0, 'd3': 92.73246628571428, 'd4': 46.36623314285714, 'd5': 92.73246628571428, 'd6': 46.36623314285714, 'd7': 46.36623314285714, 'd8': 92.73246628571428, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 3245636320.0, 'd2': 0.0, 'd3': 3245636320.0, 'd4': 1622818160.0, 'd5': 3245636320.0, 'd6': 1622818160.0, 'd7': 1622818160.0, 'd8': 3245636320.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 17] No edge updates received (rounds_since_agg=4)
+[battery] {'d0': 20.349, 'd1': 12.235, 'd2': 0.064, 'd3': 36.577, 'd4': 12.235, 'd5': 64.977, 'd6': 64.977, 'd7': 52.805, 'd8': 60.92, 'd9': 81.205}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 17] completed
+
+[VGG16][Round 18]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 28 rows, 100 columns and 118 nonzeros
+Model fingerprint: 0xeca441a1
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 26 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -38.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -38 
+No other solutions better than -38
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.800000000000e+01, best bound -3.800000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -38.0, 'active_devices': 0, 'total_energy_J': 101.426135, 'total_latency_s': 579.5779142857142, 'total_upload_bytes': 20285227000.0, 'total_batches': 25, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 5, 'd1': 2, 'd2': 0, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 3, 'd9': 2}, 'batches_used': {'d0': 5, 'd1': 2, 'd2': 0, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 20.285227, 'd1': 8.1140908, 'd2': 0.0, 'd3': 16.2281816, 'd4': 8.1140908, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 8.1140908, 'd8': 12.1711362, 'd9': 8.1140908}, 'latency_s': {'d0': 115.91558285714285, 'd1': 46.36623314285714, 'd2': 0.0, 'd3': 92.73246628571428, 'd4': 46.36623314285714, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 46.36623314285714, 'd8': 69.54934971428571, 'd9': 46.36623314285714}, 'upload_bytes': {'d0': 4057045400.0, 'd1': 1622818160.0, 'd2': 0.0, 'd3': 3245636320.0, 'd4': 1622818160.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 1622818160.0, 'd8': 2434227240.0, 'd9': 1622818160.0}, 'reasons': {}}
+[cloud][round 18] No edge updates received (rounds_since_agg=4)
+[battery] {'d0': 0.064, 'd1': 4.121, 'd2': 0.064, 'd3': 20.349, 'd4': 4.121, 'd5': 52.805, 'd6': 56.863, 'd7': 44.691, 'd8': 48.748, 'd9': 73.091}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 18] completed
+
+[VGG16][Round 19]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 30 rows, 100 columns and 120 nonzeros
+Model fingerprint: 0x9dc5f212
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 28 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -29.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -29 
+No other solutions better than -29
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.900000000000e+01, best bound -2.900000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -29.0, 'active_devices': 0, 'total_energy_J': 89.25499880000001, 'total_latency_s': 510.02856457142855, 'total_upload_bytes': 17850999760.0, 'total_batches': 22, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 5, 'd4': 1, 'd5': 3, 'd6': 2, 'd7': 4, 'd8': 3, 'd9': 3}, 'batches_used': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 5, 'd4': 1, 'd5': 3, 'd6': 2, 'd7': 4, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 0.0, 'd1': 4.0570454, 'd2': 0.0, 'd3': 20.285227, 'd4': 4.0570454, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 16.2281816, 'd8': 12.1711362, 'd9': 12.1711362}, 'latency_s': {'d0': 0.0, 'd1': 23.18311657142857, 'd2': 0.0, 'd3': 115.91558285714285, 'd4': 23.18311657142857, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 92.73246628571428, 'd8': 69.54934971428571, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 0.0, 'd1': 811409080.0, 'd2': 0.0, 'd3': 4057045400.0, 'd4': 811409080.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 3245636320.0, 'd8': 2434227240.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 19] RL selected aggregation period O_e = 1
+[cloud][round 19] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 19] Aggregating 2 edge updates using FedAvg (trigger: cadence)
+[cloud][round 19] Broadcasting new global model to all edges
+[cloud] Broadcasting new global model to all edges
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 40.634, 'd6': 48.748, 'd7': 28.463, 'd8': 36.577, 'd9': 60.92}
+[edge-load] {'e0': 0, 'e1': 0}
+[edge:e0] applied new global model from cloud (ts=1773133411.875895)
+[VGG16][Round 19] completed
+
+[VGG16][Round 20]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 32 rows, 100 columns and 122 nonzeros
+Model fingerprint: 0xdea3c487
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 30 rows and 95 columns
+Presolve time: 0.00s
+Presolved: 7 rows, 9 columns, 22 nonzeros
+Variable types: 0 continuous, 9 integer (7 binary)
+Found heuristic solution: objective -15.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -15 
+No other solutions better than -15
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.500000000000e+01, best bound -1.500000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -15.0, 'active_devices': 0, 'total_energy_J': 60.855681, 'total_latency_s': 347.74674857142855, 'total_upload_bytes': 12171136200.0, 'total_batches': 15, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 3, 'd6': 2, 'd7': 4, 'd8': 3, 'd9': 3}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 3, 'd6': 2, 'd7': 4, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 16.2281816, 'd8': 12.1711362, 'd9': 12.1711362}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 92.73246628571428, 'd8': 69.54934971428571, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 3245636320.0, 'd8': 2434227240.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 20] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 28.463, 'd6': 40.634, 'd7': 12.235, 'd8': 24.406, 'd9': 48.748}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 20] completed
+
+[VGG16][Round 21]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 32 rows, 100 columns and 122 nonzeros
+Model fingerprint: 0xaebf5931
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 30 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -13.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -13 
+No other solutions better than -13
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.300000000000e+01, best bound -1.300000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -13.0, 'active_devices': 0, 'total_energy_J': 52.7415902, 'total_latency_s': 301.3805154285714, 'total_upload_bytes': 10548318040.0, 'total_batches': 13, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 2, 'd9': 4}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 8.1140908, 'd6': 8.1140908, 'd7': 12.1711362, 'd8': 8.1140908, 'd9': 16.2281816}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 46.36623314285714, 'd6': 46.36623314285714, 'd7': 69.54934971428571, 'd8': 46.36623314285714, 'd9': 92.73246628571428}, 'upload_bytes': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 1622818160.0, 'd6': 1622818160.0, 'd7': 2434227240.0, 'd8': 1622818160.0, 'd9': 3245636320.0}, 'reasons': {}}
+[cloud][round 21] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 20.349, 'd6': 32.52, 'd7': 0.064, 'd8': 16.292, 'd9': 32.52}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 21] completed
+
+[VGG16][Round 22]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 38 rows, 100 columns and 128 nonzeros
+Model fingerprint: 0xd4ce91ce
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 36 rows and 96 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 7 columns, 17 nonzeros
+Variable types: 0 continuous, 7 integer (5 binary)
+Found heuristic solution: objective -11.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -11 
+No other solutions better than -11
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.100000000000e+01, best bound -1.100000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -11.0, 'active_devices': 0, 'total_energy_J': 44.6274994, 'total_latency_s': 255.01428228571427, 'total_upload_bytes': 8925499880.0, 'total_batches': 11, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 3, 'd6': 2, 'd7': 0, 'd8': 2, 'd9': 4}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 3, 'd6': 2, 'd7': 0, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 12.1711362, 'd6': 8.1140908, 'd7': 0.0, 'd8': 8.1140908, 'd9': 16.2281816}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 69.54934971428571, 'd6': 46.36623314285714, 'd7': 0.0, 'd8': 46.36623314285714, 'd9': 92.73246628571428}, 'upload_bytes': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 2434227240.0, 'd6': 1622818160.0, 'd7': 0.0, 'd8': 1622818160.0, 'd9': 3245636320.0}, 'reasons': {}}
+[cloud][round 22] RL selected aggregation period O_e = 16
+[cloud][round 22] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 22] Aggregation SKIPPED (rounds_since_agg=0, O_e=16, delta=0.000000 < tau_cloud)
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 8.178, 'd6': 24.406, 'd7': 0.064, 'd8': 8.178, 'd9': 16.292}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 22] completed
+
+[VGG16][Round 23]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 38 rows, 100 columns and 128 nonzeros
+Model fingerprint: 0xfee9c381
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 38 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -9 
+No other solutions better than -9
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -9.000000000000e+00, best bound -9.000000000000e+00, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -9.0, 'active_devices': 0, 'total_energy_J': 36.5134086, 'total_latency_s': 208.64804914285713, 'total_upload_bytes': 7302681720.0, 'total_batches': 9, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 2, 'd6': 2, 'd7': 0, 'd8': 2, 'd9': 3}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 2, 'd6': 2, 'd7': 0, 'd8': 2, 'd9': 3}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 8.1140908, 'd6': 8.1140908, 'd7': 0.0, 'd8': 8.1140908, 'd9': 12.1711362}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 46.36623314285714, 'd6': 46.36623314285714, 'd7': 0.0, 'd8': 46.36623314285714, 'd9': 69.54934971428571}, 'upload_bytes': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 1622818160.0, 'd6': 1622818160.0, 'd7': 0.0, 'd8': 1622818160.0, 'd9': 2434227240.0}, 'reasons': {}}
+[cloud][round 23] RL selected aggregation period O_e = 2
+[cloud][round 23] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 23] Aggregation SKIPPED (rounds_since_agg=1, O_e=2, delta=0.000000 < tau_cloud)
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 0.064, 'd6': 16.292, 'd7': 0.064, 'd8': 0.064, 'd9': 4.121}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 23] completed
+
+[VGG16][Round 24]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 40 rows, 100 columns and 130 nonzeros
+Model fingerprint: 0x04a169a6
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 4e+00]
+  QRHS range       [6e-02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 40 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -5 
+No other solutions better than -5
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.000000000000e+00, best bound -5.000000000000e+00, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -5.0, 'active_devices': 0, 'total_energy_J': 20.285227, 'total_latency_s': 115.91558285714285, 'total_upload_bytes': 4057045400.0, 'total_batches': 5, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 4, 'd7': 0, 'd8': 0, 'd9': 1}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 4, 'd7': 0, 'd8': 0, 'd9': 1}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 16.2281816, 'd7': 0.0, 'd8': 0.0, 'd9': 4.0570454}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 92.73246628571428, 'd7': 0.0, 'd8': 0.0, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 3245636320.0, 'd7': 0.0, 'd8': 0.0, 'd9': 811409080.0}, 'reasons': {}}
+[cloud][round 24] RL selected aggregation period O_e = 8
+[cloud][round 24] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 24] Aggregation SKIPPED (rounds_since_agg=2, O_e=8, delta=0.000000 < tau_cloud)
+[battery] {'d0': 0.064, 'd1': 0.064, 'd2': 0.064, 'd3': 0.064, 'd4': 0.064, 'd5': 0.064, 'd6': 0.064, 'd7': 0.064, 'd8': 0.064, 'd9': 0.064}
+[edge-load] {'e0': 0, 'e1': 0}
+[VGG16][Round 24] completed
+[VGG16] Training complete

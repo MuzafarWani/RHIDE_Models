@@ -1,0 +1,1 @@
+python scripts/train_federated_vgg16.py   --train_cfg configs_vgg16/train.yaml   --fed_cfg outvgg/base100/federated.yaml   --el_cfg outvgg/base100/energy_latency.yaml   --split_cfg configs_vgg16/split.yaml   --solver_cfg configs_vgg16/solver.yaml   --rl_cfg configs_vgg16/rl.yaml   --rounds 1

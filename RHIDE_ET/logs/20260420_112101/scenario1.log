@@ -1,0 +1,32 @@
+2026-04-20 11:21:02.291458: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 11:21:02.291488: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 11:21:02.292900: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 11:21:02.298626: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 11:21:02.865962: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+[XEVENTNET][ROUND 0]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'd10', 'd11', 'd12', 'd13', 'd14', 'd15', 'd16', 'd17', 'd18', 'd19', 'd20', 'd21', 'd22', 'd23', 'd24', 'd25', 'd26', 'd27', 'd28', 'd29', 'd30', 'd31', 'd32', 'd33', 'd34', 'd35', 'd36', 'd37', 'd38', 'd39', 'd40', 'd41', 'd42', 'd43', 'd44', 'd45', 'd46', 'd47', 'd48', 'd49', 'd50', 'd51', 'd52', 'd53', 'd54', 'd55', 'd56', 'd57', 'd58', 'd59', 'd60', 'd61', 'd62', 'd63', 'd64', 'd65', 'd66', 'd67', 'd68', 'd69', 'd70', 'd71', 'd72', 'd73', 'd74', 'd75', 'd76', 'd77', 'd78', 'd79', 'd80', 'd81', 'd82', 'd83', 'd84', 'd85', 'd86', 'd87', 'd88', 'd89', 'd90', 'd91', 'd92', 'd93', 'd94', 'd95', 'd96', 'd97', 'd98', 'd99']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 275, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 207, in main
+    sol = RoundMILPSolver(rc, sp).solve()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/src/solver/gurobi_solver.py", line 80, in solve
+    m = gp.Model("sphere_train_joint_beta")
+  File "src/gurobipy/_model.pyx", line 146, in gurobipy._model.Model.__init__
+  File "src/gurobipy/gurobi.pxi", line 60, in gurobipy._core.gurobi._getdefaultenv
+  File "src/gurobipy/env.pxi", line 108, in gurobipy._core.Env.__init__
+gurobipy._exception.GurobiError: License 2761103 has expired

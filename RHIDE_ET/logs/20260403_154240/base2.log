@@ -1,0 +1,1206 @@
+2026-04-03 15:42:41.289468: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-03 15:42:41.289494: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-03 15:42:41.301984: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-03 15:42:41.318047: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-03 15:42:42.021410: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+================ ROUND 0 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x42694244
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 0] RL selected aggregation period O_e = 16
+[cloud][round 0] model_delta = inf, tau_cloud = 0.05
+[cloud][round 0] Aggregating 2 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 0] Broadcasting new global model to all edges
+
+================ ROUND 1 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x4ef27b99
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1775211175.6012902)
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 2 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0xe7a328cc
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 3 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x09a58548
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 3] RL selected aggregation period O_e = 1
+[cloud][round 3] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 3] Aggregation SKIPPED (rounds_since_agg=0, O_e=1, delta=0.000000 < tau_cloud)
+
+================ ROUND 4 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0xc148c48a
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 4] No edge updates received (rounds_since_agg=1)
+
+================ ROUND 5 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x1e1d0482
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 5] RL selected aggregation period O_e = 4
+[cloud][round 5] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 5] Aggregation SKIPPED (rounds_since_agg=1, O_e=4, delta=0.000000 < tau_cloud)
+
+================ ROUND 6 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x4070182b
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 6] No edge updates received (rounds_since_agg=2)
+
+================ ROUND 7 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0xf4c604e6
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 7] RL selected aggregation period O_e = 1
+[cloud][round 7] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 7] Aggregating 1 edge updates using FedAvg (trigger: cadence)
+[cloud][round 7] Broadcasting new global model to all edges
+
+================ ROUND 8 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x5a735b6d
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1775211185.9646342)
+[cloud][round 8] RL selected aggregation period O_e = 2
+[cloud][round 8] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 8] Aggregation SKIPPED (rounds_since_agg=0, O_e=2, delta=0.000000 < tau_cloud)
+
+================ ROUND 9 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 300.0
+
+EDGE e1 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x4b8ee525
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 9] No edge updates received (rounds_since_agg=1)
+Training complete

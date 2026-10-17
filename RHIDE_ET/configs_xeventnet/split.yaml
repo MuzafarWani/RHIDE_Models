@@ -1,0 +1,35 @@
+# Split points β and payload sizes.
+# Names must match split_graph.DEFAULT_CUTS
+# Split points
+allowed: ["early_prepool", 
+          "post_pool1", 
+          "post_conv3", 
+          "global_pooled", 
+          "branch_dense",
+          "concat", 
+          "combined_dense"]
+
+# Activation payload per β (bytes) — used by the solver as U(β)
+A_size_bytes:
+  early_prepool:   1_048_576    
+  post_pool1:        196_608    
+  post_conv3:        393_216    
+  global_pooled:          512   
+  branch_dense:           512
+  concat:                512
+  combined_dense:        256    
+
+# Optional: model-delta bytes from device→edge for β=output (not used in your pipeline)
+Delta_model_bytes: 0
+
+# Device memory on device up to each β (bytes) = cumulative params + activation(β)
+# (Conservative, based on your params_bytes + activation_bytes table)
+memory_bytes:
+  early_prepool:   1705120
+  post_pool1:      1705120
+  post_conv3:      2294656
+  global_pooled:   2294656
+  branch_dense:    2558272
+  concat:          2559296
+  combined_dense:  2690880
+

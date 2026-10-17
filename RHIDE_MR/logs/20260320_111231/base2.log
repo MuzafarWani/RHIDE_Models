@@ -1,0 +1,646 @@
+2026-03-20 11:12:32.273776: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-20 11:12:32.273802: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-20 11:12:32.274556: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-20 11:12:32.278600: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-20 11:12:32.843934: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-20 11:12:34.641125: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 153600000 exceeds 10% of free system memory.
+2026-03-20 11:12:34.736586: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 153600000 exceeds 10% of free system memory.
+2026-03-20 11:12:34.950439: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-20 11:12:34.998679: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-20 11:12:35.053307: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+================ ROUND 0 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 10
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xd1d7d569
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 6e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -265.522 0 
+No other solutions better than -265.522
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.655219018908e+02, best bound -2.655219018908e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -265.5219018907886, 'active_devices': 3, 'total_energy_J': 50.369546400000004, 'total_latency_s': 141.1489394745626, 'total_upload_bytes': 154140672.0, 'total_batches': 6, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': '', 'd3': '', 'd4': 'block1_pool', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 0, 'd3': 0, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 16.7898488, 'd1': 16.7898488, 'd2': 0.0, 'd3': 0.0, 'd4': 16.7898488, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 47.04964649152087, 'd1': 47.04964649152087, 'd2': 0.0, 'd3': 0.0, 'd4': 47.04964649152087, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 51380224.0, 'd1': 51380224.0, 'd2': 0, 'd3': 0, 'd4': 51380224.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 1 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 9
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xd1c6c3e8
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 8e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -271.074 0 
+No other solutions better than -271.074
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.710739521370e+02, best bound -2.710739521370e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -271.07395213699607, 'active_devices': 3, 'total_energy_J': 50.369546400000004, 'total_latency_s': 141.1849394745626, 'total_upload_bytes': 154140672.0, 'total_batches': 6, 'beta_choice': {'d0': 'block1_pool', 'd1': '', 'd2': '', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 0, 'd2': 0, 'd3': 2, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 16.7898488, 'd1': 0.0, 'd2': 0.0, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 47.06164649152087, 'd1': 0.0, 'd2': 0.0, 'd3': 47.06164649152087, 'd4': 47.06164649152087, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 51380224.0, 'd1': 0, 'd2': 0, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 2 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 8
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x92bc9371
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 8e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -184.209 0 
+No other solutions better than -184.209
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.842088411003e+02, best bound -1.842088411003e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -184.20884110034902, 'active_devices': 2, 'total_energy_J': 33.5796976, 'total_latency_s': 94.12329298304174, 'total_upload_bytes': 102760448.0, 'total_batches': 4, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 16.7898488, 'd1': 16.7898488, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 47.06164649152087, 'd1': 47.06164649152087, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 51380224.0, 'd1': 51380224.0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 3 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 7
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x47ddaf50
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 7e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -189.061 0 
+No other solutions better than -189.061
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.890613940668e+02, best bound -1.890613940668e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -189.06139406680091, 'active_devices': 2, 'total_energy_J': 33.5796976, 'total_latency_s': 94.11529298304174, 'total_upload_bytes': 102760448.0, 'total_batches': 4, 'beta_choice': {'d0': 'block1_pool', 'd1': '', 'd2': '', 'd3': 'block1_pool', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 0, 'd2': 0, 'd3': 2, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 16.7898488, 'd1': 0.0, 'd2': 0.0, 'd3': 16.7898488, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 47.05764649152087, 'd1': 0.0, 'd2': 0.0, 'd3': 47.05764649152087, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 51380224.0, 'd1': 0, 'd2': 0, 'd3': 51380224.0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 4 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 6
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x932472d7
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 7e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -200.049 0 
+No other solutions better than -200.049
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.000488707586e+02, best bound -2.000488707586e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d6: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -200.04887075863647, 'active_devices': 5, 'total_energy_J': 83.94924400000001, 'total_latency_s': 235.26423245760432, 'total_upload_bytes': 256901120.0, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': '', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': '', 'd8': '', 'd9': 'block1_pool'}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 1, 'd6': 1, 'd7': 0, 'd8': 0, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 2, 'd3': 2, 'd4': 0, 'd5': 2, 'd6': 2, 'd7': 0, 'd8': 0, 'd9': 2}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 16.7898488, 'd3': 16.7898488, 'd4': 0.0, 'd5': 16.7898488, 'd6': 16.7898488, 'd7': 0.0, 'd8': 0.0, 'd9': 16.7898488}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 47.05764649152087, 'd3': 47.05764649152087, 'd4': 0.0, 'd5': 47.04964649152087, 'd6': 47.04964649152087, 'd7': 0.0, 'd8': 0.0, 'd9': 47.04964649152087}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 51380224.0, 'd3': 51380224.0, 'd4': 0, 'd5': 51380224.0, 'd6': 51380224.0, 'd7': 0, 'd8': 0, 'd9': 51380224.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRAIN'}}
+
+================ ROUND 5 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 5
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x96c911f8
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 6e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -303.121 0 
+No other solutions better than -303.121
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.031208121463e+02, best bound -3.031208121463e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -303.1208121463397, 'active_devices': 3, 'total_energy_J': 50.369546400000004, 'total_latency_s': 141.1729394745626, 'total_upload_bytes': 154140672.0, 'total_batches': 6, 'beta_choice': {'d0': '', 'd1': 'block1_pool', 'd2': '', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 2, 'd2': 0, 'd3': 2, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 16.7898488, 'd2': 0.0, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 47.05764649152087, 'd2': 0.0, 'd3': 47.05764649152087, 'd4': 47.05764649152087, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 51380224.0, 'd2': 0, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 6 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 4
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x26046c79
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -440.423 0 
+No other solutions better than -440.423
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.404232437785e+02, best bound -4.404232437785e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d7: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d8: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -440.4232437784631, 'active_devices': 8, 'total_energy_J': 151.10863920000003, 'total_latency_s': 423.49881842368785, 'total_upload_bytes': 462422016.0, 'total_batches': 18, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': '', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 0, 'd6': 2, 'd7': 2, 'd8': 2, 'd9': 0}, 'energy_J': {'d0': 33.5796976, 'd1': 16.7898488, 'd2': 16.7898488, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 0.0, 'd6': 16.7898488, 'd7': 16.7898488, 'd8': 16.7898488, 'd9': 0.0}, 'latency_s': {'d0': 94.10329298304173, 'd1': 47.06164649152087, 'd2': 47.06164649152087, 'd3': 47.06164649152087, 'd4': 47.06164649152087, 'd5': 0.0, 'd6': 47.04964649152087, 'd7': 47.04964649152087, 'd8': 47.04964649152087, 'd9': 0.0}, 'upload_bytes': {'d0': 102760448.0, 'd1': 51380224.0, 'd2': 51380224.0, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 0, 'd6': 51380224.0, 'd7': 51380224.0, 'd8': 51380224.0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRANSFER'}}
+
+================ ROUND 7 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 3
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xa61367a9
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -558.428 0 
+No other solutions better than -558.428
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.584275363529e+02, best bound -5.584275363529e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d5: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -558.427536352912, 'active_devices': 8, 'total_energy_J': 134.3187904, 'total_latency_s': 376.533171932167, 'total_upload_bytes': 411041792.0, 'total_batches': 16, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': '', 'd7': 'block1_pool', 'd8': '', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 0, 'd7': 1, 'd8': 0, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 0, 'd7': 2, 'd8': 0, 'd9': 2}, 'energy_J': {'d0': 16.7898488, 'd1': 16.7898488, 'd2': 16.7898488, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 16.7898488, 'd6': 0.0, 'd7': 16.7898488, 'd8': 0.0, 'd9': 16.7898488}, 'latency_s': {'d0': 47.06964649152087, 'd1': 47.06964649152087, 'd2': 47.06964649152087, 'd3': 47.06964649152087, 'd4': 47.06964649152087, 'd5': 47.06164649152087, 'd6': 0.0, 'd7': 47.06164649152087, 'd8': 0.0, 'd9': 47.06164649152087}, 'upload_bytes': {'d0': 51380224.0, 'd1': 51380224.0, 'd2': 51380224.0, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 51380224.0, 'd6': 0, 'd7': 51380224.0, 'd8': 0, 'd9': 51380224.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRANSFER', 'd7': 'TRAIN', 'd8': 'TRANSFER', 'd9': 'TRAIN'}}
+
+================ ROUND 8 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 2
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x040853b8
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [7e+01, 3e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -292.846 0 
+No other solutions better than -292.846
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.928461013368e+02, best bound -2.928461013368e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d3: z=1 k=0 beta=[1, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d7: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -292.8461013367861, 'active_devices': 6, 'total_energy_J': 326.44088608000004, 'total_latency_s': 403.2423587799266, 'total_upload_bytes': 425203712.0, 'total_batches': 16, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': 'block3_conv3', 'd3': 'block1_pool', 'd4': '', 'd5': '', 'd6': 'block3_conv3', 'd7': 'block3_conv3', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 1, 'd7': 1, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 4, 'd4': 0, 'd5': 0, 'd6': 2, 'd7': 2, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 33.5796976, 'd1': 16.7898488, 'd2': 80.83054736, 'd3': 33.5796976, 'd4': 0.0, 'd5': 0.0, 'd6': 80.83054736, 'd7': 80.83054736, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 94.11929298304173, 'd1': 47.06964649152087, 'd2': 55.9833754407741, 'd3': 94.11929298304173, 'd4': 0.0, 'd5': 0.0, 'd6': 55.975375440774094, 'd7': 55.975375440774094, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 102760448.0, 'd1': 51380224.0, 'd2': 56100864.0, 'd3': 102760448.0, 'd4': 0, 'd5': 0, 'd6': 56100864.0, 'd7': 56100864.0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 9 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+remaining_rounds: 1
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xd89b8f6d
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [5e+01, 3e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -236.991 0 
+No other solutions better than -236.991
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.369905980974e+02, best bound -2.369905980974e+02, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d4: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d9: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -236.99059809743346, 'active_devices': 5, 'total_energy_J': 646.64437888, 'total_latency_s': 447.7510035261927, 'total_upload_bytes': 448806912.0, 'total_batches': 16, 'beta_choice': {'d0': '', 'd1': 'block3_conv3', 'd2': '', 'd3': 'block3_conv3', 'd4': 'block3_conv3', 'd5': '', 'd6': '', 'd7': '', 'd8': 'block3_conv3', 'd9': 'block3_conv3'}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 4, 'd2': 0, 'd3': 2, 'd4': 4, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 0.0, 'd1': 161.66109472, 'd2': 0.0, 'd3': 80.83054736, 'd4': 161.66109472, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 121.24582104, 'd9': 121.24582104}, 'latency_s': {'d0': 0.0, 'd1': 111.93875088154817, 'd2': 0.0, 'd3': 55.97937544077409, 'd4': 111.93875088154817, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 83.94706316116113, 'd9': 83.94706316116113}, 'upload_bytes': {'d0': 0, 'd1': 112201728.0, 'd2': 0, 'd3': 56100864.0, 'd4': 112201728.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 84151296.0, 'd9': 84151296.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+Training complete

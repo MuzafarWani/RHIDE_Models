@@ -1,0 +1,208 @@
+2026-04-20 22:12:46.937893: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 22:12:46.937920: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 22:12:46.938701: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 22:12:46.942769: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 22:12:47.499242: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+================ ROUND 0 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=280.0000, E_allowed=28.0000
+[Device d1] Erem=280.0000, E_allowed=28.0000
+[Device d2] Erem=280.0000, E_allowed=28.0000
+[Device d3] Erem=280.0000, E_allowed=28.0000
+[Device d4] Erem=280.0000, E_allowed=28.0000
+[Device d5] Erem=280.0000, E_allowed=28.0000
+[Device d6] Erem=280.0000, E_allowed=28.0000
+[Device d7] Erem=280.0000, E_allowed=28.0000
+[Device d8] Erem=280.0000, E_allowed=28.0000
+[Device d9] Erem=280.0000, E_allowed=28.0000
+====================================================
+
+Set parameter Username
+Set parameter LicenseID to value 2810616
+Academic license - for non-commercial use only - expires 2027-04-20
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-200.0, reward_k=-2.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-200.0, reward_k=-2.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-200.0, reward_k=-2.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-200.0, reward_k=-2.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-200.0, reward_k=-2.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=115.788
+  Beta 2 cost=121.013
+  Beta 3 cost=121.876
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-100.0, reward_k=-1.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-100.0, reward_k=-1.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=115.788
+  Beta 2 cost=121.013
+  Beta 3 cost=121.876
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-100.0, reward_k=-1.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-100.0, reward_k=-1.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-100.0, reward_k=-1.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x1b437882
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [4e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective -42.0000000
+Found heuristic solution: objective -105.0673516
+Found heuristic solution: objective -149.6528860
+
+Root relaxation: objective -5.955163e+02, 17 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -595.5163304 -595.51633  0.00%     -    0s
+
+Explored 1 nodes (17 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 4: -595.516 -149.653 -105.067 -42 
+No other solutions better than -595.516
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.955163304099e+02, best bound -5.955163304099e+02, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=1.0, k=-0.0
+d1: z=1.0, k=-0.0
+d2: z=1.0, k=-0.0
+d3: z=1.0, k=-0.0
+d4: z=1.0, k=-0.0
+d5: z=0.0, k=3.0
+d6: z=1.0, k=-0.0
+d7: z=0.0, k=3.0
+d8: z=0.0, k=4.0
+d9: z=1.0, k=-0.0
+OBJ = -595.5163304099295
+================================================
+
+{'status': 'OPTIMAL', 'obj': -595.5163304099295, 'active_devices': 7, 'total_energy_J': 498.67686378999986, 'total_latency_s': 694.6780708412392, 'total_upload_bytes': 8855250736.0, 'total_batches': 28, 'beta_choice': {'d0': 'block2_conv1', 'd1': 'block2_conv1', 'd2': 'block3_conv3', 'd3': 'block3_conv3', 'd4': 'block2_conv1', 'd5': '', 'd6': 'block2_conv1', 'd7': '', 'd8': '', 'd9': 'block2_conv1'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 1, 'd7': 0, 'd8': 0, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 3, 'd6': 0, 'd7': 3, 'd8': 4, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 26.95684407, 'd1': 26.95684407, 'd2': 161.66109472, 'd3': 161.66109472, 'd4': 26.95684407, 'd5': 12.1711362, 'd6': 26.95684407, 'd7': 12.1711362, 'd8': 16.2281816, 'd9': 26.95684407}, 'latency_s': {'d0': 47.80668067277142, 'd1': 47.80668067277142, 'd2': 111.90675088154818, 'd3': 111.90675088154818, 'd4': 47.80668067277142, 'd5': 69.54934971428571, 'd6': 47.80668067277142, 'd7': 69.54934971428571, 'd8': 92.73246628571428, 'd9': 47.80668067277142}, 'upload_bytes': {'d0': 103351296.0, 'd1': 103351296.0, 'd2': 112201728.0, 'd3': 112201728.0, 'd4': 103351296.0, 'd5': 2434227240, 'd6': 103351296.0, 'd7': 2434227240, 'd8': 3245636320, 'd9': 103351296.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRAIN', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRAIN'}}
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 277, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 240, in main
+    uploader.upload(
+AttributeError: 'Uploader' object has no attribute 'upload'

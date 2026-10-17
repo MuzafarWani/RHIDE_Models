@@ -1,0 +1,1865 @@
+2026-04-20 22:08:42.168310: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 22:08:42.168340: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 22:08:42.169123: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 22:08:42.173203: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 22:08:42.712948: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+================ ROUND 0 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=280.0000, E_allowed=28.0000
+[Device d1] Erem=280.0000, E_allowed=28.0000
+[Device d2] Erem=280.0000, E_allowed=28.0000
+[Device d3] Erem=280.0000, E_allowed=28.0000
+[Device d4] Erem=280.0000, E_allowed=28.0000
+[Device d5] Erem=280.0000, E_allowed=28.0000
+[Device d6] Erem=280.0000, E_allowed=28.0000
+[Device d7] Erem=280.0000, E_allowed=28.0000
+[Device d8] Erem=280.0000, E_allowed=28.0000
+[Device d9] Erem=280.0000, E_allowed=28.0000
+====================================================
+
+Set parameter Username
+Set parameter LicenseID to value 2810616
+Academic license - for non-commercial use only - expires 2027-04-20
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=115.788
+  Beta 2 cost=121.013
+  Beta 3 cost=121.876
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=115.788
+  Beta 2 cost=121.013
+  Beta 3 cost=121.876
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=156.581
+  Beta 1 cost=160.998
+  Beta 2 cost=166.619
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=74.094
+  Beta 3 cost=77.985
+  Beta 4 cost=82.441
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x455b4cd8
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [4e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 0] RL selected aggregation period O_e = 16
+[cloud][round 0] model_delta = inf, tau_cloud = 0.05
+[cloud][round 0] Aggregating 2 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 0] Broadcasting new global model to all edges
+
+================ ROUND 1 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=275.9430, E_allowed=30.6603
+[Device d1] Erem=275.9430, E_allowed=30.6603
+[Device d2] Erem=275.9430, E_allowed=30.6603
+[Device d3] Erem=275.9430, E_allowed=30.6603
+[Device d4] Erem=275.9430, E_allowed=30.6603
+[Device d5] Erem=275.9430, E_allowed=30.6603
+[Device d6] Erem=275.9430, E_allowed=30.6603
+[Device d7] Erem=275.9430, E_allowed=30.6603
+[Device d8] Erem=275.9430, E_allowed=30.6603
+[Device d9] Erem=275.9430, E_allowed=30.6603
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=71.433
+  Beta 3 cost=74.230
+  Beta 4 cost=77.432
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=154.499
+  Beta 1 cost=157.656
+  Beta 2 cost=162.613
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=241.699
+  Beta 1 cost=246.405
+  Beta 2 cost=229.802
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=71.433
+  Beta 3 cost=74.230
+  Beta 4 cost=77.432
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=71.433
+  Beta 3 cost=74.230
+  Beta 4 cost=77.432
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=113.282
+  Beta 2 cost=117.023
+  Beta 3 cost=121.166
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=154.499
+  Beta 1 cost=157.656
+  Beta 2 cost=162.613
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=113.282
+  Beta 2 cost=117.023
+  Beta 3 cost=121.166
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=71.433
+  Beta 3 cost=74.230
+  Beta 4 cost=77.432
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=113.282
+  Beta 2 cost=117.023
+  Beta 3 cost=121.166
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xade1dffc
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1776703135.1204746)
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 2 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=271.8859, E_allowed=33.9857
+[Device d1] Erem=271.8859, E_allowed=33.9857
+[Device d2] Erem=271.8859, E_allowed=33.9857
+[Device d3] Erem=271.8859, E_allowed=33.9857
+[Device d4] Erem=271.8859, E_allowed=33.9857
+[Device d5] Erem=271.8859, E_allowed=33.9857
+[Device d6] Erem=271.8859, E_allowed=33.9857
+[Device d7] Erem=271.8859, E_allowed=33.9857
+[Device d8] Erem=271.8859, E_allowed=33.9857
+[Device d9] Erem=271.8859, E_allowed=33.9857
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=68.694
+  Beta 3 cost=70.362
+  Beta 4 cost=72.272
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=68.694
+  Beta 3 cost=70.362
+  Beta 4 cost=72.272
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=238.485
+  Beta 1 cost=241.243
+  Beta 2 cost=229.802
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=154.215
+  Beta 2 cost=157.135
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=238.485
+  Beta 1 cost=241.243
+  Beta 2 cost=229.802
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=154.215
+  Beta 2 cost=157.135
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=68.694
+  Beta 3 cost=70.362
+  Beta 4 cost=72.272
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=154.215
+  Beta 2 cost=157.135
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=68.694
+  Beta 3 cost=70.362
+  Beta 4 cost=72.272
+  Beta 5 cost=71.320
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=154.215
+  Beta 2 cost=157.135
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x8ca1be43
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 3 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=267.8289, E_allowed=38.2613
+[Device d1] Erem=267.8289, E_allowed=38.2613
+[Device d2] Erem=267.8289, E_allowed=38.2613
+[Device d3] Erem=267.8289, E_allowed=38.2613
+[Device d4] Erem=267.8289, E_allowed=38.2613
+[Device d5] Erem=267.8289, E_allowed=38.2613
+[Device d6] Erem=267.8289, E_allowed=38.2613
+[Device d7] Erem=267.8289, E_allowed=38.2613
+[Device d8] Erem=267.8289, E_allowed=38.2613
+[Device d9] Erem=267.8289, E_allowed=38.2613
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=65.872
+  Beta 3 cost=66.378
+  Beta 4 cost=66.957
+  Beta 5 cost=67.733
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=235.172
+  Beta 1 cost=235.925
+  Beta 2 cost=229.802
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=150.670
+  Beta 2 cost=151.490
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=65.872
+  Beta 3 cost=66.378
+  Beta 4 cost=66.957
+  Beta 5 cost=67.733
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=235.172
+  Beta 1 cost=235.925
+  Beta 2 cost=229.802
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=108.042
+  Beta 2 cost=108.681
+  Beta 3 cost=109.387
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=150.670
+  Beta 2 cost=151.490
+  Beta 3 cost=149.049
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=65.872
+  Beta 3 cost=66.378
+  Beta 4 cost=66.957
+  Beta 5 cost=67.733
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=108.042
+  Beta 2 cost=108.681
+  Beta 3 cost=109.387
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=108.042
+  Beta 2 cost=108.681
+  Beta 3 cost=109.387
+  Beta 4 cost=106.819
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x87a4b6a9
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [6e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 3] RL selected aggregation period O_e = 1
+[cloud][round 3] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 3] Aggregation SKIPPED (rounds_since_agg=0, O_e=1, delta=0.000000 < tau_cloud)
+
+================ ROUND 4 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=263.7718, E_allowed=43.9620
+[Device d1] Erem=263.7718, E_allowed=43.9620
+[Device d2] Erem=263.7718, E_allowed=43.9620
+[Device d3] Erem=263.7718, E_allowed=43.9620
+[Device d4] Erem=263.7718, E_allowed=43.9620
+[Device d5] Erem=263.7718, E_allowed=43.9620
+[Device d6] Erem=263.7718, E_allowed=43.9620
+[Device d7] Erem=263.7718, E_allowed=43.9620
+[Device d8] Erem=263.7718, E_allowed=43.9620
+[Device d9] Erem=263.7718, E_allowed=43.9620
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=231.758
+  Beta 1 cost=230.444
+  Beta 2 cost=228.380
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=231.758
+  Beta 1 cost=230.444
+  Beta 2 cost=228.380
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=62.270
+  Beta 4 cost=61.478
+  Beta 5 cost=60.417
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=62.270
+  Beta 4 cost=61.478
+  Beta 5 cost=60.417
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=147.016
+  Beta 2 cost=145.671
+  Beta 3 cost=144.183
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=62.270
+  Beta 4 cost=61.478
+  Beta 5 cost=60.417
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=62.270
+  Beta 4 cost=61.478
+  Beta 5 cost=60.417
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=104.317
+  Beta 3 cost=103.227
+  Beta 4 cost=101.978
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=104.317
+  Beta 3 cost=103.227
+  Beta 4 cost=101.978
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=62.270
+  Beta 4 cost=61.478
+  Beta 5 cost=60.417
+  Beta 6 cost=56.081
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x9023f0a0
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [2e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 4] No edge updates received (rounds_since_agg=1)
+
+================ ROUND 5 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=259.7148, E_allowed=51.9430
+[Device d1] Erem=259.7148, E_allowed=51.9430
+[Device d2] Erem=259.7148, E_allowed=51.9430
+[Device d3] Erem=259.7148, E_allowed=51.9430
+[Device d4] Erem=259.7148, E_allowed=51.9430
+[Device d5] Erem=259.7148, E_allowed=51.9430
+[Device d6] Erem=259.7148, E_allowed=51.9430
+[Device d7] Erem=259.7148, E_allowed=51.9430
+[Device d8] Erem=259.7148, E_allowed=51.9430
+[Device d9] Erem=259.7148, E_allowed=51.9430
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=228.843
+  Beta 1 cost=224.791
+  Beta 2 cost=219.380
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=58.035
+  Beta 4 cost=55.828
+  Beta 5 cost=52.873
+  Beta 6 cost=49.510
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=228.843
+  Beta 1 cost=224.791
+  Beta 2 cost=219.380
+  Beta 3 cost=203.395
+  Beta 4 cost=173.160
+  Beta 5 cost=132.684
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=58.035
+  Beta 4 cost=55.828
+  Beta 5 cost=52.873
+  Beta 6 cost=49.510
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=58.035
+  Beta 4 cost=55.828
+  Beta 5 cost=52.873
+  Beta 6 cost=49.510
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=99.817
+  Beta 3 cost=96.873
+  Beta 4 cost=93.503
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=143.247
+  Beta 2 cost=139.671
+  Beta 3 cost=135.712
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=143.247
+  Beta 2 cost=139.671
+  Beta 3 cost=135.712
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=143.247
+  Beta 2 cost=139.671
+  Beta 3 cost=135.712
+  Beta 4 cost=128.933
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=99.817
+  Beta 3 cost=96.873
+  Beta 4 cost=93.503
+  Beta 5 cost=86.661
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x48f06b08
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+01, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [3e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 5] RL selected aggregation period O_e = 4
+[cloud][round 5] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 5] Aggregation SKIPPED (rounds_since_agg=1, O_e=4, delta=0.000000 < tau_cloud)
+
+================ ROUND 6 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=255.6577, E_allowed=63.9144
+[Device d1] Erem=255.6577, E_allowed=63.9144
+[Device d2] Erem=255.6577, E_allowed=63.9144
+[Device d3] Erem=255.6577, E_allowed=63.9144
+[Device d4] Erem=255.6577, E_allowed=63.9144
+[Device d5] Erem=255.6577, E_allowed=63.9144
+[Device d6] Erem=255.6577, E_allowed=63.9144
+[Device d7] Erem=255.6577, E_allowed=63.9144
+[Device d8] Erem=255.6577, E_allowed=63.9144
+[Device d9] Erem=255.6577, E_allowed=63.9144
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=133.480
+  Beta 3 cost=126.971
+  Beta 4 cost=119.519
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.174
+  Beta 3 cost=90.318
+  Beta 4 cost=84.759
+  Beta 5 cost=77.317
+  Beta 6 cost=63.712
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=49.998
+  Beta 5 cost=45.090
+  Beta 6 cost=39.503
+  Beta 7 cost=33.973
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=133.480
+  Beta 3 cost=126.971
+  Beta 4 cost=119.519
+  Beta 5 cost=102.002
+  Beta 6 cost=71.343
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xbccdff97
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [3e+01, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [7e-03, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 6] No edge updates received (rounds_since_agg=2)
+
+================ ROUND 7 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=251.6007, E_allowed=83.8669
+[Device d1] Erem=251.6007, E_allowed=83.8669
+[Device d2] Erem=251.6007, E_allowed=83.8669
+[Device d3] Erem=251.6007, E_allowed=83.8669
+[Device d4] Erem=251.6007, E_allowed=83.8669
+[Device d5] Erem=251.6007, E_allowed=83.8669
+[Device d6] Erem=251.6007, E_allowed=83.8669
+[Device d7] Erem=251.6007, E_allowed=83.8669
+[Device d8] Erem=251.6007, E_allowed=83.8669
+[Device d9] Erem=251.6007, E_allowed=83.8669
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.028
+  Beta 3 cost=83.552
+  Beta 4 cost=75.733
+  Beta 5 cost=65.265
+  Beta 6 cost=53.349
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.028
+  Beta 3 cost=83.552
+  Beta 4 cost=75.733
+  Beta 5 cost=65.265
+  Beta 6 cost=53.349
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=37.056
+  Beta 6 cost=29.172
+  Beta 7 cost=21.370
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xd66c76c4
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [2e+01, 1e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [4e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 7] RL selected aggregation period O_e = 1
+[cloud][round 7] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 7] Aggregating 1 edge updates using FedAvg (trigger: cadence)
+[cloud][round 7] Broadcasting new global model to all edges
+
+================ ROUND 8 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=247.5436, E_allowed=123.7718
+[Device d1] Erem=247.5436, E_allowed=123.7718
+[Device d2] Erem=247.5436, E_allowed=123.7718
+[Device d3] Erem=247.5436, E_allowed=123.7718
+[Device d4] Erem=247.5436, E_allowed=123.7718
+[Device d5] Erem=247.5436, E_allowed=123.7718
+[Device d6] Erem=247.5436, E_allowed=123.7718
+[Device d7] Erem=247.5436, E_allowed=123.7718
+[Device d8] Erem=247.5436, E_allowed=123.7718
+[Device d9] Erem=247.5436, E_allowed=123.7718
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=95.055
+  Beta 5 cost=76.879
+  Beta 6 cost=56.188
+  Beta 7 cost=35.709
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=31.320
+  Beta 6 cost=18.504
+  Beta 7 cost=8.354
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=31.320
+  Beta 6 cost=18.504
+  Beta 7 cost=8.354
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=95.055
+  Beta 5 cost=76.879
+  Beta 6 cost=56.188
+  Beta 7 cost=35.709
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=228.843
+  Beta 1 cost=213.653
+  Beta 2 cost=190.608
+  Beta 3 cost=172.769
+  Beta 4 cost=152.344
+  Beta 5 cost=125.000
+  Beta 6 cost=86.605
+  Beta 7 cost=41.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=95.055
+  Beta 5 cost=76.879
+  Beta 6 cost=56.188
+  Beta 7 cost=35.709
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=31.320
+  Beta 6 cost=18.504
+  Beta 7 cost=8.354
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=31.320
+  Beta 6 cost=18.504
+  Beta 7 cost=8.354
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=95.055
+  Beta 5 cost=76.879
+  Beta 6 cost=56.188
+  Beta 7 cost=35.709
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=95.055
+  Beta 5 cost=76.879
+  Beta 6 cost=56.188
+  Beta 7 cost=35.709
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x08027ae9
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [8e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [2e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1776703141.9935474)
+[cloud][round 8] RL selected aggregation period O_e = 2
+[cloud][round 8] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 8] Aggregation SKIPPED (rounds_since_agg=0, O_e=2, delta=0.000000 < tau_cloud)
+
+================ ROUND 9 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=243.4866, E_allowed=243.4866
+[Device d1] Erem=243.4866, E_allowed=243.4866
+[Device d2] Erem=243.4866, E_allowed=243.4866
+[Device d3] Erem=243.4866, E_allowed=243.4866
+[Device d4] Erem=243.4866, E_allowed=243.4866
+[Device d5] Erem=243.4866, E_allowed=243.4866
+[Device d6] Erem=243.4866, E_allowed=243.4866
+[Device d7] Erem=243.4866, E_allowed=243.4866
+[Device d8] Erem=243.4866, E_allowed=243.4866
+[Device d9] Erem=243.4866, E_allowed=243.4866
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+Set parameter Presolve to value 0
+
+[Device d0] priority=2.0
+  Beta 0 cost=228.843
+  Beta 1 cost=213.653
+  Beta 2 cost=189.802
+  Beta 3 cost=163.395
+  Beta 4 cost=133.160
+  Beta 5 cost=99.278
+  Beta 6 cost=60.798
+  Beta 7 cost=22.715
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d1] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=88.933
+  Beta 5 cost=62.002
+  Beta 6 cost=34.139
+  Beta 7 cost=8.810
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d2] priority=2.0
+  Beta 0 cost=228.843
+  Beta 1 cost=213.653
+  Beta 2 cost=189.802
+  Beta 3 cost=163.395
+  Beta 4 cost=133.160
+  Beta 5 cost=99.278
+  Beta 6 cost=60.798
+  Beta 7 cost=22.715
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d3] priority=2.0
+  Beta 0 cost=76.347
+  Beta 1 cost=71.324
+  Beta 2 cost=63.436
+  Beta 3 cost=54.704
+  Beta 4 cost=44.705
+  Beta 5 cost=31.320
+  Beta 6 cost=16.081
+  Beta 7 cost=1.000
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d4] priority=2.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=88.933
+  Beta 5 cost=62.002
+  Beta 6 cost=34.139
+  Beta 7 cost=8.810
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d5] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=88.933
+  Beta 5 cost=62.002
+  Beta 6 cost=34.139
+  Beta 7 cost=8.810
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d6] priority=1.0
+  Beta 0 cost=152.595
+  Beta 1 cost=142.488
+  Beta 2 cost=126.619
+  Beta 3 cost=109.049
+  Beta 4 cost=88.933
+  Beta 5 cost=62.002
+  Beta 6 cost=34.139
+  Beta 7 cost=8.810
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d7] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.028
+  Beta 3 cost=81.876
+  Beta 4 cost=66.819
+  Beta 5 cost=46.661
+  Beta 6 cost=23.712
+  Beta 7 cost=1.858
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d8] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.028
+  Beta 3 cost=81.876
+  Beta 4 cost=66.819
+  Beta 5 cost=46.661
+  Beta 6 cost=23.712
+  Beta 7 cost=1.858
+  reward_z=-0.0, reward_k=-0.0
+
+[Device d9] priority=1.0
+  Beta 0 cost=114.471
+  Beta 1 cost=106.906
+  Beta 2 cost=95.028
+  Beta 3 cost=81.876
+  Beta 4 cost=66.819
+  Beta 5 cost=46.661
+  Beta 6 cost=23.712
+  Beta 7 cost=1.858
+  reward_z=-0.0, reward_k=-0.0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+Presolve  0
+
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x4794b70b
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [4e-03, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Variable types: 80 continuous, 190 integer (170 binary)
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+d0: z=-0.0, k=1.0
+d1: z=-0.0, k=1.0
+d2: z=-0.0, k=1.0
+d3: z=-0.0, k=1.0
+d4: z=-0.0, k=1.0
+d5: z=-0.0, k=1.0
+d6: z=-0.0, k=1.0
+d7: z=-0.0, k=1.0
+d8: z=-0.0, k=1.0
+d9: z=-0.0, k=1.0
+OBJ = 0.0
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 40.570454, 'total_latency_s': 231.8311657142857, 'total_upload_bytes': 8114090800, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+[cloud][round 9] No edge updates received (rounds_since_agg=1)
+Training complete

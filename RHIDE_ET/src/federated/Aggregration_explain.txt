@@ -1,0 +1,341 @@
+Devices train
+      ↓
+Devices send updates to Edge
+      ↓
+Edge Aggregation Decision
+      ↓
+If triggered → Edge FedAvg
+      ↓
+Edge sends regional model to Cloud
+      ↓
+Cloud Aggregation Decision
+      ↓
+If triggered → Cloud FedAvg
+      ↓
+Cloud broadcasts global model to all edges
+      ↓
+Edges updates regional models
+  ↓
+Edges synchronize device models
+
+
+
+# Device training
+...
+
+# Edge aggregation
+for agg in edge_aggs.values():
+    agg.step_round(t)
+
+# Cloud aggregation
+updated = cloud_agg.maybe_aggregate_and_update(t)
+
+# Cloud broadcast
+if updated:
+    broadcast_global_model(...)
+
+# RL training
+cloud_rl.learn(...)
+
+
+Sequence::
+Edge Aggregration
+Step 1: Edge Receives Device Updates: These correspond to: Split learning activations and Raw data transfers
+	src/federated/edge_server/aggregator.py -- EdgeAggregator.step_round()		
+
+
+Step 2: Edge Performs Local Training: For every received update:train_from_activations(...) or train_from_raw(...). This updates the device-specific models maintained at the edge.
+	src/federated/edge_server/trainer.py train_from_activations() train_from_raw() called from EdgeAggregator.step_round()
+Step 3: RL Agent Chooses Aggregation Period. Edge RL selects: O_l = int(self.rl.select_action(obs_now))
+	Edge RL Inputs. The edge observation is built from: 
+	mean_energy(edge energy),mean_latency(Execution time on edge),queue_depth(Pending updates),model_delta(Edge model drift since the last aggregation),delta_exceeded,last_action(previous choice)
+	src/federated/edge_server/rl_agent.py  Called from EdgeAggregator.step_round()
+Step 4: Compute Model Drift  
+	src/federated/edge_server/aggregator.py Method step_round()
+Step 5: Trigger Condition for edge aggregration  src/federated/edge_server/aggregator.py step_round()
+Step 6: Edge FedAvg: If triggered perform aggregration  src/federated/edge_server/aggregator.py _aggregate_device_models()
+Step 7: Send Regional Model to Cloud: _send_update_to_cloud()  src/federated/edge_server/aggregator.py _send_update_to_cloud()
+
+Cloud Aggregation: When is Cloud Aggregation Checked? Every round after all edges finish.cloud_agg.maybe_aggregate_and_update(t)
+Step 1: Receive Edge Models: edge_to_cloud_update. These are the regional models produced by edge aggregation. 
+	src/federated/cloud_server/global_aggregator.py cloud_agg.maybe_aggregate_and_update(t)
+Step 2: Compute Candidate Global Model: Before deciding whether aggregation should occur, the cloud first computes what the new global model would look like if aggregation happened.
+	src/federated/cloud_server/global_aggregator.py maybe_aggregate_and_update()
+Step 3: Compute Cloud Drift
+	src/federated/cloud_server/global_aggregator.py maybe_aggregate_and_update()
+Step 4: Cloud RL Chooses Aggregation Interval: O_e = self.rl.select_action(obs)
+	Cloud RL Inputs: num_edge_updates(This is the number of edge servers that reported updates.), model_delta,rounds_since_agg
+	src/federated/cloud_server/rl_agent.py select_action()
+	
+Step 5: Cloud Trigger: Cloud aggregation happens if:rounds_since_agg >= O_e or delta >= tau_cloud
+	src/federated/cloud_server/global_aggregator.py maybe_aggregate_and_update()
+Step 6: Cloud FedAvg src/federated/cloud_server/global_aggregator.py maybe_aggregate_and_update() self._global_weights = candidate_weights
+Step 7: Broadcast to All Edges  src/federated/cloud_server/global_aggregator.py maybe_aggregate_and_update()
+Step 8: Broadcast to All devices  src/federated/edge_server/aggregator.py _apply_cloud_broadcasts()
+
+
+
+
+
+Overall Aggregation Flow
+
+1. Devices Train
+   Component:
+      Train_federated_vgg16.py
+   Methods:
+      Local training / split execution performed on each device
+
+          ↓
+
+2. Devices Send Updates to Edge
+   Component:
+      src/federated/device_client/uploader.py
+   Methods:
+      Uploader.send_activations()
+      Uploader.send_rawbatch()
+   Topics:
+      device_to_edge_activations
+      device_to_edge_raw
+
+          ↓
+
+3. Edge Receives Device Updates
+   Component:
+      src/federated/edge_server/aggregator.py
+   Method:
+      EdgeAggregator.step_round()
+
+          ↓
+
+4. Edge Performs Local Training
+   Component:
+      src/federated/edge_server/trainer.py
+   Methods:
+      train_from_activations(...)
+      train_from_raw(...)
+   Called From:
+      EdgeAggregator.step_round()
+
+          ↓
+
+5. Edge RL Aggregation Decision
+   Component:
+      src/federated/edge_server/rl_agent.py
+   Method:
+      EdgeRLAggregationAgent.select_action()
+
+   Edge RL Inputs:
+      mean_energy
+      mean_latency
+      queue_depth
+      model_delta
+      delta_exceeded
+      last_action
+
+   Output:
+      Oe ∈ {1,2,4,8}
+
+          ↓
+
+6. Edge Computes Model Drift
+   Component:
+      src/federated/edge_server/aggregator.py
+   Method:
+      EdgeAggregator.step_round()
+
+   Calculation:
+      delta = model_delta(
+          current_weights,
+          self._last_sent_weights
+      )
+
+          ↓
+
+7. Edge Aggregation Trigger Check
+   Component:
+      src/federated/edge_server/aggregator.py
+   Method:
+      EdgeAggregator.step_round()
+
+   Trigger:
+      rounds_since_agg >= Oe
+      OR
+      delta >= tau_edge
+
+          ↓
+
+8. Edge FedAvg Aggregation
+   Component:
+      src/federated/edge_server/aggregator.py
+   Method:
+      _aggregate_device_models()
+
+   Operation:
+      FedAvg across all device models
+
+          ↓
+
+9. Regional Model Sent to Cloud
+   Component:
+      src/federated/edge_server/aggregator.py
+   Method:
+      _send_update_to_cloud()
+
+   Topic:
+      edge_to_cloud_update
+
+          ↓
+
+10. Cloud Receives Edge Models
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Topic:
+       edge_to_cloud_update
+
+          ↓
+
+11. Candidate Global Model Computation
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Operation:
+       Temporary FedAvg across all received
+       regional edge models
+
+          ↓
+
+12. Cloud Computes Global Drift
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Calculation:
+       delta = model_delta(
+           candidate_weights,
+           self._last_global_weights
+       )
+
+          ↓
+
+13. Cloud RL Aggregation Decision
+    Component:
+       src/federated/cloud_server/rl_agent.py
+    Method:
+       select_action()
+
+    Cloud RL Inputs:
+       num_edge_updates
+       model_delta
+       rounds_since_agg
+
+    Output:
+       Ol ∈ {1,2,4,8}
+
+          ↓
+
+14. Cloud Aggregation Trigger Check
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Trigger:
+       rounds_since_agg >= Ol
+       OR
+       delta >= tau_cloud
+
+          ↓
+
+15. Cloud FedAvg Aggregation
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Operation:
+       self._global_weights =
+       candidate_weights
+
+          ↓
+
+16. Cloud Broadcasts Global Model
+    Component:
+       src/federated/cloud_server/global_aggregator.py
+    Method:
+       maybe_aggregate_and_update()
+
+    Topic:
+       cloud_to_edges_broadcast
+
+          ↓
+
+17. Edges Receive Global Model
+    Component:
+       src/federated/edge_server/aggregator.py
+    Method:
+       _apply_cloud_broadcasts()
+
+    Topic:
+       cloud_to_edges_broadcast
+
+          ↓
+
+18. Edges Update Regional Models
+    Component:
+       src/federated/edge_server/aggregator.py
+    Method:
+       _apply_cloud_broadcasts()
+
+    Operation:
+       self.edge_root_model.set_weights(...)
+
+          ↓
+
+19. Edges Synchronize Device Models
+    Component:
+       src/federated/edge_server/aggregator.py
+    Method:
+       _apply_cloud_broadcasts()
+
+    Operation:
+       for d,m in self.device_models.items():
+           m.set_weights(...)
+
+    (Current Implementation)
+
+    Intended Hierarchical Version:
+       Uploader.send_model_to_device()
+       ↓
+       edge_to_device_model_<device_id>
+       ↓
+       Device receives updated model
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+ 
+ 
+ 1. Devices train locally: Each device trains using its own data. Each device has only updated its own copy of the model.
+ 2. Devices send updates to the edge server: Now Edge 1 has:W1, W2, W3 stored in its update queue.
+ 3. Edge decides whether to aggregate based on :
+     a. Drift check: How different are device models from the last edge model? this gives Δe for each model
+     b. Edge aggregration Frequency control from RL agent
+ 4. Edge aggregation trigger: Aggregation happens when either: 5-A or 5-B satifies.
+ 5. Edge performs FedAvg: Edge computes: Regional Model Re = FedAvg(W1,W2,W3). Now there is only one model representing that region. Regional Model Re
+   
+  
+

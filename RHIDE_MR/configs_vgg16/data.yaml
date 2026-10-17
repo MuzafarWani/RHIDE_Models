@@ -1,0 +1,25 @@
+# ========================
+# Image Dataset (VGG16)
+# ========================
+
+dataset_type: "image"
+
+train_dir: "data/images/train"
+val_dir:   "data/images/val"
+test_dir:  "data/images/test"
+inference_npz: data/vgg16_inference.npz
+
+image_size: [224, 224]
+num_channels: 3
+
+classes:
+  - class0
+  - class1
+  - class2
+  - class3
+  - class4
+
+cache_arrays:
+  enabled: true
+  dir: "runs/vgg16/cache"
+

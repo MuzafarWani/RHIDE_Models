@@ -1,0 +1,17 @@
+dataset_builder.py
+This module converts raw WRF model outputs and a CSV file of locations into training-ready arrays. It reads latitude, longitude, and timestep from the CSV, finds the nearest grid point in the WRF data, and extracts a small spatial window around that point. It builds 2D and 3D feature tensors and matches them with labels (for training) or without labels (for inference). The inputs come from a WRF variable dictionary (produced by WRFReader) and a user-provided CSV file. The output is NumPy arrays that can be fed directly to the ML model.
+
+encoders.py
+This module provides a simple label encoder that converts string class names into integer IDs and back. It is used when building datasets so that textual labels from CSV files become numeric values for training. 
+
+grid_builder.py
+This module contains utility functions for working with spatial grids. It finds the nearest grid cell for a given latitude and longitude and extracts safe spatial windows from 2D or 3D arrays, even near borders. 
+
+normalization.py
+This module computes and applies normalization statistics. During training setup, it calculates mean and standard deviation for each 2D and 3D feature channel. These statistics are saved and later reused to normalize new data in the same way. Used in case the location given doesn't have enough data around it
+
+tf_dataset.py
+This module converts NumPy arrays into TensorFlow tf.data.Dataset pipelines. It shuffles the data, splits it into training, validation, and test sets, and applies batching, caching, and prefetching. Its inputs are the prepared arrays (X2, X3, and labels), and its output is TensorFlow datasets for model training.
+
+wrf_reader.py
+This module reads meteorological data from WRF NetCDF files. It loads latitude, longitude, time information, and selected weather variables into NumPy arrays.  The output is a dictionary of arrays that is later consumed by dataset_builder.py to construct model inputs.

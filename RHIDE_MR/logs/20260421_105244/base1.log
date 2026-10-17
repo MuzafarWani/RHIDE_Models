@@ -1,0 +1,4 @@
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_xeventnet.py", line 96
+    )
+    ^
+SyntaxError: positional argument follows keyword argument

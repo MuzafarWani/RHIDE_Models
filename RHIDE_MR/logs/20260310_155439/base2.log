@@ -1,0 +1,1495 @@
+2026-03-10 15:54:39.939931: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-10 15:54:39.939956: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-10 15:54:39.940734: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-10 15:54:39.944798: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-10 15:54:40.493466: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+================ CONFIG DEBUG ================
+Train cfg: {'input_shape_2d': [224, 224, 3], 'input_shape_3d': [1, 1, 1], 'num_classes': 10, 'optimizer': 'adam', 'loss': 'sparse_categorical_crossentropy', 'metrics': ['accuracy'], 'batch_size': 1, 'epochs': 3, 'prefetch': 2, 'cache': True, 'shuffle': True, 'seed': 1337, 'out_dir': 'runs/vgg16', 'save_best': True, 'savedmodel_path': 'runs/vgg16/savedmodel', 'default_beta': 'block1_pool', 'eval_every': 1, 'eval_batch_size': 64, 'eval_report_csv': 'runs/vgg16/val_metrics.csv'}
+Solver cfg: {'eta': 40.0, 'xi': 1.0, 'lambda_energy': 1.0, 'gamma_edge': 0.0001, 'edge_power_w': 120.0, 'mip_gap': 0.01, 'time_limit_s': 30, 'threads': 0, 'integer_k': True, 'use_warm_start': False}
+Allowed splits: ['block1_pool', 'block2_conv1', 'block3_conv1', 'block3_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv2', 'block5_conv3']
+Edges: [{'id': 'e0', 'priority': 2.0, 'ram_edge_s': 221836200000, 'devices': ['d0', 'd1', 'd2', 'd3', 'd4']}, {'id': 'e1', 'priority': 1.0, 'ram_edge_s': 221836200000, 'devices': ['d5', 'd6', 'd7', 'd8', 'd9']}]
+=============================================
+
+[VGG16] Global model built
+
+[DEBUG] Edge RAM limits
+e0 221836200000
+e1 221836200000
+
+[DEBUG] Solver params SolverParams(lambda_energy=1.0, gamma_edge=0.0001, eta=40.0, xi=1.0, mip_gap=0.01, time_limit_s=30.0, threads=0, warm_start=None)
+
+================ ROUND 0 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}
+
+[DEBUG] battery state
+{'d0': 280.0, 'd1': 280.0, 'd2': 280.0, 'd3': 280.0, 'd4': 280.0, 'd5': 280.0, 'd6': 280.0, 'd7': 280.0, 'd8': 280.0, 'd9': 280.0}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 0.0001
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d0
+beta block1_pool: E=16.790/280.0 T=47.050/110.0 M=811409080/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.807/110.0 M=824791007/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.407/110.0 M=903638679/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.090/110.0 M=932798529/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.963/110.0 M=964603936/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.782/110.0 M=992923877/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.208/110.0 M=1070366457/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.248/110.0 M=1071202172/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d1
+beta block1_pool: E=16.790/280.0 T=47.050/110.0 M=811409080/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.807/110.0 M=824791007/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.407/110.0 M=903638679/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.090/110.0 M=932798529/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.963/110.0 M=964603936/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.782/110.0 M=992923877/966978347 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.208/110.0 M=1070366457/966978347 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.248/110.0 M=1071202172/966978347 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 4
+
+Checking beta feasibility for device d2
+beta block1_pool: E=33.580/280.0 T=94.079/110.0 M=811409080/968522457 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=53.914/280.0 T=95.593/110.0 M=824791007/968522457 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=85.840/280.0 T=104.794/110.0 M=903638679/968522457 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=121.189/280.0 T=108.160/110.0 M=932798529/968522457 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=161.661/280.0 T=111.907/110.0 M=964603936/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=215.843/280.0 T=115.544/110.0 M=992923877/968522457 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv2: E=277.525/280.0 T=124.397/110.0 M=1070366457/968522457 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv3: E=338.571/280.0 T=124.476/110.0 M=1071202172/968522457 -> energy_ok=False, latency_ok=False, mem_ok=False
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+Checking beta feasibility for device d3
+beta block1_pool: E=33.580/280.0 T=94.079/110.0 M=811409080/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=53.914/280.0 T=95.593/110.0 M=824791007/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=85.840/280.0 T=104.794/110.0 M=903638679/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=121.189/280.0 T=108.160/110.0 M=932798529/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=161.661/280.0 T=111.907/110.0 M=964603936/972260626 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=215.843/280.0 T=115.544/110.0 M=992923877/972260626 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv2: E=277.525/280.0 T=124.397/110.0 M=1070366457/972260626 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv3: E=338.571/280.0 T=124.476/110.0 M=1071202172/972260626 -> energy_ok=False, latency_ok=False, mem_ok=False
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d4
+beta block1_pool: E=16.790/280.0 T=47.050/110.0 M=811409080/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.807/110.0 M=824791007/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.407/110.0 M=903638679/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.090/110.0 M=932798529/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.963/110.0 M=964603936/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.782/110.0 M=992923877/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.208/110.0 M=1070366457/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.248/110.0 M=1071202172/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+Checking beta feasibility for device d5
+beta block1_pool: E=25.185/280.0 T=70.564/110.0 M=811409080/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=40.435/280.0 T=71.700/110.0 M=824791007/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=64.380/280.0 T=78.600/110.0 M=903638679/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=90.892/280.0 T=81.125/110.0 M=932798529/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=121.246/280.0 T=83.935/110.0 M=964603936/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=161.882/280.0 T=86.663/110.0 M=992923877/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=208.144/280.0 T=93.303/110.0 M=1070366457/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=253.929/280.0 T=93.362/110.0 M=1071202172/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d6
+beta block1_pool: E=16.790/280.0 T=47.050/110.0 M=811409080/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.807/110.0 M=824791007/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.407/110.0 M=903638679/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.090/110.0 M=932798529/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.963/110.0 M=964603936/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.782/110.0 M=992923877/971395545 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.208/110.0 M=1070366457/971395545 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.248/110.0 M=1071202172/971395545 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+Checking beta feasibility for device d7
+beta block1_pool: E=25.185/280.0 T=70.564/110.0 M=811409080/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=40.435/280.0 T=71.700/110.0 M=824791007/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=64.380/280.0 T=78.600/110.0 M=903638679/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=90.892/280.0 T=81.125/110.0 M=932798529/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=121.246/280.0 T=83.935/110.0 M=964603936/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=161.882/280.0 T=86.663/110.0 M=992923877/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=208.144/280.0 T=93.303/110.0 M=1070366457/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=253.929/280.0 T=93.362/110.0 M=1071202172/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+Checking beta feasibility for device d8
+beta block1_pool: E=33.580/280.0 T=94.079/110.0 M=811409080/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=53.914/280.0 T=95.593/110.0 M=824791007/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=85.840/280.0 T=104.794/110.0 M=903638679/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=121.189/280.0 T=108.160/110.0 M=932798529/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=161.661/280.0 T=111.907/110.0 M=964603936/974275444 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=215.843/280.0 T=115.544/110.0 M=992923877/974275444 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv2: E=277.525/280.0 T=124.397/110.0 M=1070366457/974275444 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv3: E=338.571/280.0 T=124.476/110.0 M=1071202172/974275444 -> energy_ok=False, latency_ok=False, mem_ok=False
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d9
+beta block1_pool: E=16.790/280.0 T=47.050/110.0 M=811409080/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.807/110.0 M=824791007/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.407/110.0 M=903638679/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.090/110.0 M=932798529/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.963/110.0 M=964603936/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.782/110.0 M=992923877/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.208/110.0 M=1070366457/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.248/110.0 M=1071202172/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+EDGE e0 RAM LIMIT: 221836200000
+Device d0 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d1 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d2 activation sizes
+block1_pool upload bytes: 102760448.0
+block2_conv1 upload bytes: 206702592.0
+block3_conv1 upload bytes: 107483136.0
+block3_conv2 upload bytes: 112201728.0
+block3_conv3 upload bytes: 112201728.0
+block4_conv3 upload bytes: 89137152.0
+block5_conv2 upload bytes: 50601984.0
+block5_conv3 upload bytes: 50601984.0
+Raw batch bytes: 811409080
+Device d3 activation sizes
+block1_pool upload bytes: 102760448.0
+block2_conv1 upload bytes: 206702592.0
+block3_conv1 upload bytes: 107483136.0
+block3_conv2 upload bytes: 112201728.0
+block3_conv3 upload bytes: 112201728.0
+block4_conv3 upload bytes: 89137152.0
+block5_conv2 upload bytes: 50601984.0
+block5_conv3 upload bytes: 50601984.0
+Raw batch bytes: 811409080
+Device d4 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+
+EDGE e1 RAM LIMIT: 221836200000
+Device d5 activation sizes
+block1_pool upload bytes: 77070336.0
+block2_conv1 upload bytes: 155026944.0
+block3_conv1 upload bytes: 80612352.0
+block3_conv2 upload bytes: 84151296.0
+block3_conv3 upload bytes: 84151296.0
+block4_conv3 upload bytes: 66852864.0
+block5_conv2 upload bytes: 37951488.0
+block5_conv3 upload bytes: 37951488.0
+Raw batch bytes: 811409080
+Device d6 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d7 activation sizes
+block1_pool upload bytes: 77070336.0
+block2_conv1 upload bytes: 155026944.0
+block3_conv1 upload bytes: 80612352.0
+block3_conv2 upload bytes: 84151296.0
+block3_conv3 upload bytes: 84151296.0
+block4_conv3 upload bytes: 66852864.0
+block5_conv2 upload bytes: 37951488.0
+block5_conv3 upload bytes: 37951488.0
+Raw batch bytes: 811409080
+Device d8 activation sizes
+block1_pool upload bytes: 102760448.0
+block2_conv1 upload bytes: 206702592.0
+block3_conv1 upload bytes: 107483136.0
+block3_conv2 upload bytes: 112201728.0
+block3_conv3 upload bytes: 112201728.0
+block4_conv3 upload bytes: 89137152.0
+block5_conv2 upload bytes: 50601984.0
+block5_conv3 upload bytes: 50601984.0
+Raw batch bytes: 811409080
+Device d9 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+
+Objective contributions for device d0
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d1
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d2
+block1_pool: device_energy=33.580 edge_energy=304.992 objective_cost=33.610
+block2_conv1: device_energy=53.914 edge_energy=284.658 objective_cost=53.942
+block3_conv1: device_energy=85.840 edge_energy=252.732 objective_cost=85.865
+block3_conv2: device_energy=121.189 edge_energy=217.383 objective_cost=121.211
+block3_conv3: device_energy=161.661 edge_energy=176.910 objective_cost=161.679
+block4_conv3: device_energy=215.843 edge_energy=122.728 objective_cost=215.855
+block5_conv2: device_energy=277.525 edge_energy=61.047 objective_cost=277.531
+block5_conv3: device_energy=338.571 edge_energy=0.000 objective_cost=338.571
+
+Objective contributions for device d3
+block1_pool: device_energy=33.580 edge_energy=304.992 objective_cost=33.610
+block2_conv1: device_energy=53.914 edge_energy=284.658 objective_cost=53.942
+block3_conv1: device_energy=85.840 edge_energy=252.732 objective_cost=85.865
+block3_conv2: device_energy=121.189 edge_energy=217.383 objective_cost=121.211
+block3_conv3: device_energy=161.661 edge_energy=176.910 objective_cost=161.679
+block4_conv3: device_energy=215.843 edge_energy=122.728 objective_cost=215.855
+block5_conv2: device_energy=277.525 edge_energy=61.047 objective_cost=277.531
+block5_conv3: device_energy=338.571 edge_energy=0.000 objective_cost=338.571
+
+Objective contributions for device d4
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d5
+block1_pool: device_energy=25.185 edge_energy=228.744 objective_cost=25.208
+block2_conv1: device_energy=40.435 edge_energy=213.493 objective_cost=40.457
+block3_conv1: device_energy=64.380 edge_energy=189.549 objective_cost=64.399
+block3_conv2: device_energy=90.892 edge_energy=163.037 objective_cost=90.908
+block3_conv3: device_energy=121.246 edge_energy=132.683 objective_cost=121.259
+block4_conv3: device_energy=161.882 edge_energy=92.046 objective_cost=161.892
+block5_conv2: device_energy=208.144 edge_energy=45.785 objective_cost=208.148
+block5_conv3: device_energy=253.929 edge_energy=0.000 objective_cost=253.929
+
+Objective contributions for device d6
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d7
+block1_pool: device_energy=25.185 edge_energy=228.744 objective_cost=25.208
+block2_conv1: device_energy=40.435 edge_energy=213.493 objective_cost=40.457
+block3_conv1: device_energy=64.380 edge_energy=189.549 objective_cost=64.399
+block3_conv2: device_energy=90.892 edge_energy=163.037 objective_cost=90.908
+block3_conv3: device_energy=121.246 edge_energy=132.683 objective_cost=121.259
+block4_conv3: device_energy=161.882 edge_energy=92.046 objective_cost=161.892
+block5_conv2: device_energy=208.144 edge_energy=45.785 objective_cost=208.148
+block5_conv3: device_energy=253.929 edge_energy=0.000 objective_cost=253.929
+
+Objective contributions for device d8
+block1_pool: device_energy=33.580 edge_energy=304.992 objective_cost=33.610
+block2_conv1: device_energy=53.914 edge_energy=284.658 objective_cost=53.942
+block3_conv1: device_energy=85.840 edge_energy=252.732 objective_cost=85.865
+block3_conv2: device_energy=121.189 edge_energy=217.383 objective_cost=121.211
+block3_conv3: device_energy=161.661 edge_energy=176.910 objective_cost=161.679
+block4_conv3: device_energy=215.843 edge_energy=122.728 objective_cost=215.855
+block5_conv2: device_energy=277.525 edge_energy=61.047 objective_cost=277.531
+block5_conv3: device_energy=338.571 edge_energy=0.000 objective_cost=338.571
+
+Objective contributions for device d9
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 30 rows, 100 columns and 130 nonzeros
+Model fingerprint: 0x3c692371
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 3e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 4e+00]
+  QRHS range       [3e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 27 rows and 90 columns
+Presolve time: 0.00s
+Presolved: 16 rows, 19 columns, 64 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -326.3388194
+Found heuristic solution: objective -344.3966654
+Found heuristic solution: objective -364.7286226
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -364.729 -344.397 -326.339 
+No other solutions better than -364.729
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.647286225863e+02, best bound -3.647286225863e+02, gap 0.0000%
+
+================ SOLVER RESULTS ================
+
+Device d0
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d1
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d2
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = -0.0
+block3_conv1 = -0.0
+block3_conv2 = -0.0
+block3_conv3 = -0.0
+block4_conv3 = -0.0
+block5_conv2 = -0.0
+block5_conv3 = -0.0
+
+Device d3
+z = 1.0
+k = 0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d4
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d5
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d6
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d7
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d8
+z = 1.0
+k = 0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d9
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Objective value: -364.728622586312
+==============================================
+
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -364.728622586312, 'active_devices': 10, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+d0 -> z=1 k=0 beta=
+d1 -> z=1 k=0 beta=
+d2 -> z=1 k=0 beta=
+d3 -> z=1 k=0 beta=
+d4 -> z=1 k=0 beta=
+d5 -> z=1 k=0 beta=
+d6 -> z=1 k=0 beta=
+d7 -> z=1 k=0 beta=
+d8 -> z=1 k=0 beta=
+d9 -> z=1 k=0 beta=
+================================================
+[cloud][round 0] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 280.0, 'd1': 280.0, 'd2': 280.0, 'd3': 280.0, 'd4': 280.0, 'd5': 280.0, 'd6': 280.0, 'd7': 280.0, 'd8': 280.0, 'd9': 280.0}
+[edge-load] {'e0': 5, 'e1': 5}
+[ROUND 0 COMPLETE]
+
+================ ROUND 1 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}
+
+[DEBUG] battery state
+{'d0': 280.0, 'd1': 280.0, 'd2': 280.0, 'd3': 280.0, 'd4': 280.0, 'd5': 280.0, 'd6': 280.0, 'd7': 280.0, 'd8': 280.0, 'd9': 280.0}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 0.0001
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d0
+beta block1_pool: E=16.790/280.0 T=47.070/110.0 M=811409080/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.827/110.0 M=824791007/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.427/110.0 M=903638679/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.110/110.0 M=932798529/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.983/110.0 M=964603936/974549656 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.802/110.0 M=992923877/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.228/110.0 M=1070366457/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.268/110.0 M=1071202172/974549656 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 4
+
+Checking beta feasibility for device d1
+beta block1_pool: E=33.580/280.0 T=94.119/110.0 M=811409080/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=53.914/280.0 T=95.633/110.0 M=824791007/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=85.840/280.0 T=104.834/110.0 M=903638679/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=121.189/280.0 T=108.200/110.0 M=932798529/966978347 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=161.661/280.0 T=111.947/110.0 M=964603936/966978347 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=215.843/280.0 T=115.584/110.0 M=992923877/966978347 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv2: E=277.525/280.0 T=124.437/110.0 M=1070366457/966978347 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv3: E=338.571/280.0 T=124.516/110.0 M=1071202172/966978347 -> energy_ok=False, latency_ok=False, mem_ok=False
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+Checking beta feasibility for device d2
+beta block1_pool: E=50.370/280.0 T=141.169/110.0 M=811409080/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block2_conv1: E=80.871/280.0 T=143.440/110.0 M=824791007/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block3_conv1: E=128.760/280.0 T=157.241/110.0 M=903638679/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block3_conv2: E=181.783/280.0 T=162.290/110.0 M=932798529/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block3_conv3: E=242.492/280.0 T=167.910/110.0 M=964603936/968522457 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=323.765/280.0 T=173.366/110.0 M=992923877/968522457 -> energy_ok=False, latency_ok=False, mem_ok=False
+beta block5_conv2: E=416.287/280.0 T=186.645/110.0 M=1070366457/968522457 -> energy_ok=False, latency_ok=False, mem_ok=False
+beta block5_conv3: E=507.857/280.0 T=186.764/110.0 M=1071202172/968522457 -> energy_ok=False, latency_ok=False, mem_ok=False
+Device d2 has NO feasible beta splits
+Transfer option -> E_transfer=4.057 T_transfer=23.183 can_transfer=True
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d3
+beta block1_pool: E=16.790/280.0 T=47.070/110.0 M=811409080/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.827/110.0 M=824791007/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.427/110.0 M=903638679/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.110/110.0 M=932798529/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.983/110.0 M=964603936/972260626 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.802/110.0 M=992923877/972260626 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.228/110.0 M=1070366457/972260626 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.268/110.0 M=1071202172/972260626 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d4
+beta block1_pool: E=16.790/280.0 T=47.070/110.0 M=811409080/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.827/110.0 M=824791007/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.427/110.0 M=903638679/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.110/110.0 M=932798529/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.983/110.0 M=964603936/969468285 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.802/110.0 M=992923877/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.228/110.0 M=1070366457/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.268/110.0 M=1071202172/969468285 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+Checking beta feasibility for device d5
+beta block1_pool: E=25.185/280.0 T=70.594/110.0 M=811409080/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=40.435/280.0 T=71.730/110.0 M=824791007/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=64.380/280.0 T=78.630/110.0 M=903638679/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=90.892/280.0 T=81.155/110.0 M=932798529/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=121.246/280.0 T=83.965/110.0 M=964603936/970325585 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=161.882/280.0 T=86.693/110.0 M=992923877/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=208.144/280.0 T=93.333/110.0 M=1070366457/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=253.929/280.0 T=93.392/110.0 M=1071202172/970325585 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+Checking beta feasibility for device d6
+beta block1_pool: E=33.580/280.0 T=94.119/110.0 M=811409080/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=53.914/280.0 T=95.633/110.0 M=824791007/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=85.840/280.0 T=104.834/110.0 M=903638679/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=121.189/280.0 T=108.200/110.0 M=932798529/971395545 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=161.661/280.0 T=111.947/110.0 M=964603936/971395545 -> energy_ok=True, latency_ok=False, mem_ok=True
+beta block4_conv3: E=215.843/280.0 T=115.584/110.0 M=992923877/971395545 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv2: E=277.525/280.0 T=124.437/110.0 M=1070366457/971395545 -> energy_ok=True, latency_ok=False, mem_ok=False
+beta block5_conv3: E=338.571/280.0 T=124.516/110.0 M=1071202172/971395545 -> energy_ok=False, latency_ok=False, mem_ok=False
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+Checking beta feasibility for device d7
+beta block1_pool: E=25.185/280.0 T=70.594/110.0 M=811409080/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=40.435/280.0 T=71.730/110.0 M=824791007/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=64.380/280.0 T=78.630/110.0 M=903638679/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=90.892/280.0 T=81.155/110.0 M=932798529/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=121.246/280.0 T=83.965/110.0 M=964603936/973852152 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=161.882/280.0 T=86.693/110.0 M=992923877/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=208.144/280.0 T=93.333/110.0 M=1070366457/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=253.929/280.0 T=93.392/110.0 M=1071202172/973852152 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+Checking beta feasibility for device d8
+beta block1_pool: E=16.790/280.0 T=47.070/110.0 M=811409080/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=26.957/280.0 T=47.827/110.0 M=824791007/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=42.920/280.0 T=52.427/110.0 M=903638679/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=60.594/280.0 T=54.110/110.0 M=932798529/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=80.831/280.0 T=55.983/110.0 M=964603936/974275444 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=107.922/280.0 T=57.802/110.0 M=992923877/974275444 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=138.762/280.0 T=62.228/110.0 M=1070366457/974275444 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=169.286/280.0 T=62.268/110.0 M=1071202172/974275444 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+Checking beta feasibility for device d9
+beta block1_pool: E=25.185/280.0 T=70.594/110.0 M=811409080/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block2_conv1: E=40.435/280.0 T=71.730/110.0 M=824791007/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv1: E=64.380/280.0 T=78.630/110.0 M=903638679/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv2: E=90.892/280.0 T=81.155/110.0 M=932798529/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block3_conv3: E=121.246/280.0 T=83.965/110.0 M=964603936/972710866 -> energy_ok=True, latency_ok=True, mem_ok=True
+beta block4_conv3: E=161.882/280.0 T=86.693/110.0 M=992923877/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv2: E=208.144/280.0 T=93.333/110.0 M=1070366457/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+beta block5_conv3: E=253.929/280.0 T=93.392/110.0 M=1071202172/972710866 -> energy_ok=True, latency_ok=True, mem_ok=False
+
+EDGE e0 RAM LIMIT: 221836200000
+Device d0 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d1 activation sizes
+block1_pool upload bytes: 102760448.0
+block2_conv1 upload bytes: 206702592.0
+block3_conv1 upload bytes: 107483136.0
+block3_conv2 upload bytes: 112201728.0
+block3_conv3 upload bytes: 112201728.0
+block4_conv3 upload bytes: 89137152.0
+block5_conv2 upload bytes: 50601984.0
+block5_conv3 upload bytes: 50601984.0
+Raw batch bytes: 811409080
+Device d2 activation sizes
+block1_pool upload bytes: 154140672.0
+block2_conv1 upload bytes: 310053888.0
+block3_conv1 upload bytes: 161224704.0
+block3_conv2 upload bytes: 168302592.0
+block3_conv3 upload bytes: 168302592.0
+block4_conv3 upload bytes: 133705728.0
+block5_conv2 upload bytes: 75902976.0
+block5_conv3 upload bytes: 75902976.0
+Raw batch bytes: 811409080
+Device d3 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d4 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+
+EDGE e1 RAM LIMIT: 221836200000
+Device d5 activation sizes
+block1_pool upload bytes: 77070336.0
+block2_conv1 upload bytes: 155026944.0
+block3_conv1 upload bytes: 80612352.0
+block3_conv2 upload bytes: 84151296.0
+block3_conv3 upload bytes: 84151296.0
+block4_conv3 upload bytes: 66852864.0
+block5_conv2 upload bytes: 37951488.0
+block5_conv3 upload bytes: 37951488.0
+Raw batch bytes: 811409080
+Device d6 activation sizes
+block1_pool upload bytes: 102760448.0
+block2_conv1 upload bytes: 206702592.0
+block3_conv1 upload bytes: 107483136.0
+block3_conv2 upload bytes: 112201728.0
+block3_conv3 upload bytes: 112201728.0
+block4_conv3 upload bytes: 89137152.0
+block5_conv2 upload bytes: 50601984.0
+block5_conv3 upload bytes: 50601984.0
+Raw batch bytes: 811409080
+Device d7 activation sizes
+block1_pool upload bytes: 77070336.0
+block2_conv1 upload bytes: 155026944.0
+block3_conv1 upload bytes: 80612352.0
+block3_conv2 upload bytes: 84151296.0
+block3_conv3 upload bytes: 84151296.0
+block4_conv3 upload bytes: 66852864.0
+block5_conv2 upload bytes: 37951488.0
+block5_conv3 upload bytes: 37951488.0
+Raw batch bytes: 811409080
+Device d8 activation sizes
+block1_pool upload bytes: 51380224.0
+block2_conv1 upload bytes: 103351296.0
+block3_conv1 upload bytes: 53741568.0
+block3_conv2 upload bytes: 56100864.0
+block3_conv3 upload bytes: 56100864.0
+block4_conv3 upload bytes: 44568576.0
+block5_conv2 upload bytes: 25300992.0
+block5_conv3 upload bytes: 25300992.0
+Raw batch bytes: 811409080
+Device d9 activation sizes
+block1_pool upload bytes: 77070336.0
+block2_conv1 upload bytes: 155026944.0
+block3_conv1 upload bytes: 80612352.0
+block3_conv2 upload bytes: 84151296.0
+block3_conv3 upload bytes: 84151296.0
+block4_conv3 upload bytes: 66852864.0
+block5_conv2 upload bytes: 37951488.0
+block5_conv3 upload bytes: 37951488.0
+Raw batch bytes: 811409080
+
+Objective contributions for device d0
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d1
+block1_pool: device_energy=33.580 edge_energy=304.992 objective_cost=33.610
+block2_conv1: device_energy=53.914 edge_energy=284.658 objective_cost=53.942
+block3_conv1: device_energy=85.840 edge_energy=252.732 objective_cost=85.865
+block3_conv2: device_energy=121.189 edge_energy=217.383 objective_cost=121.211
+block3_conv3: device_energy=161.661 edge_energy=176.910 objective_cost=161.679
+block4_conv3: device_energy=215.843 edge_energy=122.728 objective_cost=215.855
+block5_conv2: device_energy=277.525 edge_energy=61.047 objective_cost=277.531
+block5_conv3: device_energy=338.571 edge_energy=0.000 objective_cost=338.571
+
+Objective contributions for device d2
+block1_pool: device_energy=50.370 edge_energy=457.488 objective_cost=50.415
+block2_conv1: device_energy=80.871 edge_energy=426.987 objective_cost=80.913
+block3_conv1: device_energy=128.760 edge_energy=379.098 objective_cost=128.797
+block3_conv2: device_energy=181.783 edge_energy=326.074 objective_cost=181.816
+block3_conv3: device_energy=242.492 edge_energy=265.366 objective_cost=242.518
+block4_conv3: device_energy=323.765 edge_energy=184.093 objective_cost=323.783
+block5_conv2: device_energy=416.287 edge_energy=91.570 objective_cost=416.296
+block5_conv3: device_energy=507.857 edge_energy=0.000 objective_cost=507.857
+
+Objective contributions for device d3
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d4
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d5
+block1_pool: device_energy=25.185 edge_energy=228.744 objective_cost=25.208
+block2_conv1: device_energy=40.435 edge_energy=213.493 objective_cost=40.457
+block3_conv1: device_energy=64.380 edge_energy=189.549 objective_cost=64.399
+block3_conv2: device_energy=90.892 edge_energy=163.037 objective_cost=90.908
+block3_conv3: device_energy=121.246 edge_energy=132.683 objective_cost=121.259
+block4_conv3: device_energy=161.882 edge_energy=92.046 objective_cost=161.892
+block5_conv2: device_energy=208.144 edge_energy=45.785 objective_cost=208.148
+block5_conv3: device_energy=253.929 edge_energy=0.000 objective_cost=253.929
+
+Objective contributions for device d6
+block1_pool: device_energy=33.580 edge_energy=304.992 objective_cost=33.610
+block2_conv1: device_energy=53.914 edge_energy=284.658 objective_cost=53.942
+block3_conv1: device_energy=85.840 edge_energy=252.732 objective_cost=85.865
+block3_conv2: device_energy=121.189 edge_energy=217.383 objective_cost=121.211
+block3_conv3: device_energy=161.661 edge_energy=176.910 objective_cost=161.679
+block4_conv3: device_energy=215.843 edge_energy=122.728 objective_cost=215.855
+block5_conv2: device_energy=277.525 edge_energy=61.047 objective_cost=277.531
+block5_conv3: device_energy=338.571 edge_energy=0.000 objective_cost=338.571
+
+Objective contributions for device d7
+block1_pool: device_energy=25.185 edge_energy=228.744 objective_cost=25.208
+block2_conv1: device_energy=40.435 edge_energy=213.493 objective_cost=40.457
+block3_conv1: device_energy=64.380 edge_energy=189.549 objective_cost=64.399
+block3_conv2: device_energy=90.892 edge_energy=163.037 objective_cost=90.908
+block3_conv3: device_energy=121.246 edge_energy=132.683 objective_cost=121.259
+block4_conv3: device_energy=161.882 edge_energy=92.046 objective_cost=161.892
+block5_conv2: device_energy=208.144 edge_energy=45.785 objective_cost=208.148
+block5_conv3: device_energy=253.929 edge_energy=0.000 objective_cost=253.929
+
+Objective contributions for device d8
+block1_pool: device_energy=16.790 edge_energy=152.496 objective_cost=16.805
+block2_conv1: device_energy=26.957 edge_energy=142.329 objective_cost=26.971
+block3_conv1: device_energy=42.920 edge_energy=126.366 objective_cost=42.932
+block3_conv2: device_energy=60.594 edge_energy=108.691 objective_cost=60.605
+block3_conv3: device_energy=80.831 edge_energy=88.455 objective_cost=80.839
+block4_conv3: device_energy=107.922 edge_energy=61.364 objective_cost=107.928
+block5_conv2: device_energy=138.762 edge_energy=30.523 objective_cost=138.765
+block5_conv3: device_energy=169.286 edge_energy=0.000 objective_cost=169.286
+
+Objective contributions for device d9
+block1_pool: device_energy=25.185 edge_energy=228.744 objective_cost=25.208
+block2_conv1: device_energy=40.435 edge_energy=213.493 objective_cost=40.457
+block3_conv1: device_energy=64.380 edge_energy=189.549 objective_cost=64.399
+block3_conv2: device_energy=90.892 edge_energy=163.037 objective_cost=90.908
+block3_conv3: device_energy=121.246 edge_energy=132.683 objective_cost=121.259
+block4_conv3: device_energy=161.882 edge_energy=92.046 objective_cost=161.892
+block5_conv2: device_energy=208.144 edge_energy=45.785 objective_cost=208.148
+block5_conv3: device_energy=253.929 edge_energy=0.000 objective_cost=253.929
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 32 rows, 100 columns and 132 nonzeros
+Model fingerprint: 0xd5e442cb
+Model has 10 quadratic objective terms
+Model has 22 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [1e+00, 5e+02]
+  QObjective range [2e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [3e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 29 rows and 90 columns
+Presolve time: 0.01s
+Presolved: 16 rows, 19 columns, 64 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -319.5464669
+
+Root relaxation: interrupted, 0 iterations, 0.00 seconds (0.00 work units)
+
+Explored 1 nodes (0 simplex iterations) in 0.04 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -319.546 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.195464669397e+02, best bound -3.219362701663e+02, gap 0.7479%
+
+================ SOLVER RESULTS ================
+
+Device d0
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d1
+z = 1.0
+k = 0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d2
+z = 0.0
+k = 6.0
+block1_pool = 0.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d3
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d4
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d5
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d6
+z = -0.0
+k = 4.0
+block1_pool = -0.0
+block2_conv1 = -0.0
+block3_conv1 = -0.0
+block3_conv2 = -0.0
+block3_conv3 = -0.0
+block4_conv3 = -0.0
+block5_conv2 = -0.0
+block5_conv3 = -0.0
+
+Device d7
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d8
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Device d9
+z = 1.0
+k = -0.0
+block1_pool = 1.0
+block2_conv1 = 0.0
+block3_conv1 = 0.0
+block3_conv2 = 0.0
+block3_conv3 = 0.0
+block4_conv3 = 0.0
+block5_conv2 = 0.0
+block5_conv3 = 0.0
+
+Objective value: -319.54646693973405
+==============================================
+
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -319.54646693973405, 'active_devices': 8, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 0, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 6, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 4, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+d0 -> z=1 k=0 beta=
+d1 -> z=1 k=0 beta=
+d2 -> z=0 k=6 beta=
+d3 -> z=1 k=0 beta=
+d4 -> z=1 k=0 beta=
+d5 -> z=1 k=0 beta=
+d6 -> z=0 k=4 beta=
+d7 -> z=1 k=0 beta=
+d8 -> z=1 k=0 beta=
+d9 -> z=1 k=0 beta=
+================================================
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 280.0, 'd1': 280.0, 'd2': 280.0, 'd3': 280.0, 'd4': 280.0, 'd5': 280.0, 'd6': 280.0, 'd7': 280.0, 'd8': 280.0, 'd9': 280.0}
+[edge-load] {'e0': 4, 'e1': 4}
+[ROUND 1 COMPLETE]
+Training complete

@@ -1,0 +1,17 @@
+aggregator.py
+This is the main controller at the edge server. It receives data from devices (either activations from split models or full raw batches), trains the edge-side model, and sends gradients back to devices when needed. It also decides when to send a model update to the cloud. Each round it:
+Applies the latest global model broadcast from the cloud.
+Drains messages sent by devices for this edge.
+Trains on those messages.
+Uses an RL agent to choose how often to aggregate.
+Sends a model update to the cloud when the chosen period is reached.
+Its inputs come from the messaging bus (device uploads and cloud broadcasts), and its outputs are cut-gradients to devices and model updates to the cloud.
+
+edge_state.py
+This module stores the current state of an edge server for scheduling and learning. It tracks how many messages were processed, how many are still pending, and the total energy and latency seen in the round. It also keeps the current aggregation period and the number of rounds since the last aggregation. The RL agent reads this state to decide the next action.
+
+rl_agent.py
+This module implements the edge-side reinforcement learning agent. It observes simple statistics such as mean energy, mean latency, and queue depth, and selects an aggregation period Ol for the edge. Internally it uses PPO to learn better decisions over time. Each round, it receives the current state from EdgeState, outputs a chosen Ol, and later updates its policy using the reward.
+
+trainer.py
+This module performs all training work on the edge. When devices send activations (split learning), it trains only the edge part of the model and computes gradients at the cut layer to send back to the device. When devices send raw data, it trains the full model locally at the edge. It builds and caches edge-side submodels for each split point, synchronizes their weights with the full model, and returns losses and cut-gradients as needed. Inputs come from device messages; outputs are training statistics and gradients.

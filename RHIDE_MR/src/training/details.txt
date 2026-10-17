@@ -1,0 +1,27 @@
+checkpoints.py
+This module handles saving and resuming training runs. It creates a structured checkpoint directory for each round and stores: the global model, per-edge states, solver warm-start data, round logs, and RL agent states. It allows long SPHERE experiments to be paused and resumed safely. Its inputs are the current model, edge states, solver data, and logs produced at the end of each round.
+
+constraints.py
+This module performs after-solver checks on the decisions produced for each device. It verifies that: required fields (beta, participate, k_transfer) exist, values are in valid ranges, and the solver contract is implemented (e.g., if a device participates, it must have a valid split and no raw transfer). It acts as a layer between the solver and execution.
+
+logging_hooks.py
+This module records experiment results in a structured way. It writes: per-round aggregate metrics to a CSV file, per-device decisions to another CSV file, and a full JSON snapshot for every round.
+
+training/reward.py
+This module computes the reinforcement learning reward for each edge. It aggregates realized energy and latency per edge and converts them into a scalar reward using weights. The reward is negative mean energy and latency, encouraging edges to reduce both.
+
+round_scheduler.py
+This module decides how much work each device gets in a round. It generates a list of batch descriptors per device using a simple heuristic based on: a base number of batches,
+random variation, and edge priority. It does not choose actual samples, it only decides how many batches each device should process in the current round.
+
+train_loop.py
+This is the main orchestration engine of SPHERE. It coordinates the entire training process: 
+Builds per-device batches for the round. 
+Converts system state into solver coefficients.
+Runs β-selection and the MILP solver to decide (beta, z, k) for each device.
+Validates decisions.
+Executes one federated round across devices, edges, and cloud.
+Aggregates models at the cloud and broadcasts updates.
+Collects realized energy, latency, and upload statistics.
+Computes RL rewards and trains edge agents.
+Logs results and saves a checkpoint.

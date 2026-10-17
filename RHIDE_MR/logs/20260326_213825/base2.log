@@ -1,0 +1,456 @@
+2026-03-26 21:38:26.297944: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-26 21:38:26.297973: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-26 21:38:26.298656: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-26 21:38:26.302595: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-26 21:38:26.835631: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-26 21:38:28.780160: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-26 21:38:28.826374: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-26 21:38:28.877309: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+========== EDGE CONSTRAINTS ==========
+Edge RAM: {'e0': 221836200000, 'e1': 221836200000}
+Edge Energy Budget: {'e0': 4000.0, 'e1': 4000.0}
+=====================================
+
+
+================ ROUND 0 =================
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0xd5394f55
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 253.748 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 2.537475372910e+02, best bound 2.537475372910e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 253.74753729095386, 'active_devices': 10, 'total_energy_J': 1131.62766304, 'total_latency_s': 783.4072561708373, 'total_upload_bytes': 785412096.0, 'total_batches': 28, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': 'block3_conv3', 'd3': 'block3_conv3', 'd4': 'block3_conv3', 'd5': 'block3_conv3', 'd6': 'block3_conv3', 'd7': 'block3_conv3', 'd8': 'block3_conv3', 'd9': 'block3_conv3'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 80.83054736, 'd1': 80.83054736, 'd2': 161.66109472, 'd3': 161.66109472, 'd4': 80.83054736, 'd5': 121.24582104, 'd6': 80.83054736, 'd7': 121.24582104, 'd8': 161.66109472, 'd9': 80.83054736}, 'latency_s': {'d0': 55.963375440774094, 'd1': 55.963375440774094, 'd2': 111.90675088154818, 'd3': 111.90675088154818, 'd4': 55.963375440774094, 'd5': 83.93506316116112, 'd6': 55.963375440774094, 'd7': 83.93506316116112, 'd8': 111.90675088154818, 'd9': 55.963375440774094}, 'upload_bytes': {'d0': 56100864.0, 'd1': 56100864.0, 'd2': 112201728.0, 'd3': 112201728.0, 'd4': 56100864.0, 'd5': 84151296.0, 'd6': 56100864.0, 'd7': 84151296.0, 'd8': 112201728.0, 'd9': 56100864.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 1 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0xb637bd25
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 317.933 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 3.179329728164e+02, best bound 3.179329728164e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 317.9329728164113, 'active_devices': 9, 'total_energy_J': 1014.4388874, 'total_latency_s': 722.9053095811047, 'total_upload_bytes': 1512669880.0, 'total_batches': 26, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': '', 'd3': 'block3_conv3', 'd4': 'block3_conv3', 'd5': 'block3_conv3', 'd6': 'block3_conv3', 'd7': 'block3_conv3', 'd8': 'block3_conv3', 'd9': 'block3_conv3'}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 1, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}, 'energy_J': {'d0': 80.83054736, 'd1': 161.66109472, 'd2': 4.0570454, 'd3': 80.83054736, 'd4': 80.83054736, 'd5': 121.24582104, 'd6': 161.66109472, 'd7': 121.24582104, 'd8': 80.83054736, 'd9': 121.24582104}, 'latency_s': {'d0': 55.9833754407741, 'd1': 111.94675088154818, 'd2': 23.18311657142857, 'd3': 55.9833754407741, 'd4': 55.9833754407741, 'd5': 83.96506316116113, 'd6': 111.94675088154818, 'd7': 83.96506316116113, 'd8': 55.9833754407741, 'd9': 83.96506316116113}, 'upload_bytes': {'d0': 56100864.0, 'd1': 112201728.0, 'd2': 811409080, 'd3': 56100864.0, 'd4': 56100864.0, 'd5': 84151296.0, 'd6': 112201728.0, 'd7': 84151296.0, 'd8': 56100864.0, 'd9': 84151296.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 2 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x312849e1
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 593.2 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 5.931998296798e+02, best bound 5.931998296798e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 593.1998296797501, 'active_devices': 4, 'total_energy_J': 155.54236615999997, 'total_latency_s': 336.2830143439081, 'total_upload_bytes': 5078696016.0, 'total_batches': 14, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block1_pool', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': 'block1_pool', 'd7': '', 'd8': 'block1_pool', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 1, 'd7': 0, 'd8': 1, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 0, 'd7': 1, 'd8': 0, 'd9': 1}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 2, 'd7': 1, 'd8': 2, 'd9': 1}, 'energy_J': {'d0': 80.83054736, 'd1': 16.7898488, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 16.7898488, 'd7': 4.0570454, 'd8': 16.7898488, 'd9': 4.0570454}, 'latency_s': {'d0': 55.97937544077409, 'd1': 47.06564649152087, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 47.06964649152087, 'd7': 23.18311657142857, 'd8': 47.06964649152087, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 56100864.0, 'd1': 51380224.0, 'd2': 811409080, 'd3': 811409080, 'd4': 811409080, 'd5': 811409080, 'd6': 51380224.0, 'd7': 811409080, 'd8': 51380224.0, 'd9': 811409080}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRAIN', 'd7': 'TRANSFER', 'd8': 'TRAIN', 'd9': 'TRANSFER'}}
+
+================ ROUND 3 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x1970e7d3
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 644.289 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 6.442886934396e+02, best bound 6.442886934396e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 644.2886934396166, 'active_devices': 5, 'total_energy_J': 220.874223165, 'total_latency_s': 440.5104476679793, 'total_upload_bytes': 4399281560.0, 'total_batches': 18, 'beta_choice': {'d0': 'block1_pool', 'd1': '', 'd2': 'block3_conv1', 'd3': 'block1_pool', 'd4': '', 'd5': '', 'd6': '', 'd7': 'block1_pool', 'd8': '', 'd9': 'block3_conv1'}, 'z': {'d0': 1, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 1, 'd8': 0, 'd9': 1}, 'k': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 0, 'd8': 1, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 1, 'd2': 4, 'd3': 2, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 2, 'd8': 1, 'd9': 3}, 'energy_J': {'d0': 16.7898488, 'd1': 4.0570454, 'd2': 85.83968558000001, 'd3': 16.7898488, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 16.7898488, 'd8': 4.0570454, 'd9': 64.379764185}, 'latency_s': {'d0': 47.05764649152087, 'd1': 23.18311657142857, 'd2': 104.8096716207279, 'd3': 47.05764649152087, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 47.05764649152087, 'd8': 23.18311657142857, 'd9': 78.61225371554593}, 'upload_bytes': {'d0': 51380224.0, 'd1': 811409080, 'd2': 107483136.0, 'd3': 51380224.0, 'd4': 811409080, 'd5': 811409080, 'd6': 811409080, 'd7': 51380224.0, 'd8': 811409080, 'd9': 80612352.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRAIN', 'd8': 'TRANSFER', 'd9': 'TRAIN'}}
+
+================ ROUND 4 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x470f26de
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [5e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 708.722 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 7.087217189440e+02, best bound 7.087217189440e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 708.7217189440354, 'active_devices': 3, 'total_energy_J': 147.81870097999996, 'total_latency_s': 361.21878060376963, 'total_upload_bytes': 5890107144.0, 'total_batches': 15, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block1_pool', 'd3': '', 'd4': 'block3_conv1', 'd5': 'block1_pool', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 1, 'd5': 1, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 2, 'd3': 1, 'd4': 4, 'd5': 2, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 16.7898488, 'd3': 4.0570454, 'd4': 85.83968558000001, 'd5': 16.7898488, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 47.06164649152087, 'd3': 23.18311657142857, 'd4': 104.8176716207279, 'd5': 47.05764649152087, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 51380224.0, 'd3': 811409080, 'd4': 107483136.0, 'd5': 51380224.0, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRANSFER', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 5 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0xbee2417e
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [5e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 52 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 738.881 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 7.388806798908e+02, best bound 7.388806798908e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 738.8806798908238, 'active_devices': 1, 'total_energy_J': 53.3032574, 'total_latency_s': 255.705695634378, 'total_upload_bytes': 7354061944.0, 'total_batches': 11, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': 'block1_pool', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 2, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'energy_J': {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 16.7898488, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}, 'latency_s': {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 47.05764649152087, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}, 'upload_bytes': {'d0': 811409080, 'd1': 811409080, 'd2': 811409080, 'd3': 811409080, 'd4': 51380224.0, 'd5': 811409080, 'd6': 811409080, 'd7': 811409080, 'd8': 811409080, 'd9': 811409080}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 6 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x1121adac
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [6e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 0 rows and 84 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 7 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x0d5ed880
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [5e+00, 1e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 0 rows and 84 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 8 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x011bd331
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [5e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 0 rows and 84 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 9 =================
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 52 rows, 100 columns and 390 nonzeros
+Model fingerprint: 0x3597d5e6
+Model has 2 quadratic constraints
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 0 rows and 84 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+Training complete

@@ -1,0 +1,3081 @@
+2026-03-18 17:29:16.566720: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-18 17:29:16.566747: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-18 17:29:16.567995: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-18 17:29:16.573854: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-18 17:29:17.267482: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-18 17:29:19.511298: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 153600000 exceeds 10% of free system memory.
+2026-03-18 17:29:19.621291: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 153600000 exceeds 10% of free system memory.
+2026-03-18 17:29:19.829208: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-18 17:29:19.886136: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-18 17:29:19.955612: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+================ CONFIG DEBUG ================
+Train cfg: {'input_shape_2d': [224, 224, 3], 'input_shape_3d': [1, 1, 1], 'num_classes': 10, 'optimizer': 'adam', 'loss': 'sparse_categorical_crossentropy', 'metrics': ['accuracy'], 'batch_size': 1, 'epochs': 3, 'prefetch': 2, 'cache': True, 'shuffle': True, 'seed': 1337, 'out_dir': 'runs/vgg16', 'save_best': True, 'savedmodel_path': 'runs/vgg16/savedmodel', 'default_beta': 'block1_pool', 'eval_every': 1, 'eval_batch_size': 64, 'eval_report_csv': 'runs/vgg16/val_metrics.csv'}
+Solver cfg: {'eta': 40.0, 'xi': 1.0, 'lambda_energy': 1.0, 'gamma_edge': 1e-05, 'edge_power_w': 120.0, 'mip_gap': 0.01, 'time_limit_s': 30, 'threads': 0, 'integer_k': True, 'use_warm_start': False}
+Allowed splits: ['block1_pool', 'block2_conv1', 'block3_conv1', 'block3_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv2', 'block5_conv3']
+Edges: [{'id': 'e0', 'priority': 2.0, 'ram_edge_s': 221836200000, 'energy_budget_per_round': 4000, 'devices': ['d0', 'd1', 'd2', 'd3', 'd4']}, {'id': 'e1', 'priority': 1.0, 'ram_edge_s': 221836200000, 'energy_budget_per_round': 4000, 'devices': ['d5', 'd6', 'd7', 'd8', 'd9']}]
+=============================================
+
+[VGG16] Global model built
+
+[DEBUG] Edge RAM limits
+e0 221836200000
+e1 221836200000
+
+[DEBUG] Edge energy budgets
+e0 4000.0
+e1 4000.0
+
+[DEBUG] Solver params SolverParams(lambda_energy=1.0, gamma_edge=1e-05, eta=40.0, xi=1.0, mip_gap=0.01, time_limit_s=30.0, threads=0, warm_start=None)
+
+================ ROUND 0 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}
+
+[DEBUG] battery state
+{'d0': 280.0, 'd1': 280.0, 'd2': 280.0, 'd3': 280.0, 'd4': 280.0, 'd5': 280.0, 'd6': 280.0, 'd7': 280.0, 'd8': 280.0, 'd9': 280.0}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 280.0
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 280.0
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 280.0
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x40e902e9
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -42.0000000
+Presolve removed 48 rows and 66 columns
+Presolve time: 0.01s
+Presolved: 16 rows, 34 columns, 78 nonzeros
+Found heuristic solution: objective -252.6562136
+Variable types: 0 continuous, 34 integer (29 binary)
+
+Root relaxation: objective -3.211166e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -321.1165937 -321.11659  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.03 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -321.117 -252.656 -42 
+No other solutions better than -321.117
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.211165936942e+02, best bound -3.211165936942e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -321.1165936942383, 'active_devices': 10, 'total_energy_J': 278.86248769, 'total_latency_s': 629.655364329438, 'total_upload_bytes': 724043776.0, 'total_batches': 28, 'beta_choice': {'d0': 'block3_conv2', 'd1': 'block1_pool', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 60.594453290000004, 'd1': 16.7898488, 'd2': 33.5796976, 'd3': 33.5796976, 'd4': 16.7898488, 'd5': 25.1847732, 'd6': 16.7898488, 'd7': 25.1847732, 'd8': 33.5796976, 'd9': 16.7898488}, 'latency_s': {'d0': 18.089959939666812, 'd1': 47.04964649152087, 'd2': 94.07929298304173, 'd3': 94.07929298304173, 'd4': 47.04964649152087, 'd5': 70.5644697372813, 'd6': 47.04964649152087, 'd7': 70.5644697372813, 'd8': 94.07929298304173, 'd9': 47.04964649152087}, 'upload_bytes': {'d0': 56100864.0, 'd1': 51380224.0, 'd2': 102760448.0, 'd3': 102760448.0, 'd4': 51380224.0, 'd5': 77070336.0, 'd6': 51380224.0, 'd7': 77070336.0, 'd8': 102760448.0, 'd9': 51380224.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=1 k=0 beta=block3_conv2
+d1 -> z=1 k=0 beta=block1_pool
+d2 -> z=1 k=0 beta=block1_pool
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=1 k=0 beta=block1_pool
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 0] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 219.40554671, 'd1': 263.2101512, 'd2': 246.4203024, 'd3': 246.4203024, 'd4': 263.2101512, 'd5': 254.8152268, 'd6': 263.2101512, 'd7': 254.8152268, 'd8': 246.4203024, 'd9': 263.2101512}
+[edge-load] {'e0': 5, 'e1': 5}
+[ROUND 0 COMPLETE]
+
+================ ROUND 1 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}
+
+[DEBUG] battery state
+{'d0': 219.40554671, 'd1': 263.2101512, 'd2': 246.4203024, 'd3': 246.4203024, 'd4': 263.2101512, 'd5': 254.8152268, 'd6': 263.2101512, 'd7': 254.8152268, 'd8': 246.4203024, 'd9': 263.2101512}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 219.40554671
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 263.2101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 246.4203024
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 246.4203024
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 263.2101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 254.8152268
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 263.2101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 254.8152268
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 246.4203024
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 263.2101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 219.40554671
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 263.2101512
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 246.4203024
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 246.4203024
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 263.2101512
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 254.8152268
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 263.2101512
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 254.8152268
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 246.4203024
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 263.2101512
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x9f84b309
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -41.0000000
+Presolve removed 48 rows and 66 columns
+Presolve time: 0.00s
+Presolved: 16 rows, 34 columns, 78 nonzeros
+Found heuristic solution: objective -219.2389621
+Variable types: 0 continuous, 34 integer (29 binary)
+
+Root relaxation: objective -2.783037e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -278.3036551 -278.30366  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -278.304 -219.239 -41 
+No other solutions better than -278.304
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.783036551029e+02, best bound -2.783036551029e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -278.30365510294547, 'active_devices': 9, 'total_energy_J': 278.01998689, 'total_latency_s': 698.4395940207282, 'total_upload_bytes': 5515427920.0, 'total_batches': 31, 'beta_choice': {'d0': 'block3_conv2', 'd1': 'block1_pool', 'd2': '', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 6, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}, 'energy_J': {'d0': 60.594453290000004, 'd1': 33.5796976, 'd2': 24.3422724, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 25.1847732, 'd6': 33.5796976, 'd7': 25.1847732, 'd8': 16.7898488, 'd9': 25.1847732}, 'latency_s': {'d0': 18.109959939666812, 'd1': 94.11929298304173, 'd2': 139.09869942857142, 'd3': 47.06964649152087, 'd4': 47.06964649152087, 'd5': 70.5944697372813, 'd6': 94.11929298304173, 'd7': 70.5944697372813, 'd8': 47.06964649152087, 'd9': 70.5944697372813}, 'upload_bytes': {'d0': 56100864.0, 'd1': 102760448.0, 'd2': 4868454480, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 77070336.0, 'd6': 102760448.0, 'd7': 77070336.0, 'd8': 51380224.0, 'd9': 77070336.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=1 k=0 beta=block3_conv2
+d1 -> z=1 k=0 beta=block1_pool
+d2 -> z=0 k=6 beta=
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=1 k=0 beta=block1_pool
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 158.81109342000002, 'd1': 229.63045359999998, 'd2': 222.07803, 'd3': 229.6304536, 'd4': 246.42030239999997, 'd5': 229.6304536, 'd6': 229.63045359999998, 'd7': 229.6304536, 'd8': 229.6304536, 'd9': 238.025378}
+[edge-load] {'e0': 4, 'e1': 5}
+[ROUND 1 COMPLETE]
+
+================ ROUND 2 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 2, 'd2': 6, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 4}
+
+[DEBUG] battery state
+{'d0': 158.81109342000002, 'd1': 229.63045359999998, 'd2': 222.07803, 'd3': 229.6304536, 'd4': 246.42030239999997, 'd5': 229.6304536, 'd6': 229.63045359999998, 'd7': 229.6304536, 'd8': 229.6304536, 'd9': 238.025378}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 158.81109342000002
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 229.63045359999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 222.07803
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 229.6304536
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 246.42030239999997
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 229.6304536
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 229.63045359999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 229.6304536
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 229.6304536
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 238.025378
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 158.81109342000002
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 229.63045359999998
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 222.07803
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 229.6304536
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 246.42030239999997
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 229.6304536
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 229.63045359999998
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 229.6304536
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 229.6304536
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 238.025378
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x5b95d432
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -35.0000000
+Presolve removed 48 rows and 68 columns
+Presolve time: 0.00s
+Presolved: 16 rows, 32 columns, 74 nonzeros
+Found heuristic solution: objective -154.0303364
+Variable types: 0 continuous, 32 integer (27 binary)
+
+Root relaxation: objective -2.066993e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -206.6993422 -206.69934  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -206.699 -154.03 -35 
+No other solutions better than -206.699
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.066993422392e+02, best bound -2.066993422392e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -206.6993422391812, 'active_devices': 8, 'total_energy_J': 269.62506249, 'total_latency_s': 674.8787707749678, 'total_upload_bytes': 5489737808.0, 'total_batches': 30, 'beta_choice': {'d0': 'block3_conv2', 'd1': 'block1_pool', 'd2': '', 'd3': 'block1_pool', 'd4': '', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 0, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 5, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 5, 'd3': 4, 'd4': 1, 'd5': 4, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 60.594453290000004, 'd1': 16.7898488, 'd2': 20.285227, 'd3': 33.5796976, 'd4': 4.0570454, 'd5': 33.5796976, 'd6': 16.7898488, 'd7': 33.5796976, 'd8': 16.7898488, 'd9': 33.5796976}, 'latency_s': {'d0': 18.105959939666814, 'd1': 47.06564649152087, 'd2': 115.91558285714285, 'd3': 94.11129298304174, 'd4': 23.18311657142857, 'd5': 94.11929298304173, 'd6': 47.06964649152087, 'd7': 94.11929298304173, 'd8': 47.06964649152087, 'd9': 94.11929298304173}, 'upload_bytes': {'d0': 56100864.0, 'd1': 51380224.0, 'd2': 4057045400, 'd3': 102760448.0, 'd4': 811409080, 'd5': 102760448.0, 'd6': 51380224.0, 'd7': 102760448.0, 'd8': 51380224.0, 'd9': 102760448.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=1 k=0 beta=block3_conv2
+d1 -> z=1 k=0 beta=block1_pool
+d2 -> z=0 k=5 beta=
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=0 k=1 beta=
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 98.21664013000002, 'd1': 212.8406048, 'd2': 201.79280300000002, 'd3': 196.050756, 'd4': 242.36325699999998, 'd5': 196.050756, 'd6': 212.8406048, 'd7': 196.050756, 'd8': 212.8406048, 'd9': 204.4456804}
+[edge-load] {'e0': 3, 'e1': 5}
+[ROUND 2 COMPLETE]
+
+================ ROUND 3 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 6, 'd2': 4, 'd3': 2, 'd4': 6, 'd5': 3, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}
+
+[DEBUG] battery state
+{'d0': 98.21664013000002, 'd1': 212.8406048, 'd2': 201.79280300000002, 'd3': 196.050756, 'd4': 242.36325699999998, 'd5': 196.050756, 'd6': 212.8406048, 'd7': 196.050756, 'd8': 212.8406048, 'd9': 204.4456804}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 98.21664013000002
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 212.8406048
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 201.79280300000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 196.050756
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 242.36325699999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 196.050756
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 212.8406048
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 196.050756
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 212.8406048
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 204.4456804
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 98.21664013000002
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 212.8406048
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 201.79280300000002
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 196.050756
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 242.36325699999998
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 196.050756
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 212.8406048
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 196.050756
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 212.8406048
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 204.4456804
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x7538399b
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -35.0000000
+Presolve removed 48 rows and 66 columns
+Presolve time: 0.00s
+Presolved: 16 rows, 34 columns, 78 nonzeros
+Found heuristic solution: objective -156.0303364
+Variable types: 0 continuous, 34 integer (29 binary)
+
+Root relaxation: objective -2.150950e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -215.0950294 -215.09503  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -215.095 -156.03 -35 
+No other solutions better than -215.095
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.150950293754e+02, best bound -2.150950293754e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -215.09502937541689, 'active_devices': 8, 'total_energy_J': 261.23013809, 'total_latency_s': 651.3379475292074, 'total_upload_bytes': 5464047696.0, 'total_batches': 29, 'beta_choice': {'d0': 'block3_conv2', 'd1': '', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': '', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 5, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 1, 'd2': 4, 'd3': 2, 'd4': 5, 'd5': 3, 'd6': 4, 'd7': 2, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 60.594453290000004, 'd1': 4.0570454, 'd2': 33.5796976, 'd3': 16.7898488, 'd4': 20.285227, 'd5': 25.1847732, 'd6': 33.5796976, 'd7': 16.7898488, 'd8': 25.1847732, 'd9': 25.1847732}, 'latency_s': {'d0': 18.101959939666813, 'd1': 23.18311657142857, 'd2': 94.10329298304173, 'd3': 47.06164649152087, 'd4': 115.91558285714285, 'd5': 70.5944697372813, 'd6': 94.11929298304173, 'd7': 47.06964649152087, 'd8': 70.5944697372813, 'd9': 70.5944697372813}, 'upload_bytes': {'d0': 56100864.0, 'd1': 811409080, 'd2': 102760448.0, 'd3': 51380224.0, 'd4': 4057045400, 'd5': 77070336.0, 'd6': 102760448.0, 'd7': 51380224.0, 'd8': 77070336.0, 'd9': 77070336.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=1 k=0 beta=block3_conv2
+d1 -> z=0 k=1 beta=
+d2 -> z=1 k=0 beta=block1_pool
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=0 k=5 beta=
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 3] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 37.62218684000001, 'd1': 208.7835594, 'd2': 168.21310540000002, 'd3': 179.26090720000002, 'd4': 222.07802999999998, 'd5': 170.8659828, 'd6': 179.2609072, 'd7': 179.26090720000002, 'd8': 187.6558316, 'd9': 179.2609072}
+[edge-load] {'e0': 3, 'e1': 5}
+[ROUND 3 COMPLETE]
+
+================ ROUND 4 =================
+
+[DEBUG] batches per device
+{'d0': 6, 'd1': 6, 'd2': 2, 'd3': 2, 'd4': 4, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 3, 'd9': 2}
+
+[DEBUG] battery state
+{'d0': 37.62218684000001, 'd1': 208.7835594, 'd2': 168.21310540000002, 'd3': 179.26090720000002, 'd4': 222.07802999999998, 'd5': 170.8659828, 'd6': 179.2609072, 'd7': 179.26090720000002, 'd8': 187.6558316, 'd9': 179.2609072}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 37.62218684000001
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 208.7835594
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 168.21310540000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 179.26090720000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 222.07802999999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 170.8659828
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 179.2609072
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 179.26090720000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 187.6558316
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 179.2609072
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 37.62218684000001
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 208.7835594
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 168.21310540000002
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 179.26090720000002
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 222.07802999999998
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 170.8659828
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 179.2609072
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 179.26090720000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 187.6558316
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 179.2609072
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x07f38594
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -32.0000000
+Presolve removed 54 rows and 79 columns
+Presolve time: 0.00s
+Presolved: 10 rows, 21 columns, 47 nonzeros
+Found heuristic solution: objective -119.2517544
+Variable types: 0 continuous, 21 integer (17 binary)
+
+Root relaxation: objective -2.854357e+02, 4 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 -285.43572    0    1 -119.25175 -285.43572   139%     -    0s
+H    0     0                    -284.0862573 -285.43572  0.48%     -    0s
+     0     0 -285.43572    0    1 -284.08626 -285.43572  0.48%     -    0s
+
+Explored 1 nodes (4 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -284.086 -119.252 -32 
+No other solutions better than -284.086
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.840862572753e+02, best bound -2.840862572753e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -284.08625727528556, 'active_devices': 8, 'total_energy_J': 192.2407604, 'total_latency_s': 609.7231643437801, 'total_upload_bytes': 5382256720.0, 'total_batches': 26, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 5, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 5, 'd1': 1, 'd2': 2, 'd3': 2, 'd4': 4, 'd5': 2, 'd6': 2, 'd7': 3, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 20.285227, 'd1': 4.0570454, 'd2': 16.7898488, 'd3': 16.7898488, 'd4': 33.5796976, 'd5': 16.7898488, 'd6': 16.7898488, 'd7': 25.1847732, 'd8': 25.1847732, 'd9': 16.7898488}, 'latency_s': {'d0': 115.91558285714285, 'd1': 23.18311657142857, 'd2': 47.06164649152087, 'd3': 47.06164649152087, 'd4': 94.10329298304173, 'd5': 47.06964649152087, 'd6': 47.06964649152087, 'd7': 70.5944697372813, 'd8': 70.5944697372813, 'd9': 47.06964649152087}, 'upload_bytes': {'d0': 4057045400, 'd1': 811409080, 'd2': 51380224.0, 'd3': 51380224.0, 'd4': 102760448.0, 'd5': 51380224.0, 'd6': 51380224.0, 'd7': 77070336.0, 'd8': 77070336.0, 'd9': 51380224.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=0 k=5 beta=
+d1 -> z=0 k=1 beta=
+d2 -> z=1 k=0 beta=block1_pool
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=1 k=0 beta=block1_pool
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 4] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 17.336959840000013, 'd1': 204.726514, 'd2': 151.4232566, 'd3': 162.4710584, 'd4': 188.49833239999998, 'd5': 154.07613400000002, 'd6': 162.4710584, 'd7': 154.07613400000002, 'd8': 162.4710584, 'd9': 162.4710584}
+[edge-load] {'e0': 3, 'e1': 5}
+[ROUND 4 COMPLETE]
+
+================ ROUND 5 =================
+
+[DEBUG] batches per device
+{'d0': 6, 'd1': 2, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}
+
+[DEBUG] battery state
+{'d0': 17.336959840000013, 'd1': 204.726514, 'd2': 151.4232566, 'd3': 162.4710584, 'd4': 188.49833239999998, 'd5': 154.07613400000002, 'd6': 162.4710584, 'd7': 154.07613400000002, 'd8': 162.4710584, 'd9': 162.4710584}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 17.336959840000013
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 204.726514
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 151.4232566
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 162.4710584
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 188.49833239999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 154.07613400000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 162.4710584
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 154.07613400000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 162.4710584
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 162.4710584
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 17.336959840000013
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 204.726514
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 151.4232566
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 162.4710584
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 188.49833239999998
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 154.07613400000002
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 162.4710584
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 154.07613400000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 162.4710584
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 162.4710584
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0xc5dce122
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -35.0000000
+Presolve removed 48 rows and 68 columns
+Presolve time: 0.00s
+Presolved: 16 rows, 32 columns, 74 nonzeros
+Found heuristic solution: objective -214.6258772
+Variable types: 0 continuous, 32 integer (27 binary)
+
+Root relaxation: objective -2.505035e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -250.5035087 -250.50351  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -250.504 -214.626 -35 
+No other solutions better than -250.504
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.505035087303e+02, best bound -2.505035087303e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -250.5035087303427, 'active_devices': 8, 'total_energy_J': 225.820458, 'total_latency_s': 703.8304573268219, 'total_upload_bytes': 5485017168.0, 'total_batches': 30, 'beta_choice': {'d0': '', 'd1': 'block1_pool', 'd2': '', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 1, 'd1': 0, 'd2': 5, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 1, 'd1': 2, 'd2': 5, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 4, 'd8': 4, 'd9': 3}, 'energy_J': {'d0': 4.0570454, 'd1': 16.7898488, 'd2': 20.285227, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 25.1847732, 'd6': 33.5796976, 'd7': 33.5796976, 'd8': 33.5796976, 'd9': 25.1847732}, 'latency_s': {'d0': 23.18311657142857, 'd1': 47.06164649152087, 'd2': 115.91558285714285, 'd3': 47.06164649152087, 'd4': 47.06164649152087, 'd5': 70.5944697372813, 'd6': 94.11929298304173, 'd7': 94.11929298304173, 'd8': 94.11929298304173, 'd9': 70.5944697372813}, 'upload_bytes': {'d0': 811409080, 'd1': 51380224.0, 'd2': 4057045400, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 77070336.0, 'd6': 102760448.0, 'd7': 102760448.0, 'd8': 102760448.0, 'd9': 77070336.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=0 k=1 beta=
+d1 -> z=1 k=0 beta=block1_pool
+d2 -> z=0 k=5 beta=
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=1 k=0 beta=block1_pool
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 5] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 13.279914440000013, 'd1': 187.9366652, 'd2': 131.1380296, 'd3': 145.6812096, 'd4': 171.70848359999997, 'd5': 128.89136080000003, 'd6': 128.8913608, 'd7': 120.49643640000002, 'd8': 128.8913608, 'd9': 137.2862852}
+[edge-load] {'e0': 3, 'e1': 5}
+[ROUND 5 COMPLETE]
+
+================ ROUND 6 =================
+
+[DEBUG] batches per device
+{'d0': 4, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 2, 'd9': 4}
+
+[DEBUG] battery state
+{'d0': 13.279914440000013, 'd1': 187.9366652, 'd2': 131.1380296, 'd3': 145.6812096, 'd4': 171.70848359999997, 'd5': 128.89136080000003, 'd6': 128.8913608, 'd7': 120.49643640000002, 'd8': 128.8913608, 'd9': 137.2862852}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 13.279914440000013
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 187.9366652
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 131.1380296
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 145.6812096
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 171.70848359999997
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 128.89136080000003
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 128.8913608
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 120.49643640000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 128.8913608
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 137.2862852
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 13.279914440000013
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 187.9366652
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 131.1380296
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 145.6812096
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 171.70848359999997
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 128.89136080000003
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 128.8913608
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 120.49643640000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 128.8913608
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 137.2862852
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x19cb1396
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -35.0000000
+Presolve removed 46 rows and 66 columns
+Presolve time: 0.00s
+Presolved: 18 rows, 34 columns, 82 nonzeros
+Found heuristic solution: objective -271.8345029
+Variable types: 0 continuous, 34 integer (29 binary)
+
+Root relaxation: objective -3.496906e+02, 5 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    -349.6905701 -349.69057  0.00%     -    0s
+
+Explored 1 nodes (5 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -349.691 -271.835 -35 
+No other solutions better than -349.691
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.496905701390e+02, best bound -3.496905701390e+02, gap 0.0000%
+
+================ SOLVER OUTPUT ================
+{'status': 'OPTIMAL', 'obj': -349.69057013904984, 'active_devices': 9, 'total_energy_J': 188.46454860000003, 'total_latency_s': 563.7186378752548, 'total_upload_bytes': 2973719592.0, 'total_batches': 24, 'beta_choice': {'d0': '', 'd1': 'block1_pool', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 0, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 3, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 3, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 2, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 12.1711362, 'd1': 16.7898488, 'd2': 16.7898488, 'd3': 16.7898488, 'd4': 16.7898488, 'd5': 25.1847732, 'd6': 16.7898488, 'd7': 16.7898488, 'd8': 16.7898488, 'd9': 33.5796976}, 'latency_s': {'d0': 69.54934971428571, 'd1': 47.06164649152087, 'd2': 47.06164649152087, 'd3': 47.06164649152087, 'd4': 47.06164649152087, 'd5': 70.5944697372813, 'd6': 47.06964649152087, 'd7': 47.06964649152087, 'd8': 47.06964649152087, 'd9': 94.11929298304173}, 'upload_bytes': {'d0': 2434227240, 'd1': 51380224.0, 'd2': 51380224.0, 'd3': 51380224.0, 'd4': 51380224.0, 'd5': 77070336.0, 'd6': 51380224.0, 'd7': 51380224.0, 'd8': 51380224.0, 'd9': 102760448.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+d0 -> z=0 k=3 beta=
+d1 -> z=1 k=0 beta=block1_pool
+d2 -> z=1 k=0 beta=block1_pool
+d3 -> z=1 k=0 beta=block1_pool
+d4 -> z=1 k=0 beta=block1_pool
+d5 -> z=1 k=0 beta=block1_pool
+d6 -> z=1 k=0 beta=block1_pool
+d7 -> z=1 k=0 beta=block1_pool
+d8 -> z=1 k=0 beta=block1_pool
+d9 -> z=1 k=0 beta=block1_pool
+================================================
+[cloud][round 6] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+[edge-load] {'e0': 4, 'e1': 5}
+[ROUND 6 COMPLETE]
+
+================ ROUND 7 =================
+
+[DEBUG] batches per device
+{'d0': 2, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2, 'd5': 2, 'd6': 3, 'd7': 2, 'd8': 3, 'd9': 2}
+
+[DEBUG] battery state
+{'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 1.1087782400000137
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 171.14681639999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 114.34818080000001
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 128.89136079999997
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 154.91863479999995
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 103.70658760000003
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 103.70658760000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 103.7065876
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 1.1087782400000137
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 171.14681639999998
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 114.34818080000001
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 128.89136079999997
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 154.91863479999995
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 103.70658760000003
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 103.70658760000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 103.7065876
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0xaa8a0103
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 3e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 2 rows and 39 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+================ SOLVER OUTPUT ================
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+================================================
+[cloud][round 7] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+[edge-load] {'e0': 0, 'e1': 0}
+[ROUND 7 COMPLETE]
+
+================ ROUND 8 =================
+
+[DEBUG] batches per device
+{'d0': 4, 'd1': 2, 'd2': 2, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 2, 'd8': 4, 'd9': 4}
+
+[DEBUG] battery state
+{'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 1.1087782400000137
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 171.14681639999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 114.34818080000001
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 128.89136079999997
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 154.91863479999995
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 103.70658760000003
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 103.70658760000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 103.7065876
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 1.1087782400000137
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 171.14681639999998
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 114.34818080000001
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 128.89136079999997
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 154.91863479999995
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 103.70658760000003
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 103.70658760000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 103.7065876
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x81f877ef
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 2 rows and 49 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+================ SOLVER OUTPUT ================
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+================================================
+[cloud][round 8] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+[edge-load] {'e0': 0, 'e1': 0}
+[ROUND 8 COMPLETE]
+
+================ ROUND 9 =================
+
+[DEBUG] batches per device
+{'d0': 6, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 4, 'd5': 4, 'd6': 4, 'd7': 3, 'd8': 3, 'd9': 3}
+
+[DEBUG] battery state
+{'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+
+DEVICE d0
+Edge: e0
+Memory: 974549656
+Battery: 1.1087782400000137
+Latency limit: 26.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d1
+Edge: e0
+Memory: 966978347
+Battery: 171.14681639999998
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d2
+Edge: e0
+Memory: 968522457
+Battery: 114.34818080000001
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d3
+Edge: e0
+Memory: 972260626
+Battery: 128.89136079999997
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d4
+Edge: e0
+Memory: 969468285
+Battery: 154.91863479999995
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d5
+Edge: e1
+Memory: 970325585
+Battery: 103.70658760000003
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d6
+Edge: e1
+Memory: 971395545
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d7
+Edge: e1
+Memory: 973852152
+Battery: 103.70658760000002
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d8
+Edge: e1
+Memory: 974275444
+Battery: 112.101512
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+DEVICE d9
+Edge: e1
+Memory: 972710866
+Battery: 103.7065876
+Latency limit: 110.0
+Per-beta parameters
+beta 1 -> Ecomp 4.337879 Ecomm 4.0570454 M 811409080
+beta 2 -> Ecomp 9.354467 Ecomm 4.123955035 M 824791007
+beta 3 -> Ecomp 16.941728 Ecomm 4.518193395 M 903638679
+beta 4 -> Ecomp 25.633234 Ecomm 4.663992645 M 932798529
+beta 5 -> Ecomp 35.592254 Ecomm 4.82301968 M 964603936
+beta 6 -> Ecomp 48.996152 Ecomm 4.964619385 M 992923877
+beta 7 -> Ecomp 64.029379 Ecomm 5.351832285 M 1070366457
+beta 8 -> Ecomp 79.286847 Ecomm 5.35601086 M 1071202172
+
+================ RoundCoeffs DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Transfer energy: {'d0': 4.0570454, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 4.0570454, 'd4': 4.0570454, 'd5': 4.0570454, 'd6': 4.0570454, 'd7': 4.0570454, 'd8': 4.0570454, 'd9': 4.0570454}
+Transfer time: {'d0': 23.18311657142857, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 23.18311657142857, 'd4': 23.18311657142857, 'd5': 23.18311657142857, 'd6': 23.18311657142857, 'd7': 23.18311657142857, 'd8': 23.18311657142857, 'd9': 23.18311657142857}
+===================================================
+
+Calling solver now...
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 1.0
+gamma_edge: 1e-05
+eta: 40.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 1.1087782400000137
+Memory limit: 974549656
+Latency limit: 26.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 171.14681639999998
+Memory limit: 966978347
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 114.34818080000001
+Memory limit: 968522457
+Latency limit: 110.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 128.89136079999997
+Memory limit: 972260626
+Latency limit: 110.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 154.91863479999995
+Memory limit: 969468285
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d5 PROFILE -----
+Remaining energy: 103.70658760000003
+Memory limit: 970325585
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d6 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 971395545
+Latency limit: 110.0
+Batches: 4
+
+----- DEVICE d7 PROFILE -----
+Remaining energy: 103.70658760000002
+Memory limit: 973852152
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d8 PROFILE -----
+Remaining energy: 112.101512
+Memory limit: 974275444
+Latency limit: 110.0
+Batches: 3
+
+----- DEVICE d9 PROFILE -----
+Remaining energy: 103.7065876
+Memory limit: 972710866
+Latency limit: 110.0
+Batches: 3
+
+EDGE e0 RAM LIMIT: 221836200000
+
+EDGE e1 RAM LIMIT: 221836200000
+
+EDGE e0 ENERGY BUDGET: 4000.0
+
+EDGE e1 ENERGY BUDGET: 4000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 64 rows, 100 columns and 560 nonzeros
+Model fingerprint: 0x9b11f918
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [1e+00, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 2 rows and 51 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+================ SOLVER OUTPUT ================
+{'status': 'INFEASIBLE', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+================================================
+[cloud][round 9] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 1.1087782400000137, 'd1': 171.14681639999998, 'd2': 114.34818080000001, 'd3': 128.89136079999997, 'd4': 154.91863479999995, 'd5': 103.70658760000003, 'd6': 112.101512, 'd7': 103.70658760000002, 'd8': 112.101512, 'd9': 103.7065876}
+[edge-load] {'e0': 0, 'e1': 0}
+[ROUND 9 COMPLETE]
+Training complete

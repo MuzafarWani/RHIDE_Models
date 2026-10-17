@@ -1,0 +1,13 @@
+{
+  "obs_keys": [
+    "global_mean_latency",
+    "global_mean_energy",
+    "global_queue"
+  ],
+  "actions": [
+    1,
+    2,
+    4,
+    8
+  ]
+}

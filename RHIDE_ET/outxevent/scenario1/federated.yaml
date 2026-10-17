@@ -1,0 +1,18 @@
+edges:
+  - id: "e0"
+    priority: 2.0
+    ram_edge_s: 2147483648
+    energy_budget_per_round: 1000.0
+    devices: ["d0", "d1", "d2", "d3", "d4"]
+
+devices:
+  d0:
+    edge: "e0"
+  d1:
+    edge: "e0"
+  d2:
+    edge: "e0"
+  d3:
+    edge: "e0"
+  d4:
+    edge: "e0"

@@ -1,0 +1,17 @@
+reward_weights:
+  alpha: 1.0
+  beta:  0.1
+  gamma: 0.01
+
+edge_actions: [1, 2, 4, 8]
+cloud_actions: [1, 2, 4, 8]
+
+cloud_obs_keys:
+  - num_edge_updates
+  - model_delta
+  - delta_exceeded
+  - rounds_since_agg
+
+cloud_tau: 0.05
+edge_tau: 0.05
+

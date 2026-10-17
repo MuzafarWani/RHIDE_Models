@@ -1,0 +1,24 @@
+beta_selection.py
+This module chooses the split point β for a device based on minimum energy. For each allowed split, it checks whether energy, upload, latency, and memory constraints are satisfied. Among all feasible options, it returns the split with the lowest total energy. It takes precomputed per-β coefficients and device limits as input and outputs a single split name (or None if nothing is feasible).
+
+gurobi_solver.py
+
+This module runs the main optimization for a training round using Gurobi. chooses split points first with a heuristic, it then decides:which devices participate (z), and
+
+how many raw batches are transferred (k). It builds a MILP with energy, latency, memory, and budget constraints, solves it, and returns a result containing decisions, total cost, and solver status. Inputs come from RoundCoeffs (numeric parameters for the round) and solver settings; output is a SolverOutput object used by the rest of the system.
+
+mappings.py
+This module defines the available split points (β) for XEvenetNet model. 
+
+mappings_vgg16.py
+This module defines the available split points (β) for VGG16 model. 
+
+param_feeds.py
+This module converts configuration data into pure numeric form for the solver. It defines: static per-device limits (energy, memory, latency, etc.), per-β coefficients (energy, time, memory per split), and a RoundCoeffs container that holds everything for one round.
+It also computes per-batch values into per-round totals and validates that all arrays match the number of splits. Its input is configuration data and batch counts. its output is a RoundCoeffs object ready for optimization.
+
+postprocess.py
+This module summarizes the solver output into a compact dictionary. It computes total energy, latency, upload size, and the number of active devices. The result is used for logging and for computing rewards for the RL agents.
+
+solver/warm_start.py
+This module manages warm-start data for the MILP solver. It saves and loads previous solutions for variables z and k so that future rounds can start from a good initial guess. It also validates, prunes, and safely loads warm-start files. Inputs are previous solver decisions and file paths; outputs are clean dictionaries that can be fed back into the solver.

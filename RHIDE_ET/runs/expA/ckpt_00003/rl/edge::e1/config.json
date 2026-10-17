@@ -1,0 +1,20 @@
+{
+  "obs_dim": 7,
+  "n_actions": 4,
+  "policy_hidden": [
+    64,
+    64
+  ],
+  "value_hidden": [
+    64,
+    64
+  ],
+  "clip_ratio": 0.2,
+  "gamma": 0.99,
+  "lam": 0.95,
+  "policy_lr": 0.0003,
+  "value_lr": 0.001,
+  "train_iters": 4,
+  "minibatch_size": 64,
+  "entropy_coef": 0.01
+}

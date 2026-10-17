@@ -1,0 +1,22 @@
+metrics_losses.py
+This module defines custom evaluation metrics and loss functions used during training. These are used to validate inference results
+
+
+serialization.py
+This module provides utilities for saving, loading, and synchronizing Keras models. It does:Saving and loading models in TensorFlow’s SavedModel format.
+Copying weights between models by matching layer names. Transferring weights from a full model into device-side and edge-side submodels.
+
+
+split_graph.py
+This module defines how the XevenetNet model is split into device and edge subgraphs. It: Declares all valid cut points (CutSpec) in the architecture.
+Builds submodels for a chosen split β using create_submodels. Ensures that device and edge submodels use the same layer names as the full model so weights can be copied safely.
+
+split_graph_vgg16.py
+
+This module performs the same role as split_graph.py, but specifically for VGG16. It maps each split name to a real VGG16 layer, constructs: a device-side model from input to the cut layer, and an edge-side model from the cut output to the final layer.
+
+vgg16.py
+This module builds the complete VGG16-based classifier used across device, edge, and cloud. 
+
+xeventnet.py
+This module defines the full XevenetNet architecture.

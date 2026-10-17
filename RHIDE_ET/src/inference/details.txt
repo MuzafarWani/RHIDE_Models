@@ -1,0 +1,15 @@
+build_grids.py
+This module prepares raw WRF data for inference. Given a list of locations and timesteps (from a CSV file), it finds the nearest grid cell in the weather data and extracts small 2D and 3D windows around that point. It produces two tensors: 
+X2: 2D feature windows,
+X3: 3D feature windows,
+along with a list of metadata rows that remember where each sample came from (timestep, latitude, longitude, grid indices). Inputs are the WRF arrays and a CSV of query locations. Outputs are model-ready tensors and per-sample metadata.
+
+postprocess.py
+This module converts model predictions into a human-readable CSV file. It combines: the original metadata (location, timestep, grid position), predicted class indices, optional class probabilities, and optional decoded class labels.
+The result is a single CSV file that can be used for analysis. Inputs are prediction arrays and metadata; the output is a structured CSV file.
+
+predictor.py
+This module runs inference using either: the full model (no split), or a split configuration where part of the model runs on the device and the rest on the edge.
+For a given beta (split point), it dynamically builds the device and edge sub-models, copies weights from the full model, and executes inference in two stages:
+Device forward pass up to the cut, Edge forward pass to produce final predictions.
+Inputs are prepared tensors (X2, X3) and a split choice (beta). Outputs are predicted class indices and optional class probabilities.

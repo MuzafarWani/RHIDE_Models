@@ -1,0 +1,12 @@
+python scripts/train_federated.py --data_cfg configs/data.yaml --train_cfg configs/train.yaml --fed_cfg configs/federated.yaml --split_cfg configs/split.yaml --el_cfg configs/energy_latency.yaml \
+  --solver_cfg configs/solver.yaml \
+  --rl_cfg configs/rl.yaml \
+  --rounds 5 --seed 1
+
+Labsystem
+export PYTHONPATH=$PYTHONPATH:/home/muzafar/FedML/my_examples/XEenetNet_Real_data/src   
+export PYTHONPATH="/home/muzafar/FedML/my_examples/XEenetNet_Real_data:/home/muzafar/FedML/my_examples/XEenetNet_Real_data/src"
+
+
+cse231
+export PYTHONPATH=$PYTHONPATH:/home/muzafar/FedML-Code/XEenetNet_Real_data/src

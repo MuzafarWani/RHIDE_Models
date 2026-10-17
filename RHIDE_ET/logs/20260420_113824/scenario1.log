@@ -1,0 +1,32 @@
+2026-04-20 11:38:24.655847: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 11:38:24.655891: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 11:38:24.675981: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 11:38:24.728227: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 11:38:25.440744: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+[XEVENTNET][ROUND 0]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 275, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 207, in main
+    sol = RoundMILPSolver(rc, sp).solve()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/src/solver/gurobi_solver.py", line 80, in solve
+    m = gp.Model("sphere_train_joint_beta")
+  File "src/gurobipy/_model.pyx", line 146, in gurobipy._model.Model.__init__
+  File "src/gurobipy/gurobi.pxi", line 60, in gurobipy._core.gurobi._getdefaultenv
+  File "src/gurobipy/env.pxi", line 108, in gurobipy._core.Env.__init__
+gurobipy._exception.GurobiError: License 2761103 has expired

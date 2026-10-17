@@ -1,0 +1,14 @@
+bus.py
+This module provides a meachnism in-process message bus used by all cloud, edge, and device components to communicate. It supports publishing messages to a topic, draining all messages from a topic, peeking at pending messages, and merging multiple dictionary messages into one. All other parts of SPHERE use this bus. Its inputs are arbitrary messages from any component, and its outputs are those messages delivered to subscribers.
+
+codecs.py
+This module handles serialization, compression, and integrity checking of NumPy arrays. It converts arrays into byte payloads, optionally compresses them using NPZ or Zstandard, and computes checksums for verification. The device uploader and edge receiver use these helpers to reduce payload size and to ensure data integrity. Its inputs are dictionaries of NumPy arrays, and its outputs are compressed byte streams, size estimates, and checksums.
+
+messages.py
+This module defines all message types exchanged in the federated system. These include:
+Activations: sent from devices to edges during split learning.
+RawBatch: sent when devices transfer full data batches.
+ModelUpdate: sent from devices to edges or from edges to the cloud.
+CutGradients: sent from edges back to devices during split backpropagation.
+Labels: optional standalone label message.
+Each message bundles routing information (device ID, edge ID), the actual data, and size metadata for accounting. These message objects are what travel through the MessagingBus and connect all layers of the system.

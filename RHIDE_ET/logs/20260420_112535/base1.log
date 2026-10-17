@@ -1,0 +1,37 @@
+2026-04-20 11:25:35.503273: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 11:25:35.503298: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 11:25:35.504032: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 11:25:35.508046: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 11:25:36.065474: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-20 11:25:38.114107: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-20 11:25:38.159407: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-20 11:25:38.210784: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-20 11:25:38.445859: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-20 11:25:38.492312: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+================ ROUND 0 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_vgg16.py", line 255, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_vgg16.py", line 200, in main
+    sol = RoundMILPSolver(rc, sp).solve()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/src/solver/gurobi_solver.py", line 80, in solve
+    m = gp.Model("sphere_train_joint_beta")
+  File "src/gurobipy/_model.pyx", line 146, in gurobipy._model.Model.__init__
+  File "src/gurobipy/gurobi.pxi", line 60, in gurobipy._core.gurobi._getdefaultenv
+  File "src/gurobipy/env.pxi", line 108, in gurobipy._core.Env.__init__
+gurobipy._exception.GurobiError: License 2761103 has expired

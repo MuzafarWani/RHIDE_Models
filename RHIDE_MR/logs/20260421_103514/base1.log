@@ -1,0 +1,12 @@
+2026-04-21 10:35:15.012779: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-21 10:35:15.012823: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-21 10:35:15.013696: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-21 10:35:15.017911: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-21 10:35:15.555186: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_xeventnet.py", line 276, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_xeventnet.py", line 84, in main
+    X2, X3, y, _ = build_labeled_arrays(
+TypeError: build_labeled_arrays() takes 0 positional arguments but 7 were given

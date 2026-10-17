@@ -1,0 +1,34 @@
+edges:
+  - id: "e0"
+    priority: 2.0
+    ram_edge_s: 5000000000
+    devices: ["d0", "d1"]
+
+  - id: "e1"
+    priority: 1.0
+    ram_edge_s: 5000000000
+    devices: ["d2"]
+
+devices:
+  d0: { edge: "e0" }
+  d1: { edge: "e0" }
+  d2: { edge: "e1" }
+
+batches_per_device_default: 1
+min_batches_if_active: 1
+
+topics:
+  activations: "device_to_edge_activations"
+  raw:         "device_to_edge_raw"
+  edge2cloud:  "edge_to_cloud_update"
+  cloud2edges: "cloud_to_edges_broadcast"
+
+links:
+  device_to_edge:
+    use_zstd: true
+    zstd_level: 7
+    activations_dtype: "float16"
+
+  edge_to_cloud:
+    use_zstd: false
+

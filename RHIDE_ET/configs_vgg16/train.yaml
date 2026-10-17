@@ -1,0 +1,37 @@
+# =========================
+# Model & Training (VGG16)
+# =========================
+
+# VGG16 is single-input (2D image only)
+input_shape_2d: [224, 224, 3]
+input_shape_3d: [1, 1, 1]
+num_classes: 10
+
+optimizer: "adam"
+loss: "sparse_categorical_crossentropy"
+metrics: ["accuracy"]
+
+batch_size: 1
+epochs: 3
+prefetch: 2
+cache: true
+shuffle: true
+seed: 1337
+
+# -------------------------
+# Checkpoints / exports
+# -------------------------
+out_dir: "runs/vgg16"
+save_best: true
+savedmodel_path: "runs/vgg16/savedmodel"
+
+# Default inference split
+default_beta: "block1_pool"
+
+# -------------------------
+# Evaluation
+# -------------------------
+eval_every: 1
+eval_batch_size: 64
+eval_report_csv: "runs/vgg16/val_metrics.csv"
+

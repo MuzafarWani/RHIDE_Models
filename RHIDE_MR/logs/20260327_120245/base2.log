@@ -1,0 +1,67 @@
+2026-03-27 12:02:45.941865: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-27 12:02:45.941891: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-27 12:02:45.942569: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-27 12:02:45.946508: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-27 12:02:46.497460: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-27 12:02:48.463808: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-27 12:02:48.510771: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-27 12:02:48.561830: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+========== EDGE CONSTRAINTS ==========
+Edge RAM: {'e0': 221836200000, 'e1': 221836200000}
+Edge Energy Budget: {'e0': 4000.0, 'e1': 4000.0}
+=====================================
+
+
+================ ROUND 0 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d1] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d2] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d3] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d4] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d5] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d6] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d7] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d8] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+[Device d9] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.0714
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=280.0000, mem=974549656
+[Device Constraint][d1] Erem=280.0000, mem=966978347
+[Device Constraint][d2] Erem=280.0000, mem=968522457
+[Device Constraint][d3] Erem=280.0000, mem=972260626
+[Device Constraint][d4] Erem=280.0000, mem=969468285
+[Device Constraint][d5] Erem=280.0000, mem=970325585
+[Device Constraint][d6] Erem=280.0000, mem=971395545
+[Device Constraint][d7] Erem=280.0000, mem=973852152
+[Device Constraint][d8] Erem=280.0000, mem=974275444
+[Device Constraint][d9] Erem=280.0000, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 249, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 225, in main
+    sol = RoundMILPSolver(rc, sp).solve()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/src/solver/gurobi_solver.py", line 277, in solve
+    print(f"[Device {i} | Beta {b}] energy_term={norm * weight:.4f}")
+NameError: name 'weight' is not defined
+Warning: environment still referenced so free is deferred (Continue to use WLS)

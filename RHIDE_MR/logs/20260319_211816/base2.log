@@ -1,0 +1,1803 @@
+2026-03-19 21:18:17.135791: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-19 21:18:17.135819: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-19 21:18:17.136625: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-19 21:18:17.140732: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-19 21:18:17.679632: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-19 21:18:19.599262: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-19 21:18:19.644292: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-19 21:18:19.695401: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+================ CONFIG DEBUG ================
+Train cfg: {'input_shape_2d': [224, 224, 3], 'input_shape_3d': [1, 1, 1], 'num_classes': 10, 'optimizer': 'adam', 'loss': 'sparse_categorical_crossentropy', 'metrics': ['accuracy'], 'batch_size': 1, 'epochs': 3, 'prefetch': 2, 'cache': True, 'shuffle': True, 'seed': 1337, 'out_dir': 'runs/vgg16', 'save_best': True, 'savedmodel_path': 'runs/vgg16/savedmodel', 'default_beta': 'block1_pool', 'eval_every': 1, 'eval_batch_size': 64, 'eval_report_csv': 'runs/vgg16/val_metrics.csv'}
+Solver cfg: {'eta': 40.0, 'xi': 1.0, 'lambda_energy': 1.0, 'gamma_edge': 0.5, 'alpha_future': 50.0, 'lambda_comm': '1e-7', 'edge_power_w': 120.0, 'mip_gap': 0.01, 'time_limit_s': 30, 'threads': 0, 'integer_k': True, 'use_warm_start': False}
+Allowed splits: ['block1_pool', 'block2_conv1', 'block3_conv1', 'block3_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv2', 'block5_conv3']
+Edges: [{'id': 'e0', 'priority': 2.0, 'ram_edge_s': 221836200000, 'energy_budget_per_round': 4000, 'devices': ['d0', 'd1', 'd2', 'd3', 'd4']}, {'id': 'e1', 'priority': 1.0, 'ram_edge_s': 221836200000, 'energy_budget_per_round': 4000, 'devices': ['d5', 'd6', 'd7', 'd8', 'd9']}]
+=============================================
+
+[VGG16] Global model built
+
+[DEBUG] Solver params SolverParams(lambda_energy=1.0, gamma_edge=0.5, lambda_comm=1e-07, lambda_latency=0.0, eta=40.0, xi=1.0, alpha_future=50.0, mip_gap=0.01, time_limit_s=30.0, threads=0, warm_start=None)
+
+================ ROUND 0 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xdca8c135
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -88.7146 0 
+No other solutions better than -88.7146
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -8.871460402711e+01, best bound -8.871460402711e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d1: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -88.71460402711382, 'active_devices': 3, 'total_energy_J': 242.49164208, 'total_latency_s': 167.8901263223223, 'total_upload_bytes': 168302592.0, 'total_batches': 6, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': '', 'd3': '', 'd4': 'block3_conv3', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 0, 'd3': 0, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 80.83054736, 'd1': 80.83054736, 'd2': 0.0, 'd3': 0.0, 'd4': 80.83054736, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 55.963375440774094, 'd1': 55.963375440774094, 'd2': 0.0, 'd3': 0.0, 'd4': 55.963375440774094, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 56100864.0, 'd1': 56100864.0, 'd2': 0, 'd3': 0, 'd4': 56100864.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 1 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x4d2fe983
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -88.6454 0 
+No other solutions better than -88.6454
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -8.864539703660e+01, best bound -8.864539703660e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d4: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -88.64539703659662, 'active_devices': 3, 'total_energy_J': 242.49164208, 'total_latency_s': 167.9261263223223, 'total_upload_bytes': 168302592.0, 'total_batches': 6, 'beta_choice': {'d0': 'block3_conv3', 'd1': '', 'd2': '', 'd3': 'block3_conv3', 'd4': 'block3_conv3', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 0, 'd2': 0, 'd3': 2, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 80.83054736, 'd1': 0.0, 'd2': 0.0, 'd3': 80.83054736, 'd4': 80.83054736, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 55.975375440774094, 'd1': 0.0, 'd2': 0.0, 'd3': 55.975375440774094, 'd4': 55.975375440774094, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 56100864.0, 'd1': 0, 'd2': 0, 'd3': 56100864.0, 'd4': 56100864.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 2 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x01337c81
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -58.992 0 
+No other solutions better than -58.992
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.899198752312e+01, best bound -5.899198752312e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d1: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -58.99198752311587, 'active_devices': 2, 'total_energy_J': 161.66109472, 'total_latency_s': 111.95075088154819, 'total_upload_bytes': 112201728.0, 'total_batches': 4, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 80.83054736, 'd1': 80.83054736, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 55.975375440774094, 'd1': 55.975375440774094, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 56100864.0, 'd1': 56100864.0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 3 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xc1552a78
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -29.5369 0 
+No other solutions better than -29.5369
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.953693118045e+01, best bound -2.953693118045e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -29.53693118044601, 'active_devices': 1, 'total_energy_J': 80.83054736, 'total_latency_s': 55.971375440774096, 'total_upload_bytes': 56100864.0, 'total_batches': 2, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': 'block3_conv3', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 2, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 80.83054736, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 55.971375440774096, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 56100864.0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 4 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x757e3cca
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -59.0266 0 
+No other solutions better than -59.0266
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.902659101837e+01, best bound -5.902659101837e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d3: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -59.02659101837447, 'active_devices': 2, 'total_energy_J': 161.66109472, 'total_latency_s': 111.93475088154818, 'total_upload_bytes': 112201728.0, 'total_batches': 4, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block3_conv3', 'd3': 'block3_conv3', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 2, 'd3': 2, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 80.83054736, 'd3': 80.83054736, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 55.96737544077409, 'd3': 55.96737544077409, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 56100864.0, 'd3': 56100864.0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 5 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xb6a363c2
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -58.9101 0 
+No other solutions better than -58.9101
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.891011268534e+01, best bound -5.891011268534e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -58.910112685339726, 'active_devices': 2, 'total_energy_J': 161.66109472, 'total_latency_s': 111.94275088154819, 'total_upload_bytes': 112201728.0, 'total_batches': 4, 'beta_choice': {'d0': '', 'd1': 'block3_conv3', 'd2': '', 'd3': '', 'd4': 'block3_conv3', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 2, 'd2': 0, 'd3': 0, 'd4': 2, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 80.83054736, 'd2': 0.0, 'd3': 0.0, 'd4': 80.83054736, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 55.971375440774096, 'd2': 0.0, 'd3': 0.0, 'd4': 55.971375440774096, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 56100864.0, 'd2': 0, 'd3': 0, 'd4': 56100864.0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRAIN', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 6 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0xc4ad38ff
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -29.5369 0 
+No other solutions better than -29.5369
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.953693118045e+01, best bound -2.953693118045e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -29.53693118044601, 'active_devices': 1, 'total_energy_J': 80.83054736, 'total_latency_s': 55.971375440774096, 'total_upload_bytes': 56100864.0, 'total_batches': 2, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block3_conv3', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 2, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 80.83054736, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 55.971375440774096, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 56100864.0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 7 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x21f3c692
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 1e+02]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -29.4551 0 
+No other solutions better than -29.4551
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.945505634267e+01, best bound -2.945505634267e+01, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=1 k=0 beta=[0, 0, 0, 0, 1, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': -29.455056342669863, 'active_devices': 1, 'total_energy_J': 80.83054736, 'total_latency_s': 55.96737544077409, 'total_upload_bytes': 56100864.0, 'total_batches': 2, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'block3_conv3', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 2, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 80.83054736, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 55.96737544077409, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 56100864.0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 8 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x2b1f8a55
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [4e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+
+================ ROUND 9 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9']
+alpha_future: 50.0
+lambda_comm: 1e-07
+====================================================
+
+
+================ COST BREAKDOWN DEBUG ================
+
+--- Device d0 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d1 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d2 ---
+[TRAIN] beta=block1_pool | RawEnergy=50.37J | NormEnergy=0.0992 | Upload=1.54e+08B | EnergyCost=0.0992 | CommCost=15.41
+[TRAIN] beta=block2_conv1 | RawEnergy=80.87J | NormEnergy=0.1592 | Upload=3.10e+08B | EnergyCost=0.1592 | CommCost=31.01
+[TRAIN] beta=block3_conv1 | RawEnergy=128.76J | NormEnergy=0.2535 | Upload=1.61e+08B | EnergyCost=0.2535 | CommCost=16.12
+[TRAIN] beta=block3_conv2 | RawEnergy=181.78J | NormEnergy=0.3579 | Upload=1.68e+08B | EnergyCost=0.3579 | CommCost=16.83
+[TRAIN] beta=block3_conv3 | RawEnergy=242.49J | NormEnergy=0.4775 | Upload=1.68e+08B | EnergyCost=0.4775 | CommCost=16.83
+[TRAIN] beta=block4_conv3 | RawEnergy=323.76J | NormEnergy=0.6375 | Upload=1.34e+08B | EnergyCost=0.6375 | CommCost=13.37
+[TRAIN] beta=block5_conv2 | RawEnergy=416.29J | NormEnergy=0.8197 | Upload=7.59e+07B | EnergyCost=0.8197 | CommCost=7.59
+[TRAIN] beta=block5_conv3 | RawEnergy=507.86J | NormEnergy=1.0000 | Upload=7.59e+07B | EnergyCost=1.0000 | CommCost=7.59
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d3 ---
+[TRAIN] beta=block1_pool | RawEnergy=16.79J | NormEnergy=0.0992 | Upload=5.14e+07B | EnergyCost=0.0992 | CommCost=5.14
+[TRAIN] beta=block2_conv1 | RawEnergy=26.96J | NormEnergy=0.1592 | Upload=1.03e+08B | EnergyCost=0.1592 | CommCost=10.34
+[TRAIN] beta=block3_conv1 | RawEnergy=42.92J | NormEnergy=0.2535 | Upload=5.37e+07B | EnergyCost=0.2535 | CommCost=5.37
+[TRAIN] beta=block3_conv2 | RawEnergy=60.59J | NormEnergy=0.3579 | Upload=5.61e+07B | EnergyCost=0.3579 | CommCost=5.61
+[TRAIN] beta=block3_conv3 | RawEnergy=80.83J | NormEnergy=0.4775 | Upload=5.61e+07B | EnergyCost=0.4775 | CommCost=5.61
+[TRAIN] beta=block4_conv3 | RawEnergy=107.92J | NormEnergy=0.6375 | Upload=4.46e+07B | EnergyCost=0.6375 | CommCost=4.46
+[TRAIN] beta=block5_conv2 | RawEnergy=138.76J | NormEnergy=0.8197 | Upload=2.53e+07B | EnergyCost=0.8197 | CommCost=2.53
+[TRAIN] beta=block5_conv3 | RawEnergy=169.29J | NormEnergy=1.0000 | Upload=2.53e+07B | EnergyCost=1.0000 | CommCost=2.53
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d4 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d5 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d6 ---
+[TRAIN] beta=block1_pool | RawEnergy=33.58J | NormEnergy=0.0992 | Upload=1.03e+08B | EnergyCost=0.0992 | CommCost=10.28
+[TRAIN] beta=block2_conv1 | RawEnergy=53.91J | NormEnergy=0.1592 | Upload=2.07e+08B | EnergyCost=0.1592 | CommCost=20.67
+[TRAIN] beta=block3_conv1 | RawEnergy=85.84J | NormEnergy=0.2535 | Upload=1.07e+08B | EnergyCost=0.2535 | CommCost=10.75
+[TRAIN] beta=block3_conv2 | RawEnergy=121.19J | NormEnergy=0.3579 | Upload=1.12e+08B | EnergyCost=0.3579 | CommCost=11.22
+[TRAIN] beta=block3_conv3 | RawEnergy=161.66J | NormEnergy=0.4775 | Upload=1.12e+08B | EnergyCost=0.4775 | CommCost=11.22
+[TRAIN] beta=block4_conv3 | RawEnergy=215.84J | NormEnergy=0.6375 | Upload=8.91e+07B | EnergyCost=0.6375 | CommCost=8.91
+[TRAIN] beta=block5_conv2 | RawEnergy=277.52J | NormEnergy=0.8197 | Upload=5.06e+07B | EnergyCost=0.8197 | CommCost=5.06
+[TRAIN] beta=block5_conv3 | RawEnergy=338.57J | NormEnergy=1.0000 | Upload=5.06e+07B | EnergyCost=1.0000 | CommCost=5.06
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d7 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d8 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+--- Device d9 ---
+[TRAIN] beta=block1_pool | RawEnergy=25.18J | NormEnergy=0.0992 | Upload=7.71e+07B | EnergyCost=0.0992 | CommCost=7.71
+[TRAIN] beta=block2_conv1 | RawEnergy=40.44J | NormEnergy=0.1592 | Upload=1.55e+08B | EnergyCost=0.1592 | CommCost=15.50
+[TRAIN] beta=block3_conv1 | RawEnergy=64.38J | NormEnergy=0.2535 | Upload=8.06e+07B | EnergyCost=0.2535 | CommCost=8.06
+[TRAIN] beta=block3_conv2 | RawEnergy=90.89J | NormEnergy=0.3579 | Upload=8.42e+07B | EnergyCost=0.3579 | CommCost=8.42
+[TRAIN] beta=block3_conv3 | RawEnergy=121.25J | NormEnergy=0.4775 | Upload=8.42e+07B | EnergyCost=0.4775 | CommCost=8.42
+[TRAIN] beta=block4_conv3 | RawEnergy=161.88J | NormEnergy=0.6375 | Upload=6.69e+07B | EnergyCost=0.6375 | CommCost=6.69
+[TRAIN] beta=block5_conv2 | RawEnergy=208.14J | NormEnergy=0.8197 | Upload=3.80e+07B | EnergyCost=0.8197 | CommCost=3.80
+[TRAIN] beta=block5_conv3 | RawEnergy=253.93J | NormEnergy=1.0000 | Upload=3.80e+07B | EnergyCost=1.0000 | CommCost=3.80
+[TRANSFER] | Energy=4.06J | Upload=8.11e+08B | CommCost=81.14
+
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 50 rows, 100 columns and 300 nonzeros
+Model fingerprint: 0x4f5f73e2
+Variable types: 0 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+09]
+  Objective range  [5e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 1e+09]
+Warning: Model contains large matrix coefficients
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 50 rows and 100 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+================ DECISION DEBUG ================
+d0: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d1: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d2: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d3: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d4: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d5: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d6: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d7: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d8: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+d9: z=0 k=0 beta=[0, 0, 0, 0, 0, 0, 0, 0]
+================================================
+
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': '', 'd5': '', 'd6': '', 'd7': '', 'd8': '', 'd9': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'energy_J': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'latency_s': {'d0': 0.0, 'd1': 0.0, 'd2': 0.0, 'd3': 0.0, 'd4': 0.0, 'd5': 0.0, 'd6': 0.0, 'd7': 0.0, 'd8': 0.0, 'd9': 0.0}, 'upload_bytes': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRANSFER', 'd4': 'TRANSFER', 'd5': 'TRANSFER', 'd6': 'TRANSFER', 'd7': 'TRANSFER', 'd8': 'TRANSFER', 'd9': 'TRANSFER'}}
+Training complete

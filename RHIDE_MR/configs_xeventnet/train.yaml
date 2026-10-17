@@ -1,0 +1,36 @@
+# Model & training
+input_shape_2d: [21, 21, 6]         # (H,W,C2) must match window + channels
+input_shape_3d: [21, 21, 35, 6]     # (Z,H,W,C3) vertical levels Z from WRF
+num_classes: 5
+
+optimizer: "adam"
+loss: "sparse_categorical_crossentropy"
+metrics: ["accuracy"]
+
+batch_size: 16
+epochs: 3
+prefetch: 2
+cache: true
+shuffle: true
+seed: 1337
+
+# Checkpoints / exports
+out_dir: "runs/expA"
+save_best: true
+savedmodel_path: "runs/expA/savedmodel"
+
+# Inference default β (used by scripts/run_inference.py if none provided)
+default_beta: "post_pool1"
+
+
+# --- Evaluation cadence ---
+eval_every: 1                # evaluate every N rounds (0 to disable)
+eval_batch_size: 64          # optional; defaults to train batch_size if omitted
+eval_report_csv: "runs/expA/val_metrics.csv"
+
+# ...
+locations_train_csv: "data/locations_train.csv"
+locations_val_csv: "data/locations_val.csv"   # <-- add this for eval to run
+
+
+

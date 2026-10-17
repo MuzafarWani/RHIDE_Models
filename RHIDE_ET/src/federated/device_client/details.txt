@@ -1,0 +1,17 @@
+energy_model.py
+This module models how much energy a device consumes in one training round. It estimates energy for local computation (based on which layers run on the device), and for communication (based on how many bytes are uploaded). Other parts of the device client provide the chosen split point, number of batches, and transmitted bytes. The model simply converts these inputs into Joules using the device’s energy profile.
+
+latency_model.py
+This module estimates how long a device takes in one round. It computes local compute time from per-layer timings, communication time from upload size and link speed, and adds fixed overheads for edge processing and synchronization. It receives the split point, batch count, and transmitted bytes from the execution logic and returns the total round time in seconds.
+
+memory_model.py
+This module checks whether a given split point fits within the device’s memory limit. It stores cumulative memory usage (weights and activations) for each possible split and compares it against the device’s maximum memory. Other components query it to decide if a split is feasible on a device.
+
+device_client/splitter.py
+This module builds and manages the device-side part of a split neural network. Given a chosen split point β, it creates a submodel that runs only the layers up to that cut. During training, it performs the forward pass on the device and returns the intermediate activations that must be sent to the edge. Its inputs are the full model and the device’s input batches.Its output is a dictionary of activation tensors.
+
+device_client/trainer.py
+This module performs learning on the device. If the full model runs locally (β=L), it trains normally and produces updated weights.If the model is split (β<L). It receives batches and gradients from the execution flow and updates the device-side parameters accordingly.
+
+device_client/uploader.py
+This module handles sending data from devices to the edge or cloud. It packages activations, raw batches, or model weights, optionally casts and compresses them, and publishes them on the messaging bus. It also reports how many bytes were sent so that energy and latency can be accounted for. Its inputs are arrays produced by the splitter or trainer, and its outputs are messages placed on the bus.

@@ -1,0 +1,41 @@
+2026-04-03 15:35:07.979288: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-03 15:35:07.979316: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-03 15:35:07.980040: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-03 15:35:07.983990: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-03 15:35:08.520298: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-04-03 15:35:10.470697: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-03 15:35:10.517142: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-03 15:35:10.568107: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-03 15:35:10.807839: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-04-03 15:35:10.854296: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+================ ROUND 0 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d1] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d2] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d3] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d4] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d5] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d6] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d7] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d8] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+[Device d9] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.7143
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 276, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_vgg16.py", line 222, in main
+    sol = RoundMILPSolver(rc, sp).solve()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/src/solver/gurobi_solver.py", line 93, in solve
+    m = gp.Model("sphere_train_joint_beta")
+  File "src/gurobipy/_model.pyx", line 146, in gurobipy._model.Model.__init__
+  File "src/gurobipy/gurobi.pxi", line 60, in gurobipy._core.gurobi._getdefaultenv
+  File "src/gurobipy/env.pxi", line 108, in gurobipy._core.Env.__init__
+gurobipy._exception.GurobiError: SSL: no alternative certificate subject name matches target hostname 'token.gurobi.com' (code 60, command POST https://token.gurobi.com/api/v1/tokens)

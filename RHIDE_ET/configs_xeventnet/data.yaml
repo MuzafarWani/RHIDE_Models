@@ -1,0 +1,63 @@
+# ===========================
+# Data sources & preprocessing
+# ===========================
+wrf_file: "/home/muzafar/FedML/my_examples/XEenetNet_Real_data/data/wrf/Snowfall_2019-01-18_1_day"
+
+# Label files (use the same basename as the NetCDF, preprocessed to CSV)
+locations_train_csv: "/home/muzafar/FedML/my_examples/XEenetNet_Real_data/data/labels/Snowfall_2019-01-18_1_day.csv"
+locations_val_csv:   null
+locations_test_csv:  null
+
+# Classes (order matters; used by SimpleLabelEncoder)
+# Replace with your actual rainfall categories
+classes: ["Heavy Rain", "No Event", "Snowfall", "Landslide", "Cyclone"]
+
+# If you later add more categories, update as:
+# classes: ["Cyclone", "NoRain", "Light", "Moderate", "Heavy", "Extreme"]
+
+# ================
+# NetCDF variables
+# ================
+var_map:
+  XLAT:   "XLAT"
+  XLONG:  "XLONG"
+  Time:   "Time"        # if present, otherwise ignored
+
+  # Adjust these to what exists inside the netcdf header
+  RAINC:  "RAINC"
+  RAINNC: "RAINNC"
+  OLR:    "OLR"
+  SNOW:   "SNOW"
+  SNOWH:  "SNOWH"
+  PSFC:   "PSFC"
+  P:      "P"
+  U:      "U"
+  V:      "V"
+  T:      "T"
+  PB:     "PB"
+  QVAPOR: "QVAPOR"
+
+# ==================================
+# Window extraction around each label
+# ==================================
+window_half_width: 10     # results in a (21×21) spatial patch
+
+# ======================
+# Feature channel selection
+# ======================
+feature2d_keys: ["RAINC", "RAINNC", "OLR", "SNOW", "SNOWH", "PSFC"]
+feature3d_keys: ["P", "U", "V", "T", "PB", "QVAPOR"]
+
+# ==========
+# Normalization
+# ==========
+norm_stats_out: "runs/expA/norm_stats.json"
+label_encoder_out: "runs/expA/label_encoder.json"
+
+# =====================
+# Optional caching
+# =====================
+cache_arrays:
+  enabled: true
+  dir: "runs/expA/cache"
+

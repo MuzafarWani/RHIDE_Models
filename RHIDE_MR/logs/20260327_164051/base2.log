@@ -1,0 +1,1867 @@
+2026-03-27 16:40:52.055508: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-27 16:40:52.055536: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-27 16:40:52.056198: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-27 16:40:52.060144: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-27 16:40:52.603783: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-27 16:40:54.543287: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-27 16:40:54.592982: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+2026-03-27 16:40:54.646309: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 411041792 exceeds 10% of free system memory.
+
+========== EDGE CONSTRAINTS ==========
+Edge RAM: {'e0': 221836200000, 'e1': 221836200000}
+Edge Energy Budget: {'e0': 4000.0, 'e1': 4000.0}
+=====================================
+
+
+================ ROUND 0 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d1] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d2] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d3] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d4] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d5] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d6] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d7] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d8] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+[Device d9] Erem=280.0000, E_allowed=28.0000, alpha/E_allowed=0.3571
+====================================================
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=280.0000, mem=974549656
+[Device Constraint][d1] Erem=280.0000, mem=966978347
+[Device Constraint][d2] Erem=280.0000, mem=968522457
+[Device Constraint][d3] Erem=280.0000, mem=972260626
+[Device Constraint][d4] Erem=280.0000, mem=969468285
+[Device Constraint][d5] Erem=280.0000, mem=970325585
+[Device Constraint][d6] Erem=280.0000, mem=971395545
+[Device Constraint][d7] Erem=280.0000, mem=973852152
+[Device Constraint][d8] Erem=280.0000, mem=974275444
+[Device Constraint][d9] Erem=280.0000, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=0.0992, ratio=0.5996, penalty=0.0000
+[Device d0 | Beta 1] energy_term=0.1592, ratio=0.9627, penalty=0.0000
+[Device d0 | Beta 2] energy_term=5.5821, ratio=1.5329, penalty=0.5329
+[Device d0 | Beta 3] energy_term=11.9988, ratio=2.1641, penalty=1.1641
+[Device d0 | Beta 4] energy_term=19.3455, ratio=2.8868, penalty=1.8868
+[Device d0 | Beta 5] energy_term=29.1809, ratio=3.8543, penalty=2.8543
+[Device d0 | Beta 6] energy_term=40.3777, ratio=4.9558, penalty=3.9558
+[Device d0 | Beta 7] energy_term=51.4592, ratio=6.0459, penalty=5.0459
+[Device d1 | Beta 0] energy_term=0.0992, ratio=0.5996, penalty=0.0000
+[Device d1 | Beta 1] energy_term=0.1592, ratio=0.9627, penalty=0.0000
+[Device d1 | Beta 2] energy_term=5.5821, ratio=1.5329, penalty=0.5329
+[Device d1 | Beta 3] energy_term=11.9988, ratio=2.1641, penalty=1.1641
+[Device d1 | Beta 4] energy_term=19.3455, ratio=2.8868, penalty=1.8868
+[Device d1 | Beta 5] energy_term=29.1809, ratio=3.8543, penalty=2.8543
+[Device d1 | Beta 6] energy_term=40.3777, ratio=4.9558, penalty=3.9558
+[Device d1 | Beta 7] energy_term=51.4592, ratio=6.0459, penalty=5.0459
+[Device d2 | Beta 0] energy_term=2.0919, ratio=1.1993, penalty=0.1993
+[Device d2 | Beta 1] energy_term=9.4141, ratio=1.9255, penalty=0.9255
+[Device d2 | Beta 2] energy_term=20.9106, ratio=3.0657, penalty=2.0657
+[Device d2 | Beta 3] energy_term=33.6397, ratio=4.3282, penalty=3.3282
+[Device d2 | Beta 4] energy_term=48.2136, ratio=5.7736, penalty=4.7736
+[Device d2 | Beta 5] energy_term=67.7243, ratio=7.7087, penalty=6.7087
+[Device d2 | Beta 6] energy_term=89.9357, ratio=9.9116, penalty=8.9116
+[Device d2 | Beta 7] energy_term=111.9184, ratio=12.0918, penalty=11.0918
+[Device d3 | Beta 0] energy_term=2.0919, ratio=1.1993, penalty=0.1993
+[Device d3 | Beta 1] energy_term=9.4141, ratio=1.9255, penalty=0.9255
+[Device d3 | Beta 2] energy_term=20.9106, ratio=3.0657, penalty=2.0657
+[Device d3 | Beta 3] energy_term=33.6397, ratio=4.3282, penalty=3.3282
+[Device d3 | Beta 4] energy_term=48.2136, ratio=5.7736, penalty=4.7736
+[Device d3 | Beta 5] energy_term=67.7243, ratio=7.7087, penalty=6.7087
+[Device d3 | Beta 6] energy_term=89.9357, ratio=9.9116, penalty=8.9116
+[Device d3 | Beta 7] energy_term=111.9184, ratio=12.0918, penalty=11.0918
+[Device d4 | Beta 0] energy_term=0.0992, ratio=0.5996, penalty=0.0000
+[Device d4 | Beta 1] energy_term=0.1592, ratio=0.9627, penalty=0.0000
+[Device d4 | Beta 2] energy_term=5.5821, ratio=1.5329, penalty=0.5329
+[Device d4 | Beta 3] energy_term=11.9988, ratio=2.1641, penalty=1.1641
+[Device d4 | Beta 4] energy_term=19.3455, ratio=2.8868, penalty=1.8868
+[Device d4 | Beta 5] energy_term=29.1809, ratio=3.8543, penalty=2.8543
+[Device d4 | Beta 6] energy_term=40.3777, ratio=4.9558, penalty=3.9558
+[Device d4 | Beta 7] energy_term=51.4592, ratio=6.0459, penalty=5.0459
+[Device d5 | Beta 0] energy_term=0.0992, ratio=0.8995, penalty=0.0000
+[Device d5 | Beta 1] energy_term=4.6004, ratio=1.4441, penalty=0.4441
+[Device d5 | Beta 2] energy_term=13.2463, ratio=2.2993, penalty=1.2993
+[Device d5 | Beta 3] energy_term=22.8193, ratio=3.2461, penalty=2.2461
+[Device d5 | Beta 4] energy_term=33.7796, ratio=4.3302, penalty=3.3302
+[Device d5 | Beta 5] energy_term=48.4526, ratio=5.7815, penalty=4.7815
+[Device d5 | Beta 6] energy_term=65.1567, ratio=7.4337, penalty=6.4337
+[Device d5 | Beta 7] energy_term=81.6888, ratio=9.0689, penalty=8.0689
+[Device d6 | Beta 0] energy_term=0.0992, ratio=0.5996, penalty=0.0000
+[Device d6 | Beta 1] energy_term=0.1592, ratio=0.9627, penalty=0.0000
+[Device d6 | Beta 2] energy_term=5.5821, ratio=1.5329, penalty=0.5329
+[Device d6 | Beta 3] energy_term=11.9988, ratio=2.1641, penalty=1.1641
+[Device d6 | Beta 4] energy_term=19.3455, ratio=2.8868, penalty=1.8868
+[Device d6 | Beta 5] energy_term=29.1809, ratio=3.8543, penalty=2.8543
+[Device d6 | Beta 6] energy_term=40.3777, ratio=4.9558, penalty=3.9558
+[Device d6 | Beta 7] energy_term=51.4592, ratio=6.0459, penalty=5.0459
+[Device d7 | Beta 0] energy_term=0.0992, ratio=0.8995, penalty=0.0000
+[Device d7 | Beta 1] energy_term=4.6004, ratio=1.4441, penalty=0.4441
+[Device d7 | Beta 2] energy_term=13.2463, ratio=2.2993, penalty=1.2993
+[Device d7 | Beta 3] energy_term=22.8193, ratio=3.2461, penalty=2.2461
+[Device d7 | Beta 4] energy_term=33.7796, ratio=4.3302, penalty=3.3302
+[Device d7 | Beta 5] energy_term=48.4526, ratio=5.7815, penalty=4.7815
+[Device d7 | Beta 6] energy_term=65.1567, ratio=7.4337, penalty=6.4337
+[Device d7 | Beta 7] energy_term=81.6888, ratio=9.0689, penalty=8.0689
+[Device d8 | Beta 0] energy_term=2.0919, ratio=1.1993, penalty=0.1993
+[Device d8 | Beta 1] energy_term=9.4141, ratio=1.9255, penalty=0.9255
+[Device d8 | Beta 2] energy_term=20.9106, ratio=3.0657, penalty=2.0657
+[Device d8 | Beta 3] energy_term=33.6397, ratio=4.3282, penalty=3.3282
+[Device d8 | Beta 4] energy_term=48.2136, ratio=5.7736, penalty=4.7736
+[Device d8 | Beta 5] energy_term=67.7243, ratio=7.7087, penalty=6.7087
+[Device d8 | Beta 6] energy_term=89.9357, ratio=9.9116, penalty=8.9116
+[Device d8 | Beta 7] energy_term=111.9184, ratio=12.0918, penalty=11.0918
+[Device d9 | Beta 0] energy_term=0.0992, ratio=0.5996, penalty=0.0000
+[Device d9 | Beta 1] energy_term=0.1592, ratio=0.9627, penalty=0.0000
+[Device d9 | Beta 2] energy_term=5.5821, ratio=1.5329, penalty=0.5329
+[Device d9 | Beta 3] energy_term=11.9988, ratio=2.1641, penalty=1.1641
+[Device d9 | Beta 4] energy_term=19.3455, ratio=2.8868, penalty=1.8868
+[Device d9 | Beta 5] energy_term=29.1809, ratio=3.8543, penalty=2.8543
+[Device d9 | Beta 6] energy_term=40.3777, ratio=4.9558, penalty=3.9558
+[Device d9 | Beta 7] energy_term=51.4592, ratio=6.0459, penalty=5.0459
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xf6c58184
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [4e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 132 rows and 180 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -1992.95 
+No other solutions better than -1992.95
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.992952368806e+03, best bound -1.992952368806e+03, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+[Device d0] z=1, k=0
+[Device d1] z=1, k=0
+[Device d2] z=1, k=0
+[Device d3] z=1, k=0
+[Device d4] z=1, k=0
+[Device d5] z=1, k=0
+[Device d6] z=1, k=0
+[Device d7] z=1, k=0
+[Device d8] z=1, k=0
+[Device d9] z=1, k=0
+================================================
+
+{'status': 'OPTIMAL', 'obj': -1992.9523688064635, 'active_devices': 10, 'total_energy_J': 1131.62766304, 'total_latency_s': 783.4072561708373, 'total_upload_bytes': 785412096.0, 'total_batches': 28, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': 'block3_conv3', 'd3': 'block3_conv3', 'd4': 'block3_conv3', 'd5': 'block3_conv3', 'd6': 'block3_conv3', 'd7': 'block3_conv3', 'd8': 'block3_conv3', 'd9': 'block3_conv3'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2, 'd5': 3, 'd6': 2, 'd7': 3, 'd8': 4, 'd9': 2}, 'energy_J': {'d0': 80.83054736, 'd1': 80.83054736, 'd2': 161.66109472, 'd3': 161.66109472, 'd4': 80.83054736, 'd5': 121.24582104, 'd6': 80.83054736, 'd7': 121.24582104, 'd8': 161.66109472, 'd9': 80.83054736}, 'latency_s': {'d0': 55.963375440774094, 'd1': 55.963375440774094, 'd2': 111.90675088154818, 'd3': 111.90675088154818, 'd4': 55.963375440774094, 'd5': 83.93506316116112, 'd6': 55.963375440774094, 'd7': 83.93506316116112, 'd8': 111.90675088154818, 'd9': 55.963375440774094}, 'upload_bytes': {'d0': 56100864.0, 'd1': 56100864.0, 'd2': 112201728.0, 'd3': 112201728.0, 'd4': 56100864.0, 'd5': 84151296.0, 'd6': 56100864.0, 'd7': 84151296.0, 'd8': 112201728.0, 'd9': 56100864.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 1 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=199.1695, E_allowed=22.1299, alpha/E_allowed=0.4519
+[Device d1] Erem=199.1695, E_allowed=22.1299, alpha/E_allowed=0.4519
+[Device d2] Erem=118.3389, E_allowed=13.1488, alpha/E_allowed=0.7605
+[Device d3] Erem=118.3389, E_allowed=13.1488, alpha/E_allowed=0.7605
+[Device d4] Erem=199.1695, E_allowed=22.1299, alpha/E_allowed=0.4519
+[Device d5] Erem=158.7542, E_allowed=17.6394, alpha/E_allowed=0.5669
+[Device d6] Erem=199.1695, E_allowed=22.1299, alpha/E_allowed=0.4519
+[Device d7] Erem=158.7542, E_allowed=17.6394, alpha/E_allowed=0.5669
+[Device d8] Erem=118.3389, E_allowed=13.1488, alpha/E_allowed=0.7605
+[Device d9] Erem=199.1695, E_allowed=22.1299, alpha/E_allowed=0.4519
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=199.1695, mem=974549656
+[Device Constraint][d1] Erem=199.1695, mem=966978347
+[Device Constraint][d2] Erem=118.3389, mem=968522457
+[Device Constraint][d3] Erem=118.3389, mem=972260626
+[Device Constraint][d4] Erem=199.1695, mem=969468285
+[Device Constraint][d5] Erem=158.7542, mem=970325585
+[Device Constraint][d6] Erem=199.1695, mem=971395545
+[Device Constraint][d7] Erem=158.7542, mem=973852152
+[Device Constraint][d8] Erem=118.3389, mem=974275444
+[Device Constraint][d9] Erem=199.1695, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=0.0992, ratio=0.7587, penalty=0.0000
+[Device d0 | Beta 1] energy_term=2.3404, ratio=1.2181, penalty=0.2181
+[Device d0 | Beta 2] energy_term=9.6480, ratio=1.9394, penalty=0.9394
+[Device d0 | Beta 3] energy_term=17.7392, ratio=2.7381, penalty=1.7381
+[Device d0 | Beta 4] energy_term=27.0029, ratio=3.6525, penalty=2.6525
+[Device d0 | Beta 5] energy_term=39.4047, ratio=4.8767, penalty=3.8767
+[Device d0 | Beta 6] energy_term=53.5232, ratio=6.2703, penalty=5.2703
+[Device d0 | Beta 7] energy_term=67.4962, ratio=7.6496, penalty=6.6496
+[Device d1 | Beta 0] energy_term=5.2731, ratio=1.5174, penalty=0.5174
+[Device d1 | Beta 1] energy_term=14.5216, ratio=2.4362, penalty=1.4362
+[Device d1 | Beta 2] energy_term=29.0425, ratio=3.8789, penalty=2.8789
+[Device d1 | Beta 3] energy_term=45.1204, ratio=5.4762, penalty=4.4762
+[Device d1 | Beta 4] energy_term=63.5283, ratio=7.3051, penalty=6.3051
+[Device d1 | Beta 5] energy_term=88.1719, ratio=9.7534, penalty=8.7534
+[Device d1 | Beta 6] energy_term=116.2267, ratio=12.5407, penalty=11.5407
+[Device d1 | Beta 7] energy_term=143.9925, ratio=15.2992, penalty=14.2992
+[Device d2 | Beta 0] energy_term=28.4066, ratio=3.8307, penalty=2.8307
+[Device d2 | Beta 1] energy_term=51.6635, ratio=6.1504, penalty=5.1504
+[Device d2 | Beta 2] energy_term=88.1787, ratio=9.7925, penalty=8.7925
+[Device d2 | Beta 3] energy_term=128.6092, ratio=13.8251, penalty=12.8251
+[Device d2 | Beta 4] energy_term=174.8991, ratio=18.4422, penalty=17.4422
+[Device d2 | Beta 5] energy_term=236.8694, ratio=24.6232, penalty=23.6232
+[Device d2 | Beta 6] energy_term=307.4176, ratio=31.6598, penalty=30.6598
+[Device d2 | Beta 7] energy_term=377.2394, ratio=38.6239, penalty=37.6239
+[Device d3 | Beta 0] energy_term=2.8683, ratio=1.2769, penalty=0.2769
+[Device d3 | Beta 1] energy_term=10.6607, ratio=2.0501, penalty=1.0501
+[Device d3 | Beta 2] energy_term=22.8953, ratio=3.2642, penalty=2.2642
+[Device d3 | Beta 3] energy_term=36.4417, ratio=4.6084, penalty=3.6084
+[Device d3 | Beta 4] energy_term=51.9513, ratio=6.1474, penalty=5.1474
+[Device d3 | Beta 5] energy_term=72.7148, ratio=8.2077, penalty=7.2077
+[Device d3 | Beta 6] energy_term=96.3523, ratio=10.5533, penalty=9.5533
+[Device d3 | Beta 7] energy_term=119.7465, ratio=12.8746, penalty=11.8746
+[Device d4 | Beta 0] energy_term=0.0992, ratio=0.7587, penalty=0.0000
+[Device d4 | Beta 1] energy_term=2.3404, ratio=1.2181, penalty=0.2181
+[Device d4 | Beta 2] energy_term=9.6480, ratio=1.9394, penalty=0.9394
+[Device d4 | Beta 3] energy_term=17.7392, ratio=2.7381, penalty=1.7381
+[Device d4 | Beta 4] energy_term=27.0029, ratio=3.6525, penalty=2.6525
+[Device d4 | Beta 5] energy_term=39.4047, ratio=4.8767, penalty=3.8767
+[Device d4 | Beta 6] energy_term=53.5232, ratio=6.2703, penalty=5.2703
+[Device d4 | Beta 7] energy_term=67.4962, ratio=7.6496, penalty=6.6496
+[Device d5 | Beta 0] energy_term=4.3768, ratio=1.4278, penalty=0.4278
+[Device d5 | Beta 1] energy_term=13.0826, ratio=2.2923, penalty=1.2923
+[Device d5 | Beta 2] energy_term=26.7513, ratio=3.6498, penalty=2.6498
+[Device d5 | Beta 3] energy_term=41.8857, ratio=5.1528, penalty=4.1528
+[Device d5 | Beta 4] energy_term=59.2135, ratio=6.8736, penalty=5.8736
+[Device d5 | Beta 5] energy_term=82.4109, ratio=9.1773, penalty=8.1773
+[Device d5 | Beta 6] energy_term=108.8193, ratio=11.8000, penalty=10.8000
+[Device d5 | Beta 7] energy_term=134.9557, ratio=14.3956, penalty=13.3956
+[Device d6 | Beta 0] energy_term=5.2731, ratio=1.5174, penalty=0.5174
+[Device d6 | Beta 1] energy_term=14.5216, ratio=2.4362, penalty=1.4362
+[Device d6 | Beta 2] energy_term=29.0425, ratio=3.8789, penalty=2.8789
+[Device d6 | Beta 3] energy_term=45.1204, ratio=5.4762, penalty=4.4762
+[Device d6 | Beta 4] energy_term=63.5283, ratio=7.3051, penalty=6.3051
+[Device d6 | Beta 5] energy_term=88.1719, ratio=9.7534, penalty=8.7534
+[Device d6 | Beta 6] energy_term=116.2267, ratio=12.5407, penalty=11.5407
+[Device d6 | Beta 7] energy_term=143.9925, ratio=15.2992, penalty=14.2992
+[Device d7 | Beta 0] energy_term=4.3768, ratio=1.4278, penalty=0.4278
+[Device d7 | Beta 1] energy_term=13.0826, ratio=2.2923, penalty=1.2923
+[Device d7 | Beta 2] energy_term=26.7513, ratio=3.6498, penalty=2.6498
+[Device d7 | Beta 3] energy_term=41.8857, ratio=5.1528, penalty=4.1528
+[Device d7 | Beta 4] energy_term=59.2135, ratio=6.8736, penalty=5.8736
+[Device d7 | Beta 5] energy_term=82.4109, ratio=9.1773, penalty=8.1773
+[Device d7 | Beta 6] energy_term=108.8193, ratio=11.8000, penalty=10.8000
+[Device d7 | Beta 7] energy_term=134.9557, ratio=14.3956, penalty=13.3956
+[Device d8 | Beta 0] energy_term=2.8683, ratio=1.2769, penalty=0.2769
+[Device d8 | Beta 1] energy_term=10.6607, ratio=2.0501, penalty=1.0501
+[Device d8 | Beta 2] energy_term=22.8953, ratio=3.2642, penalty=2.2642
+[Device d8 | Beta 3] energy_term=36.4417, ratio=4.6084, penalty=3.6084
+[Device d8 | Beta 4] energy_term=51.9513, ratio=6.1474, penalty=5.1474
+[Device d8 | Beta 5] energy_term=72.7148, ratio=8.2077, penalty=7.2077
+[Device d8 | Beta 6] energy_term=96.3523, ratio=10.5533, penalty=9.5533
+[Device d8 | Beta 7] energy_term=119.7465, ratio=12.8746, penalty=11.8746
+[Device d9 | Beta 0] energy_term=1.4796, ratio=1.1380, penalty=0.1380
+[Device d9 | Beta 1] energy_term=8.4310, ratio=1.8272, penalty=0.8272
+[Device d9 | Beta 2] energy_term=19.3452, ratio=2.9092, penalty=1.9092
+[Device d9 | Beta 3] energy_term=31.4298, ratio=4.1072, penalty=3.1072
+[Device d9 | Beta 4] energy_term=45.2656, ratio=5.4788, penalty=4.4788
+[Device d9 | Beta 5] energy_term=63.7883, ratio=7.3151, penalty=6.3151
+[Device d9 | Beta 6] energy_term=84.8749, ratio=9.4055, penalty=8.4055
+[Device d9 | Beta 7] energy_term=105.7444, ratio=11.4744, penalty=10.4744
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xbe22794b
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 132 rows and 180 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -1705.49 
+No other solutions better than -1705.49
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.705488994733e+03, best bound -1.705488994733e+03, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+[Device d0] z=1, k=0
+[Device d1] z=1, k=0
+[Device d2] z=1, k=0
+[Device d3] z=1, k=0
+[Device d4] z=1, k=0
+[Device d5] z=1, k=0
+[Device d6] z=1, k=0
+[Device d7] z=1, k=0
+[Device d8] z=1, k=0
+[Device d9] z=1, k=0
+================================================
+
+{'status': 'OPTIMAL', 'obj': -1705.4889947331592, 'active_devices': 10, 'total_energy_J': 740.5478956, 'total_latency_s': 796.3224877379727, 'total_upload_bytes': 831798272.0, 'total_batches': 31, 'beta_choice': {'d0': 'block3_conv3', 'd1': 'block3_conv3', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block3_conv3', 'd5': 'block1_pool', 'd6': 'block3_conv3', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block3_conv3'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2, 'd5': 3, 'd6': 4, 'd7': 3, 'd8': 2, 'd9': 3}, 'energy_J': {'d0': 80.83054736, 'd1': 161.66109472, 'd2': 50.3695464, 'd3': 16.7898488, 'd4': 80.83054736, 'd5': 25.1847732, 'd6': 161.66109472, 'd7': 25.1847732, 'd8': 16.7898488, 'd9': 121.24582104}, 'latency_s': {'d0': 55.9833754407741, 'd1': 111.94675088154818, 'd2': 141.16893947456262, 'd3': 47.06964649152087, 'd4': 55.9833754407741, 'd5': 70.5944697372813, 'd6': 111.94675088154818, 'd7': 70.5944697372813, 'd8': 47.06964649152087, 'd9': 83.96506316116113}, 'upload_bytes': {'d0': 56100864.0, 'd1': 112201728.0, 'd2': 154140672.0, 'd3': 51380224.0, 'd4': 56100864.0, 'd5': 77070336.0, 'd6': 112201728.0, 'd7': 77070336.0, 'd8': 51380224.0, 'd9': 84151296.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 2 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=118.3389, E_allowed=14.7924, alpha/E_allowed=0.6760
+[Device d1] Erem=37.5084, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=67.9694, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=101.5491, E_allowed=12.6936, alpha/E_allowed=0.7878
+[Device d4] Erem=118.3389, E_allowed=14.7924, alpha/E_allowed=0.6760
+[Device d5] Erem=133.5694, E_allowed=16.6962, alpha/E_allowed=0.5989
+[Device d6] Erem=37.5084, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=133.5694, E_allowed=16.6962, alpha/E_allowed=0.5989
+[Device d8] Erem=101.5491, E_allowed=12.6936, alpha/E_allowed=0.7878
+[Device d9] Erem=77.9236, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=118.3389, mem=974549656
+[Device Constraint][d1] Erem=37.5084, mem=966978347
+[Device Constraint][d2] Erem=67.9694, mem=968522457
+[Device Constraint][d3] Erem=101.5491, mem=972260626
+[Device Constraint][d4] Erem=118.3389, mem=969468285
+[Device Constraint][d5] Erem=133.5694, mem=970325585
+[Device Constraint][d6] Erem=37.5084, mem=971395545
+[Device Constraint][d7] Erem=133.5694, mem=973852152
+[Device Constraint][d8] Erem=101.5491, mem=974275444
+[Device Constraint][d9] Erem=77.9236, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=1.4495, ratio=1.1350, penalty=0.1350
+[Device d0 | Beta 1] energy_term=8.3827, ratio=1.8223, penalty=0.8223
+[Device d0 | Beta 2] energy_term=19.2684, ratio=2.9015, penalty=1.9015
+[Device d0 | Beta 3] energy_term=31.3213, ratio=4.0963, penalty=3.0963
+[Device d0 | Beta 4] energy_term=45.1209, ratio=5.4643, penalty=4.4643
+[Device d0 | Beta 5] energy_term=63.5951, ratio=7.2958, penalty=6.2958
+[Device d0 | Beta 6] energy_term=84.6265, ratio=9.3807, penalty=8.3807
+[Device d0 | Beta 7] energy_term=105.4413, ratio=11.4441, penalty=10.4441
+[Device d1 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d1 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d1 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d1 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d1 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d1 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d1 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d1 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d2 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d2 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d2 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d2 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d2 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d2 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d2 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d2 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d3 | Beta 0] energy_term=16.5532, ratio=2.6454, penalty=1.6454
+[Device d3 | Beta 1] energy_term=32.6323, ratio=4.2473, penalty=3.2473
+[Device d3 | Beta 2] energy_term=57.8777, ratio=6.7624, penalty=5.7624
+[Device d3 | Beta 3] energy_term=85.8301, ratio=9.5472, penalty=8.5472
+[Device d3 | Beta 4] energy_term=117.8335, ratio=12.7356, penalty=11.7356
+[Device d3 | Beta 5] energy_term=160.6780, ratio=17.0040, penalty=16.0040
+[Device d3 | Beta 6] energy_term=209.4528, ratio=21.8633, penalty=20.8633
+[Device d3 | Beta 7] energy_term=257.7254, ratio=26.6725, penalty=25.6725
+[Device d4 | Beta 0] energy_term=24.1502, ratio=3.4051, penalty=2.4051
+[Device d4 | Beta 1] energy_term=44.8297, ratio=5.4670, penalty=4.4670
+[Device d4 | Beta 2] energy_term=77.2981, ratio=8.7045, penalty=7.7045
+[Device d4 | Beta 3] energy_term=113.2479, ratio=12.2890, penalty=11.2890
+[Device d4 | Beta 4] energy_term=154.4078, ratio=16.3930, penalty=15.3930
+[Device d4 | Beta 5] energy_term=209.5103, ratio=21.8873, penalty=20.8873
+[Device d4 | Beta 6] energy_term=272.2401, ratio=28.1420, penalty=27.1420
+[Device d4 | Beta 7] energy_term=334.3239, ratio=34.3324, penalty=33.3324
+[Device d5 | Beta 0] energy_term=10.2114, ratio=2.0112, penalty=1.0112
+[Device d5 | Beta 1] energy_term=22.4503, ratio=3.2291, penalty=2.2291
+[Device d5 | Beta 2] energy_term=41.6663, ratio=5.1413, penalty=4.1413
+[Device d5 | Beta 3] energy_term=62.9428, ratio=7.2585, penalty=6.2585
+[Device d5 | Beta 4] energy_term=87.3027, ratio=9.6825, penalty=8.6825
+[Device d5 | Beta 5] energy_term=119.9145, ratio=12.9277, penalty=11.9277
+[Device d5 | Beta 6] energy_term=157.0403, ratio=16.6221, penalty=15.6221
+[Device d5 | Beta 7] energy_term=193.7838, ratio=20.2784, penalty=19.2784
+[Device d6 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d6 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d6 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d6 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d6 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d6 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d6 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d6 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d7 | Beta 0] energy_term=10.2114, ratio=2.0112, penalty=1.0112
+[Device d7 | Beta 1] energy_term=22.4503, ratio=3.2291, penalty=2.2291
+[Device d7 | Beta 2] energy_term=41.6663, ratio=5.1413, penalty=4.1413
+[Device d7 | Beta 3] energy_term=62.9428, ratio=7.2585, penalty=6.2585
+[Device d7 | Beta 4] energy_term=87.3027, ratio=9.6825, penalty=8.6825
+[Device d7 | Beta 5] energy_term=119.9145, ratio=12.9277, penalty=11.9277
+[Device d7 | Beta 6] energy_term=157.0403, ratio=16.6221, penalty=15.6221
+[Device d7 | Beta 7] energy_term=193.7838, ratio=20.2784, penalty=19.2784
+[Device d8 | Beta 0] energy_term=3.3262, ratio=1.3227, penalty=0.3227
+[Device d8 | Beta 1] energy_term=11.3957, ratio=2.1237, penalty=1.1237
+[Device d8 | Beta 2] energy_term=24.0656, ratio=3.3812, penalty=2.3812
+[Device d8 | Beta 3] energy_term=38.0940, ratio=4.7736, penalty=3.7736
+[Device d8 | Beta 4] energy_term=54.1555, ratio=6.3678, penalty=5.3678
+[Device d8 | Beta 5] energy_term=75.6577, ratio=8.5020, penalty=7.5020
+[Device d8 | Beta 6] energy_term=100.1363, ratio=10.9317, penalty=9.9317
+[Device d8 | Beta 7] energy_term=124.3627, ratio=13.3363, penalty=12.3363
+[Device d9 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d9 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d9 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d9 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d9 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d9 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d9 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d9 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x57f1ff2e
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 132 rows and 180 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -1390.76 
+No other solutions better than -1390.76
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -1.390762853786e+03, best bound -1.390762853786e+03, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+[Device d0] z=1, k=0
+[Device d1] z=1, k=0
+[Device d2] z=1, k=0
+[Device d3] z=1, k=0
+[Device d4] z=1, k=0
+[Device d5] z=1, k=0
+[Device d6] z=1, k=0
+[Device d7] z=1, k=0
+[Device d8] z=1, k=0
+[Device d9] z=1, k=0
+================================================
+
+{'status': 'OPTIMAL', 'obj': -1390.7628537855537, 'active_devices': 10, 'total_energy_J': 302.21727839999994, 'total_latency_s': 847.0936368473757, 'total_upload_bytes': 924844032.0, 'total_batches': 36, 'beta_choice': {'d0': 'block1_pool', 'd1': 'block1_pool', 'd2': 'block1_pool', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': 'block1_pool', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 1, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 0, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 6, 'd3': 4, 'd4': 6, 'd5': 4, 'd6': 2, 'd7': 4, 'd8': 2, 'd9': 4}, 'energy_J': {'d0': 16.7898488, 'd1': 16.7898488, 'd2': 50.3695464, 'd3': 33.5796976, 'd4': 50.3695464, 'd5': 33.5796976, 'd6': 16.7898488, 'd7': 33.5796976, 'd8': 16.7898488, 'd9': 33.5796976}, 'latency_s': {'d0': 47.06964649152087, 'd1': 47.06964649152087, 'd2': 141.16893947456262, 'd3': 94.11929298304173, 'd4': 141.16893947456262, 'd5': 94.11929298304173, 'd6': 47.06964649152087, 'd7': 94.11929298304173, 'd8': 47.06964649152087, 'd9': 94.11929298304173}, 'upload_bytes': {'d0': 51380224.0, 'd1': 51380224.0, 'd2': 154140672.0, 'd3': 102760448.0, 'd4': 154140672.0, 'd5': 102760448.0, 'd6': 51380224.0, 'd7': 102760448.0, 'd8': 51380224.0, 'd9': 102760448.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRAIN', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 3 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=101.5491, E_allowed=14.5070, alpha/E_allowed=0.6893
+[Device d1] Erem=20.7185, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=17.5998, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=67.9694, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d4] Erem=67.9694, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=99.9897, E_allowed=14.2842, alpha/E_allowed=0.7001
+[Device d6] Erem=20.7185, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=99.9897, E_allowed=14.2842, alpha/E_allowed=0.7001
+[Device d8] Erem=84.7592, E_allowed=12.1085, alpha/E_allowed=0.8259
+[Device d9] Erem=44.3439, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=101.5491, mem=974549656
+[Device Constraint][d1] Erem=20.7185, mem=966978347
+[Device Constraint][d2] Erem=17.5998, mem=968522457
+[Device Constraint][d3] Erem=67.9694, mem=972260626
+[Device Constraint][d4] Erem=67.9694, mem=969468285
+[Device Constraint][d5] Erem=99.9897, mem=970325585
+[Device Constraint][d6] Erem=20.7185, mem=971395545
+[Device Constraint][d7] Erem=99.9897, mem=973852152
+[Device Constraint][d8] Erem=84.7592, mem=974275444
+[Device Constraint][d9] Erem=44.3439, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=1.6728, ratio=1.1574, penalty=0.1574
+[Device d0 | Beta 1] energy_term=8.7412, ratio=1.8582, penalty=0.8582
+[Device d0 | Beta 2] energy_term=19.8391, ratio=2.9586, penalty=1.9586
+[Device d0 | Beta 3] energy_term=32.1270, ratio=4.1769, penalty=3.1769
+[Device d0 | Beta 4] energy_term=46.1958, ratio=5.5718, penalty=4.5718
+[Device d0 | Beta 5] energy_term=65.0302, ratio=7.4393, penalty=6.4393
+[Device d0 | Beta 6] energy_term=86.4717, ratio=9.5652, penalty=8.5652
+[Device d0 | Beta 7] energy_term=107.6924, ratio=11.6692, penalty=10.6692
+[Device d1 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d1 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d1 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d1 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d1 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d1 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d1 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d1 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d2 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d2 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d2 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d2 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d2 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d2 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d2 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d2 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d3 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d3 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d3 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d3 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d3 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d3 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d3 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d3 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d4 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d4 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d4 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d4 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d4 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d4 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d4 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d4 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d5 | Beta 0] energy_term=7.7303, ratio=1.7631, penalty=0.7631
+[Device d5 | Beta 1] energy_term=18.4668, ratio=2.8308, penalty=1.8308
+[Device d5 | Beta 2] energy_term=35.3240, ratio=4.5070, penalty=3.5070
+[Device d5 | Beta 3] energy_term=53.9887, ratio=6.3631, penalty=5.3631
+[Device d5 | Beta 4] energy_term=75.3583, ratio=8.4881, penalty=7.4881
+[Device d5 | Beta 5] energy_term=103.9668, ratio=11.3329, penalty=10.3329
+[Device d5 | Beta 6] energy_term=136.5352, ratio=14.5716, penalty=13.5716
+[Device d5 | Beta 7] energy_term=168.7683, ratio=17.7768, penalty=16.7768
+[Device d6 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d6 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d6 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d6 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d6 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d6 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d6 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d6 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d7 | Beta 0] energy_term=1.8533, ratio=1.1754, penalty=0.1754
+[Device d7 | Beta 1] energy_term=9.0310, ratio=1.8872, penalty=0.8872
+[Device d7 | Beta 2] energy_term=20.3005, ratio=3.0047, penalty=2.0047
+[Device d7 | Beta 3] energy_term=32.7784, ratio=4.2420, penalty=3.2420
+[Device d7 | Beta 4] energy_term=47.0647, ratio=5.6587, penalty=4.6587
+[Device d7 | Beta 5] energy_term=66.1904, ratio=7.5553, penalty=6.5553
+[Device d7 | Beta 6] energy_term=87.9634, ratio=9.7144, penalty=8.7144
+[Device d7 | Beta 7] energy_term=109.5122, ratio=11.8512, penalty=10.8512
+[Device d8 | Beta 0] energy_term=10.8985, ratio=2.0799, penalty=1.0799
+[Device d8 | Beta 1] energy_term=23.5535, ratio=3.3394, penalty=2.3394
+[Device d8 | Beta 2] energy_term=43.4228, ratio=5.3169, penalty=4.3169
+[Device d8 | Beta 3] energy_term=65.4226, ratio=7.5065, penalty=6.5065
+[Device d8 | Beta 4] energy_term=90.6106, ratio=10.0133, penalty=9.0133
+[Device d8 | Beta 5] energy_term=124.3311, ratio=13.3694, penalty=12.3694
+[Device d8 | Beta 6] energy_term=162.7191, ratio=17.1899, penalty=16.1899
+[Device d8 | Beta 7] energy_term=200.7117, ratio=20.9712, penalty=19.9712
+[Device d9 | Beta 0] energy_term=15.2840, ratio=2.5185, penalty=1.5185
+[Device d9 | Beta 1] energy_term=30.5945, ratio=4.0435, penalty=3.0435
+[Device d9 | Beta 2] energy_term=54.6333, ratio=6.4380, penalty=5.4380
+[Device d9 | Beta 3] energy_term=81.2496, ratio=9.0892, penalty=8.0892
+[Device d9 | Beta 4] energy_term=111.7233, ratio=12.1246, penalty=11.1246
+[Device d9 | Beta 5] energy_term=152.5198, ratio=16.1882, penalty=15.1882
+[Device d9 | Beta 6] energy_term=198.9633, ratio=20.8144, penalty=19.8144
+[Device d9 | Beta 7] energy_term=244.9286, ratio=25.3929, penalty=24.3929
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xe2a4cd17
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [2e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 132 rows and 180 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -821.958 
+No other solutions better than -821.958
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -8.219583662206e+02, best bound -8.219583662206e+02, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+[Device d0] z=1, k=0
+[Device d1] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d2] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d3] z=1, k=0
+[Device d4] z=1, k=0
+[Device d5] z=1, k=0
+[Device d6] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d7] z=1, k=0
+[Device d8] z=1, k=0
+[Device d9] z=1, k=0
+================================================
+
+{'status': 'OPTIMAL', 'obj': -821.958366220628, 'active_devices': 7, 'total_energy_J': 188.4645486, 'total_latency_s': 563.7106378752549, 'total_upload_bytes': 2973719592.0, 'total_batches': 24, 'beta_choice': {'d0': 'block1_pool', 'd1': '', 'd2': '', 'd3': 'block1_pool', 'd4': 'block1_pool', 'd5': 'block1_pool', 'd6': '', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 1, 'd5': 1, 'd6': 0, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 1, 'd2': 1, 'd3': 0, 'd4': 0, 'd5': 0, 'd6': 1, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 2, 'd1': 1, 'd2': 1, 'd3': 2, 'd4': 6, 'd5': 3, 'd6': 1, 'd7': 2, 'd8': 3, 'd9': 3}, 'energy_J': {'d0': 16.7898488, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 16.7898488, 'd4': 50.3695464, 'd5': 25.1847732, 'd6': 4.0570454, 'd7': 16.7898488, 'd8': 25.1847732, 'd9': 25.1847732}, 'latency_s': {'d0': 47.06964649152087, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 47.06964649152087, 'd4': 141.16893947456262, 'd5': 70.5944697372813, 'd6': 23.18311657142857, 'd7': 47.06964649152087, 'd8': 70.5944697372813, 'd9': 70.5944697372813}, 'upload_bytes': {'d0': 51380224.0, 'd1': 811409080, 'd2': 811409080, 'd3': 51380224.0, 'd4': 154140672.0, 'd5': 77070336.0, 'd6': 811409080, 'd7': 51380224.0, 'd8': 77070336.0, 'd9': 77070336.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN', 'd5': 'TRAIN', 'd6': 'TRANSFER', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 4 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=84.7592, E_allowed=14.1265, alpha/E_allowed=0.7079
+[Device d1] Erem=16.6615, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=13.5428, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=51.1795, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d4] Erem=17.5998, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=74.8049, E_allowed=12.4675, alpha/E_allowed=0.8021
+[Device d6] Erem=16.6615, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=83.1999, E_allowed=13.8666, alpha/E_allowed=0.7212
+[Device d8] Erem=59.5744, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d9] Erem=19.1592, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=84.7592, mem=974549656
+[Device Constraint][d1] Erem=16.6615, mem=966978347
+[Device Constraint][d2] Erem=13.5428, mem=968522457
+[Device Constraint][d3] Erem=51.1795, mem=972260626
+[Device Constraint][d4] Erem=17.5998, mem=969468285
+[Device Constraint][d5] Erem=74.8049, mem=970325585
+[Device Constraint][d6] Erem=16.6615, mem=971395545
+[Device Constraint][d7] Erem=83.1999, mem=973852152
+[Device Constraint][d8] Erem=59.5744, mem=974275444
+[Device Constraint][d9] Erem=19.1592, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=25.7552, ratio=3.5656, penalty=2.5656
+[Device d0 | Beta 1] energy_term=47.4065, ratio=5.7247, penalty=4.7247
+[Device d0 | Beta 2] energy_term=81.4008, ratio=9.1147, penalty=8.1147
+[Device d0 | Beta 3] energy_term=119.0401, ratio=12.8682, penalty=11.8682
+[Device d0 | Beta 4] energy_term=162.1343, ratio=17.1657, penalty=16.1657
+[Device d0 | Beta 5] energy_term=219.8265, ratio=22.9189, penalty=21.9189
+[Device d0 | Beta 6] energy_term=285.5043, ratio=29.4685, penalty=28.4685
+[Device d0 | Beta 7] energy_term=350.5058, ratio=35.9506, penalty=34.9506
+[Device d1 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d1 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d1 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d1 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d1 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d1 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d1 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d1 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d2 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d2 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d2 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d2 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d2 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d2 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d2 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d2 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d3 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d3 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d3 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d3 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d3 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d3 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d3 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d3 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d4 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d4 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d4 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d4 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d4 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d4 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d4 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d4 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d5 | Beta 0] energy_term=3.5661, ratio=1.3467, penalty=0.3467
+[Device d5 | Beta 1] energy_term=11.7809, ratio=2.1622, penalty=1.1622
+[Device d5 | Beta 2] energy_term=24.6789, ratio=3.4425, penalty=2.4425
+[Device d5 | Beta 3] energy_term=38.9599, ratio=4.8602, penalty=3.8602
+[Device d5 | Beta 4] energy_term=55.3105, ratio=6.4833, penalty=5.4833
+[Device d5 | Beta 5] energy_term=77.1999, ratio=8.6562, penalty=7.6562
+[Device d5 | Beta 6] energy_term=102.1191, ratio=11.1299, penalty=10.1299
+[Device d5 | Beta 7] energy_term=126.7817, ratio=13.5782, penalty=12.5782
+[Device d6 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d6 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d6 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d6 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d6 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d6 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d6 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d6 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d7 | Beta 0] energy_term=8.2613, ratio=1.8162, penalty=0.8162
+[Device d7 | Beta 1] energy_term=19.3193, ratio=2.9160, penalty=1.9160
+[Device d7 | Beta 2] energy_term=36.6813, ratio=4.6428, penalty=3.6428
+[Device d7 | Beta 3] energy_term=55.9049, ratio=6.5547, penalty=5.5547
+[Device d7 | Beta 4] energy_term=77.9145, ratio=8.7437, penalty=7.7437
+[Device d7 | Beta 5] energy_term=107.3798, ratio=11.6742, penalty=10.6742
+[Device d7 | Beta 6] energy_term=140.9235, ratio=15.0104, penalty=14.0104
+[Device d7 | Beta 7] energy_term=174.1219, ratio=18.3122, penalty=17.3122
+[Device d8 | Beta 0] energy_term=15.2840, ratio=2.5185, penalty=1.5185
+[Device d8 | Beta 1] energy_term=30.5945, ratio=4.0435, penalty=3.0435
+[Device d8 | Beta 2] energy_term=54.6333, ratio=6.4380, penalty=5.4380
+[Device d8 | Beta 3] energy_term=81.2496, ratio=9.0892, penalty=8.0892
+[Device d8 | Beta 4] energy_term=111.7233, ratio=12.1246, penalty=11.1246
+[Device d8 | Beta 5] energy_term=152.5198, ratio=16.1882, penalty=15.1882
+[Device d8 | Beta 6] energy_term=198.9633, ratio=20.8144, penalty=19.8144
+[Device d8 | Beta 7] energy_term=244.9286, ratio=25.3929, penalty=24.3929
+[Device d9 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d9 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d9 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d9 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d9 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d9 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d9 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d9 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x19f7a0f7
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [3e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 132 rows and 180 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: -483.087 
+No other solutions better than -483.087
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.830869867717e+02, best bound -4.830869867717e+02, gap 0.0000%
+
+================ DEBUG: SOLUTION =================
+[Device d0] z=1, k=0
+[Device d1] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d2] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d3] z=1, k=0
+[Device d4] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d5] z=1, k=0
+[Device d6] z=0, k=1
+  ❌ DROPPED (energy too high OR reward too low)
+[Device d7] z=1, k=0
+[Device d8] z=1, k=0
+[Device d9] z=1, k=0
+================================================
+
+{'status': 'OPTIMAL', 'obj': -483.0869867717138, 'active_devices': 6, 'total_energy_J': 167.3368208, 'total_latency_s': 516.247284709402, 'total_upload_bytes': 3708058336.0, 'total_batches': 22, 'beta_choice': {'d0': 'block1_pool', 'd1': '', 'd2': '', 'd3': 'block1_pool', 'd4': '', 'd5': 'block1_pool', 'd6': '', 'd7': 'block1_pool', 'd8': 'block1_pool', 'd9': 'block1_pool'}, 'z': {'d0': 1, 'd1': 0, 'd2': 0, 'd3': 1, 'd4': 0, 'd5': 1, 'd6': 0, 'd7': 1, 'd8': 1, 'd9': 1}, 'k': {'d0': 0, 'd1': 1, 'd2': 1, 'd3': 0, 'd4': 1, 'd5': 0, 'd6': 1, 'd7': 0, 'd8': 0, 'd9': 0}, 'batches_used': {'d0': 6, 'd1': 1, 'd2': 1, 'd3': 2, 'd4': 1, 'd5': 2, 'd6': 1, 'd7': 3, 'd8': 3, 'd9': 2}, 'energy_J': {'d0': 50.3695464, 'd1': 4.0570454, 'd2': 4.0570454, 'd3': 16.7898488, 'd4': 4.0570454, 'd5': 16.7898488, 'd6': 4.0570454, 'd7': 25.1847732, 'd8': 25.1847732, 'd9': 16.7898488}, 'latency_s': {'d0': 141.14493947456262, 'd1': 23.18311657142857, 'd2': 23.18311657142857, 'd3': 47.06164649152087, 'd4': 23.18311657142857, 'd5': 47.06564649152087, 'd6': 23.18311657142857, 'd7': 70.5884697372813, 'd8': 70.5884697372813, 'd9': 47.06564649152087}, 'upload_bytes': {'d0': 154140672.0, 'd1': 811409080, 'd2': 811409080, 'd3': 51380224.0, 'd4': 811409080, 'd5': 51380224.0, 'd6': 811409080, 'd7': 77070336.0, 'd8': 77070336.0, 'd9': 51380224.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRANSFER', 'd5': 'TRAIN', 'd6': 'TRANSFER', 'd7': 'TRAIN', 'd8': 'TRAIN', 'd9': 'TRAIN'}}
+
+================ ROUND 5 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d1] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=9.4857, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d4] Erem=13.5428, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=58.0151, E_allowed=11.6030, alpha/E_allowed=0.8618
+[Device d6] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=58.0151, E_allowed=11.6030, alpha/E_allowed=0.8618
+[Device d8] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d9] Erem=2.3693, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=34.3897, mem=974549656
+[Device Constraint][d1] Erem=12.6044, mem=966978347
+[Device Constraint][d2] Erem=9.4857, mem=968522457
+[Device Constraint][d3] Erem=34.3897, mem=972260626
+[Device Constraint][d4] Erem=13.5428, mem=969468285
+[Device Constraint][d5] Erem=58.0151, mem=970325585
+[Device Constraint][d6] Erem=12.6044, mem=971395545
+[Device Constraint][d7] Erem=58.0151, mem=973852152
+[Device Constraint][d8] Erem=34.3897, mem=974275444
+[Device Constraint][d9] Erem=2.3693, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d0 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d0 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d0 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d0 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d0 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d0 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d0 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d1 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d1 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d1 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d1 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d1 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d1 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d1 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d1 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d2 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d2 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d2 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d2 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d2 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d2 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d2 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d2 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d3 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d3 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d3 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d3 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d3 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d3 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d3 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d3 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d4 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d4 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d4 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d4 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d4 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d4 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d4 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d4 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d5 | Beta 0] energy_term=11.8045, ratio=2.1705, penalty=1.1705
+[Device d5 | Beta 1] energy_term=25.0082, ratio=3.4849, penalty=2.4849
+[Device d5 | Beta 2] energy_term=45.7389, ratio=5.5485, penalty=4.5485
+[Device d5 | Beta 3] energy_term=68.6925, ratio=7.8335, penalty=6.8335
+[Device d5 | Beta 4] energy_term=94.9726, ratio=10.4495, penalty=9.4495
+[Device d5 | Beta 5] energy_term=130.1549, ratio=13.9517, penalty=12.9517
+[Device d5 | Beta 6] energy_term=170.2072, ratio=17.9388, penalty=16.9388
+[Device d5 | Beta 7] energy_term=209.8470, ratio=21.8847, penalty=20.8847
+[Device d6 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d6 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d6 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d6 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d6 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d6 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d6 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d6 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d7 | Beta 0] energy_term=19.0397, ratio=2.8940, penalty=1.8940
+[Device d7 | Beta 1] energy_term=36.6245, ratio=4.6465, penalty=3.6465
+[Device d7 | Beta 2] energy_term=64.2340, ratio=7.3980, penalty=6.3980
+[Device d7 | Beta 3] energy_term=94.8040, ratio=10.4446, penalty=9.4446
+[Device d7 | Beta 4] energy_term=129.8043, ratio=13.9327, penalty=12.9327
+[Device d7 | Beta 5] energy_term=176.6608, ratio=18.6023, penalty=17.6023
+[Device d7 | Beta 6] energy_term=230.0030, ratio=23.9183, penalty=22.9183
+[Device d7 | Beta 7] energy_term=282.7960, ratio=29.1796, penalty=28.1796
+[Device d8 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d8 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d8 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d8 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d8 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d8 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d8 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d8 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d9 | Beta 0] energy_term=15.2840, ratio=2.5185, penalty=1.5185
+[Device d9 | Beta 1] energy_term=30.5945, ratio=4.0435, penalty=3.0435
+[Device d9 | Beta 2] energy_term=54.6333, ratio=6.4380, penalty=5.4380
+[Device d9 | Beta 3] energy_term=81.2496, ratio=9.0892, penalty=8.0892
+[Device d9 | Beta 4] energy_term=111.7233, ratio=12.1246, penalty=11.1246
+[Device d9 | Beta 5] energy_term=152.5198, ratio=16.1882, penalty=15.1882
+[Device d9 | Beta 6] energy_term=198.9633, ratio=20.8144, penalty=19.8144
+[Device d9 | Beta 7] energy_term=244.9286, ratio=25.3929, penalty=24.3929
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x1b68ba1b
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [7e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 80 rows and 156 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+
+================ DEBUG: SOLUTION =================
+[WARNING] No solution available for device d0
+[Device d0] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d1
+[Device d1] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d2
+[Device d2] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d3
+[Device d3] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d4
+[Device d4] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d5
+[Device d5] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d6
+[Device d6] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d7
+[Device d7] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d8
+[Device d8] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d9
+[Device d9] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+================================================
+
+{'status': 'STATUS_4', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 6 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d1] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=9.4857, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d4] Erem=13.5428, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=58.0151, E_allowed=14.5038, alpha/E_allowed=0.6895
+[Device d6] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=58.0151, E_allowed=14.5038, alpha/E_allowed=0.6895
+[Device d8] Erem=34.3897, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d9] Erem=2.3693, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=34.3897, mem=974549656
+[Device Constraint][d1] Erem=12.6044, mem=966978347
+[Device Constraint][d2] Erem=9.4857, mem=968522457
+[Device Constraint][d3] Erem=34.3897, mem=972260626
+[Device Constraint][d4] Erem=13.5428, mem=969468285
+[Device Constraint][d5] Erem=58.0151, mem=970325585
+[Device Constraint][d6] Erem=12.6044, mem=971395545
+[Device Constraint][d7] Erem=58.0151, mem=973852152
+[Device Constraint][d8] Erem=34.3897, mem=974275444
+[Device Constraint][d9] Erem=2.3693, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d0 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d0 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d0 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d0 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d0 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d0 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d0 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+[Device d1 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d1 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d1 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d1 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d1 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d1 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d1 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d1 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d2 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d2 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d2 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d2 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d2 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d2 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d2 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d2 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d3 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d3 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d3 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d3 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d3 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d3 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d3 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d3 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d4 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d4 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d4 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d4 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d4 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d4 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d4 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d4 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d5 | Beta 0] energy_term=7.4635, ratio=1.7364, penalty=0.7364
+[Device d5 | Beta 1] energy_term=18.0384, ratio=2.7879, penalty=1.7879
+[Device d5 | Beta 2] energy_term=34.6418, ratio=4.4388, penalty=3.4388
+[Device d5 | Beta 3] energy_term=53.0256, ratio=6.2668, penalty=5.2668
+[Device d5 | Beta 4] energy_term=74.0735, ratio=8.3596, penalty=7.3596
+[Device d5 | Beta 5] energy_term=102.2515, ratio=11.1614, penalty=10.1614
+[Device d5 | Beta 6] energy_term=134.3297, ratio=14.3510, penalty=13.3510
+[Device d5 | Beta 7] energy_term=166.0776, ratio=17.5078, penalty=16.5078
+[Device d6 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d6 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d6 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d6 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d6 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d6 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d6 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d6 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d7 | Beta 0] energy_term=1.6754, ratio=1.1576, penalty=0.1576
+[Device d7 | Beta 1] energy_term=8.7453, ratio=1.8586, penalty=0.8586
+[Device d7 | Beta 2] energy_term=19.8457, ratio=2.9592, penalty=1.9592
+[Device d7 | Beta 3] energy_term=32.1364, ratio=4.1778, penalty=3.1778
+[Device d7 | Beta 4] energy_term=46.2082, ratio=5.5731, penalty=4.5731
+[Device d7 | Beta 5] energy_term=65.0468, ratio=7.4409, penalty=6.4409
+[Device d7 | Beta 6] energy_term=86.4930, ratio=9.5673, penalty=8.5673
+[Device d7 | Beta 7] energy_term=107.7184, ratio=11.6718, penalty=10.6718
+[Device d8 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d8 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d8 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d8 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d8 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d8 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d8 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d8 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d9 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d9 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d9 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d9 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d9 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d9 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d9 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d9 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xac952ce9
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [2e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 80 rows and 153 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+
+================ DEBUG: SOLUTION =================
+[WARNING] No solution available for device d0
+[Device d0] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d1
+[Device d1] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d2
+[Device d2] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d3
+[Device d3] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d4
+[Device d4] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d5
+[Device d5] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d6
+[Device d6] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d7
+[Device d7] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d8
+[Device d8] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d9
+[Device d9] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+================================================
+
+{'status': 'STATUS_4', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 7 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=34.3897, E_allowed=11.4632, alpha/E_allowed=0.8724
+[Device d1] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=9.4857, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=34.3897, E_allowed=11.4632, alpha/E_allowed=0.8724
+[Device d4] Erem=13.5428, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=58.0151, E_allowed=19.3384, alpha/E_allowed=0.5171
+[Device d6] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=58.0151, E_allowed=19.3384, alpha/E_allowed=0.5171
+[Device d8] Erem=34.3897, E_allowed=11.4632, alpha/E_allowed=0.8724
+[Device d9] Erem=2.3693, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=34.3897, mem=974549656
+[Device Constraint][d1] Erem=12.6044, mem=966978347
+[Device Constraint][d2] Erem=9.4857, mem=968522457
+[Device Constraint][d3] Erem=34.3897, mem=972260626
+[Device Constraint][d4] Erem=13.5428, mem=969468285
+[Device Constraint][d5] Erem=58.0151, mem=970325585
+[Device Constraint][d6] Erem=12.6044, mem=971395545
+[Device Constraint][d7] Erem=58.0151, mem=973852152
+[Device Constraint][d8] Erem=34.3897, mem=974275444
+[Device Constraint][d9] Erem=2.3693, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=4.7459, ratio=1.4647, penalty=0.4647
+[Device d0 | Beta 1] energy_term=13.6752, ratio=2.3516, penalty=1.3516
+[Device d0 | Beta 2] energy_term=27.6949, ratio=3.7441, penalty=2.7441
+[Device d0 | Beta 3] energy_term=43.2178, ratio=5.2860, penalty=4.2860
+[Device d0 | Beta 4] energy_term=60.9904, ratio=7.0513, penalty=6.0513
+[Device d0 | Beta 5] energy_term=84.7834, ratio=9.4146, penalty=8.4146
+[Device d0 | Beta 6] energy_term=111.8698, ratio=12.1050, penalty=11.1050
+[Device d0 | Beta 7] energy_term=138.6773, ratio=14.7677, penalty=13.7677
+[Device d1 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d1 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d1 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d1 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d1 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d1 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d1 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d1 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d2 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d2 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d2 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d2 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d2 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d2 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d2 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d2 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d3 | Beta 0] energy_term=4.7459, ratio=1.4647, penalty=0.4647
+[Device d3 | Beta 1] energy_term=13.6752, ratio=2.3516, penalty=1.3516
+[Device d3 | Beta 2] energy_term=27.6949, ratio=3.7441, penalty=2.7441
+[Device d3 | Beta 3] energy_term=43.2178, ratio=5.2860, penalty=4.2860
+[Device d3 | Beta 4] energy_term=60.9904, ratio=7.0513, penalty=6.0513
+[Device d3 | Beta 5] energy_term=84.7834, ratio=9.4146, penalty=8.4146
+[Device d3 | Beta 6] energy_term=111.8698, ratio=12.1050, penalty=11.1050
+[Device d3 | Beta 7] energy_term=138.6773, ratio=14.7677, penalty=13.7677
+[Device d4 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d4 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d4 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d4 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d4 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d4 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d4 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d4 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d5 | Beta 0] energy_term=0.0992, ratio=0.8682, penalty=0.0000
+[Device d5 | Beta 1] energy_term=4.0988, ratio=1.3940, penalty=0.3940
+[Device d5 | Beta 2] energy_term=12.4477, ratio=2.2194, penalty=1.2194
+[Device d5 | Beta 3] energy_term=21.6918, ratio=3.1334, penalty=2.1334
+[Device d5 | Beta 4] energy_term=32.2755, ratio=4.1798, penalty=3.1798
+[Device d5 | Beta 5] energy_term=46.4445, ratio=5.5807, penalty=4.5807
+[Device d5 | Beta 6] energy_term=62.5747, ratio=7.1755, penalty=6.1755
+[Device d5 | Beta 7] energy_term=78.5388, ratio=8.7539, penalty=7.7539
+[Device d6 | Beta 0] energy_term=15.2840, ratio=2.5185, penalty=1.5185
+[Device d6 | Beta 1] energy_term=30.5945, ratio=4.0435, penalty=3.0435
+[Device d6 | Beta 2] energy_term=54.6333, ratio=6.4380, penalty=5.4380
+[Device d6 | Beta 3] energy_term=81.2496, ratio=9.0892, penalty=8.0892
+[Device d6 | Beta 4] energy_term=111.7233, ratio=12.1246, penalty=11.1246
+[Device d6 | Beta 5] energy_term=152.5198, ratio=16.1882, penalty=15.1882
+[Device d6 | Beta 6] energy_term=198.9633, ratio=20.8144, penalty=19.8144
+[Device d6 | Beta 7] energy_term=244.9286, ratio=25.3929, penalty=24.3929
+[Device d7 | Beta 0] energy_term=0.0992, ratio=0.8682, penalty=0.0000
+[Device d7 | Beta 1] energy_term=4.0988, ratio=1.3940, penalty=0.3940
+[Device d7 | Beta 2] energy_term=12.4477, ratio=2.2194, penalty=1.2194
+[Device d7 | Beta 3] energy_term=21.6918, ratio=3.1334, penalty=2.1334
+[Device d7 | Beta 4] energy_term=32.2755, ratio=4.1798, penalty=3.1798
+[Device d7 | Beta 5] energy_term=46.4445, ratio=5.5807, penalty=4.5807
+[Device d7 | Beta 6] energy_term=62.5747, ratio=7.1755, penalty=6.1755
+[Device d7 | Beta 7] energy_term=78.5388, ratio=8.7539, penalty=7.7539
+[Device d8 | Beta 0] energy_term=12.0692, ratio=2.1970, penalty=1.1970
+[Device d8 | Beta 1] energy_term=25.4332, ratio=3.5274, penalty=2.5274
+[Device d8 | Beta 2] energy_term=46.4156, ratio=5.6162, penalty=4.6162
+[Device d8 | Beta 3] energy_term=69.6478, ratio=7.9290, penalty=6.9290
+[Device d8 | Beta 4] energy_term=96.2469, ratio=10.5769, penalty=9.5769
+[Device d8 | Beta 5] energy_term=131.8564, ratio=14.1219, penalty=13.1219
+[Device d8 | Beta 6] energy_term=172.3949, ratio=18.1575, penalty=17.1575
+[Device d8 | Beta 7] energy_term=212.5159, ratio=22.1516, penalty=21.1516
+[Device d9 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d9 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d9 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d9 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d9 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d9 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d9 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d9 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x8bc085f1
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 3e+00]
+  RHS range        [1e-01, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 80 rows and 152 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+
+================ DEBUG: SOLUTION =================
+[WARNING] No solution available for device d0
+[Device d0] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d1
+[Device d1] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d2
+[Device d2] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d3
+[Device d3] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d4
+[Device d4] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d5
+[Device d5] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d6
+[Device d6] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d7
+[Device d7] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d8
+[Device d8] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d9
+[Device d9] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+================================================
+
+{'status': 'STATUS_4', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 8 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=34.3897, E_allowed=17.1948, alpha/E_allowed=0.5816
+[Device d1] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d2] Erem=9.4857, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=34.3897, E_allowed=17.1948, alpha/E_allowed=0.5816
+[Device d4] Erem=13.5428, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d5] Erem=58.0151, E_allowed=29.0075, alpha/E_allowed=0.3447
+[Device d6] Erem=12.6044, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d7] Erem=58.0151, E_allowed=29.0075, alpha/E_allowed=0.3447
+[Device d8] Erem=34.3897, E_allowed=17.1948, alpha/E_allowed=0.5816
+[Device d9] Erem=2.3693, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=34.3897, mem=974549656
+[Device Constraint][d1] Erem=12.6044, mem=966978347
+[Device Constraint][d2] Erem=9.4857, mem=968522457
+[Device Constraint][d3] Erem=34.3897, mem=972260626
+[Device Constraint][d4] Erem=13.5428, mem=969468285
+[Device Constraint][d5] Erem=58.0151, mem=970325585
+[Device Constraint][d6] Erem=12.6044, mem=971395545
+[Device Constraint][d7] Erem=58.0151, mem=973852152
+[Device Constraint][d8] Erem=34.3897, mem=974275444
+[Device Constraint][d9] Erem=2.3693, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=9.6281, ratio=1.9529, penalty=0.9529
+[Device d0 | Beta 1] energy_term=21.5138, ratio=3.1355, penalty=2.1355
+[Device d0 | Beta 2] energy_term=40.1753, ratio=4.9922, penalty=3.9922
+[Device d0 | Beta 3] energy_term=60.8378, ratio=7.0480, penalty=6.0480
+[Device d0 | Beta 4] energy_term=84.4947, ratio=9.4017, penalty=8.4017
+[Device d0 | Beta 5] energy_term=116.1654, ratio=12.5528, penalty=11.5528
+[Device d0 | Beta 6] energy_term=152.2199, ratio=16.1400, penalty=15.1400
+[Device d0 | Beta 7] energy_term=187.9030, ratio=19.6903, penalty=18.6903
+[Device d1 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d1 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d1 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d1 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d1 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d1 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d1 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d1 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d2 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d2 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d2 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d2 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d2 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d2 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d2 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d2 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d3 | Beta 0] energy_term=9.6281, ratio=1.9529, penalty=0.9529
+[Device d3 | Beta 1] energy_term=21.5138, ratio=3.1355, penalty=2.1355
+[Device d3 | Beta 2] energy_term=40.1753, ratio=4.9922, penalty=3.9922
+[Device d3 | Beta 3] energy_term=60.8378, ratio=7.0480, penalty=6.0480
+[Device d3 | Beta 4] energy_term=84.4947, ratio=9.4017, penalty=8.4017
+[Device d3 | Beta 5] energy_term=116.1654, ratio=12.5528, penalty=11.5528
+[Device d3 | Beta 6] energy_term=152.2199, ratio=16.1400, penalty=15.1400
+[Device d3 | Beta 7] energy_term=187.9030, ratio=19.6903, penalty=18.6903
+[Device d4 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d4 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d4 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d4 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d4 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d4 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d4 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d4 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d5 | Beta 0] energy_term=1.6754, ratio=1.1576, penalty=0.1576
+[Device d5 | Beta 1] energy_term=8.7453, ratio=1.8586, penalty=0.8586
+[Device d5 | Beta 2] energy_term=19.8457, ratio=2.9592, penalty=1.9592
+[Device d5 | Beta 3] energy_term=32.1364, ratio=4.1778, penalty=3.1778
+[Device d5 | Beta 4] energy_term=46.2082, ratio=5.5731, penalty=4.5731
+[Device d5 | Beta 5] energy_term=65.0468, ratio=7.4409, penalty=6.4409
+[Device d5 | Beta 6] energy_term=86.4930, ratio=9.5673, penalty=8.5673
+[Device d5 | Beta 7] energy_term=107.7184, ratio=11.6718, penalty=10.6718
+[Device d6 | Beta 0] energy_term=6.8890, ratio=1.6790, penalty=0.6790
+[Device d6 | Beta 1] energy_term=17.1161, ratio=2.6957, penalty=1.6957
+[Device d6 | Beta 2] energy_term=33.1734, ratio=4.2920, penalty=3.2920
+[Device d6 | Beta 3] energy_term=50.9524, ratio=6.0594, penalty=5.0594
+[Device d6 | Beta 4] energy_term=71.3080, ratio=8.0831, penalty=7.0831
+[Device d6 | Beta 5] energy_term=98.5591, ratio=10.7922, penalty=9.7922
+[Device d6 | Beta 6] energy_term=129.5821, ratio=13.8762, penalty=12.8762
+[Device d6 | Beta 7] energy_term=160.2857, ratio=16.9286, penalty=15.9286
+[Device d7 | Beta 0] energy_term=0.0992, ratio=0.5788, penalty=0.0000
+[Device d7 | Beta 1] energy_term=0.1592, ratio=0.9293, penalty=0.0000
+[Device d7 | Beta 2] energy_term=5.0496, ratio=1.4796, penalty=0.4796
+[Device d7 | Beta 3] energy_term=11.2471, ratio=2.0889, penalty=1.0889
+[Device d7 | Beta 4] energy_term=18.3428, ratio=2.7865, penalty=1.7865
+[Device d7 | Beta 5] energy_term=27.8422, ratio=3.7205, penalty=2.7205
+[Device d7 | Beta 6] energy_term=38.6564, ratio=4.7837, penalty=3.7837
+[Device d7 | Beta 7] energy_term=49.3592, ratio=5.8359, penalty=4.8359
+[Device d8 | Beta 0] energy_term=9.6281, ratio=1.9529, penalty=0.9529
+[Device d8 | Beta 1] energy_term=21.5138, ratio=3.1355, penalty=2.1355
+[Device d8 | Beta 2] energy_term=40.1753, ratio=4.9922, penalty=3.9922
+[Device d8 | Beta 3] energy_term=60.8378, ratio=7.0480, penalty=6.0480
+[Device d8 | Beta 4] energy_term=84.4947, ratio=9.4017, penalty=8.4017
+[Device d8 | Beta 5] energy_term=116.1654, ratio=12.5528, penalty=11.5528
+[Device d8 | Beta 6] energy_term=152.2199, ratio=16.1400, penalty=15.1400
+[Device d8 | Beta 7] energy_term=187.9030, ratio=19.6903, penalty=18.6903
+[Device d9 | Beta 0] energy_term=23.6789, ratio=3.3580, penalty=2.3580
+[Device d9 | Beta 1] energy_term=44.0729, ratio=5.3914, penalty=4.3914
+[Device d9 | Beta 2] energy_term=76.0932, ratio=8.5840, penalty=7.5840
+[Device d9 | Beta 3] energy_term=111.5468, ratio=12.1189, penalty=11.1189
+[Device d9 | Beta 4] energy_term=152.1386, ratio=16.1661, penalty=15.1661
+[Device d9 | Beta 5] energy_term=206.4806, ratio=21.5843, penalty=20.5843
+[Device d9 | Beta 6] energy_term=268.3445, ratio=27.7525, penalty=26.7525
+[Device d9 | Beta 7] energy_term=329.5714, ratio=33.8571, penalty=32.8571
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0x1111ee53
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [7e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 80 rows and 157 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+
+================ DEBUG: SOLUTION =================
+[WARNING] No solution available for device d0
+[Device d0] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d1
+[Device d1] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d2
+[Device d2] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d3
+[Device d3] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d4
+[Device d4] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d5
+[Device d5] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d6
+[Device d6] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d7
+[Device d7] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d8
+[Device d8] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d9
+[Device d9] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+================================================
+
+{'status': 'STATUS_4', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+
+================ ROUND 9 =================
+
+================ DEBUG: ROUND INPUT =================
+[Device d0] Erem=34.3897, E_allowed=34.3897, alpha/E_allowed=0.2908
+[Device d1] Erem=12.6044, E_allowed=12.6044, alpha/E_allowed=0.7934
+[Device d2] Erem=9.4857, E_allowed=10.0000, alpha/E_allowed=1.0000
+[Device d3] Erem=34.3897, E_allowed=34.3897, alpha/E_allowed=0.2908
+[Device d4] Erem=13.5428, E_allowed=13.5428, alpha/E_allowed=0.7384
+[Device d5] Erem=58.0151, E_allowed=58.0151, alpha/E_allowed=0.1724
+[Device d6] Erem=12.6044, E_allowed=12.6044, alpha/E_allowed=0.7934
+[Device d7] Erem=58.0151, E_allowed=58.0151, alpha/E_allowed=0.1724
+[Device d8] Erem=34.3897, E_allowed=34.3897, alpha/E_allowed=0.2908
+[Device d9] Erem=2.3693, E_allowed=10.0000, alpha/E_allowed=1.0000
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Set parameter NumericFocus to value 3
+[Device Constraint][d0] Erem=34.3897, mem=974549656
+[Device Constraint][d1] Erem=12.6044, mem=966978347
+[Device Constraint][d2] Erem=9.4857, mem=968522457
+[Device Constraint][d3] Erem=34.3897, mem=972260626
+[Device Constraint][d4] Erem=13.5428, mem=969468285
+[Device Constraint][d5] Erem=58.0151, mem=970325585
+[Device Constraint][d6] Erem=12.6044, mem=971395545
+[Device Constraint][d7] Erem=58.0151, mem=973852152
+[Device Constraint][d8] Erem=34.3897, mem=974275444
+[Device Constraint][d9] Erem=2.3693, mem=972710866
+
+================ DEBUG: EDGE RAM =================
+[Edge e0] RAM budget=221836200000
+[Edge e1] RAM budget=221836200000
+
+================ DEBUG: EDGE ENERGY =================
+[Edge e0] Energy budget=4000.0
+[Edge e1] Energy budget=4000.0
+
+================ DEBUG: OBJECTIVE =================
+[Device d0 | Beta 0] energy_term=4.7459, ratio=1.4647, penalty=0.4647
+[Device d0 | Beta 1] energy_term=13.6752, ratio=2.3516, penalty=1.3516
+[Device d0 | Beta 2] energy_term=27.6949, ratio=3.7441, penalty=2.7441
+[Device d0 | Beta 3] energy_term=43.2178, ratio=5.2860, penalty=4.2860
+[Device d0 | Beta 4] energy_term=60.9904, ratio=7.0513, penalty=6.0513
+[Device d0 | Beta 5] energy_term=84.7834, ratio=9.4146, penalty=8.4146
+[Device d0 | Beta 6] energy_term=111.8698, ratio=12.1050, penalty=11.1050
+[Device d0 | Beta 7] energy_term=138.6773, ratio=14.7677, penalty=13.7677
+[Device d1 | Beta 0] energy_term=16.7404, ratio=2.6641, penalty=1.6641
+[Device d1 | Beta 1] energy_term=32.9329, ratio=4.2774, penalty=3.2774
+[Device d1 | Beta 2] energy_term=58.3564, ratio=6.8103, penalty=5.8103
+[Device d1 | Beta 3] energy_term=86.5059, ratio=9.6148, penalty=8.6148
+[Device d1 | Beta 4] energy_term=118.7350, ratio=12.8257, penalty=11.8257
+[Device d1 | Beta 5] energy_term=161.8815, ratio=17.1244, penalty=16.1244
+[Device d1 | Beta 6] energy_term=211.0003, ratio=22.0181, penalty=21.0181
+[Device d1 | Beta 7] energy_term=259.6133, ratio=26.8613, penalty=25.8613
+[Device d2 | Beta 0] energy_term=40.4687, ratio=5.0370, penalty=4.0370
+[Device d2 | Beta 1] energy_term=71.0298, ratio=8.0871, penalty=7.0871
+[Device d2 | Beta 2] energy_term=119.0131, ratio=12.8760, penalty=11.8760
+[Device d2 | Beta 3] energy_term=172.1413, ratio=18.1783, penalty=17.1783
+[Device d2 | Beta 4] energy_term=232.9691, ratio=24.2492, penalty=23.2492
+[Device d2 | Beta 5] energy_term=314.4021, ratio=32.3765, penalty=31.3765
+[Device d2 | Beta 6] energy_term=407.1070, ratio=41.6287, penalty=40.6287
+[Device d2 | Beta 7] energy_term=498.8571, ratio=50.7857, penalty=49.7857
+[Device d3 | Beta 0] energy_term=0.0992, ratio=0.4882, penalty=0.0000
+[Device d3 | Beta 1] energy_term=0.1592, ratio=0.7839, penalty=0.0000
+[Device d3 | Beta 2] energy_term=2.7340, ratio=1.2480, penalty=0.2480
+[Device d3 | Beta 3] energy_term=7.9779, ratio=1.7620, penalty=0.7620
+[Device d3 | Beta 4] energy_term=13.9818, ratio=2.3504, penalty=1.3504
+[Device d3 | Beta 5] energy_term=22.0195, ratio=3.1382, penalty=2.1382
+[Device d3 | Beta 6] energy_term=31.1697, ratio=4.0350, penalty=3.0350
+[Device d3 | Beta 7] energy_term=40.2258, ratio=4.9226, penalty=3.9226
+[Device d4 | Beta 0] energy_term=14.8945, ratio=2.4795, penalty=1.4795
+[Device d4 | Beta 1] energy_term=29.9692, ratio=3.9810, penalty=2.9810
+[Device d4 | Beta 2] energy_term=53.6377, ratio=6.3384, penalty=5.3384
+[Device d4 | Beta 3] energy_term=79.8440, ratio=8.9486, penalty=7.9486
+[Device d4 | Beta 4] energy_term=109.8483, ratio=11.9371, penalty=10.9371
+[Device d4 | Beta 5] energy_term=150.0164, ratio=15.9379, penalty=14.9379
+[Device d4 | Beta 6] energy_term=195.7445, ratio=20.4925, penalty=19.4925
+[Device d4 | Beta 7] energy_term=241.0017, ratio=25.0002, penalty=24.0002
+[Device d5 | Beta 0] energy_term=0.0992, ratio=0.5788, penalty=0.0000
+[Device d5 | Beta 1] energy_term=0.1592, ratio=0.9293, penalty=0.0000
+[Device d5 | Beta 2] energy_term=5.0496, ratio=1.4796, penalty=0.4796
+[Device d5 | Beta 3] energy_term=11.2471, ratio=2.0889, penalty=1.0889
+[Device d5 | Beta 4] energy_term=18.3428, ratio=2.7865, penalty=1.7865
+[Device d5 | Beta 5] energy_term=27.8422, ratio=3.7205, penalty=2.7205
+[Device d5 | Beta 6] energy_term=38.6564, ratio=4.7837, penalty=3.7837
+[Device d5 | Beta 7] energy_term=49.3592, ratio=5.8359, penalty=4.8359
+[Device d6 | Beta 0] energy_term=16.7404, ratio=2.6641, penalty=1.6641
+[Device d6 | Beta 1] energy_term=32.9329, ratio=4.2774, penalty=3.2774
+[Device d6 | Beta 2] energy_term=58.3564, ratio=6.8103, penalty=5.8103
+[Device d6 | Beta 3] energy_term=86.5059, ratio=9.6148, penalty=8.6148
+[Device d6 | Beta 4] energy_term=118.7350, ratio=12.8257, penalty=11.8257
+[Device d6 | Beta 5] energy_term=161.8815, ratio=17.1244, penalty=16.1244
+[Device d6 | Beta 6] energy_term=211.0003, ratio=22.0181, penalty=21.0181
+[Device d6 | Beta 7] energy_term=259.6133, ratio=26.8613, penalty=25.8613
+[Device d7 | Beta 0] energy_term=0.0992, ratio=0.4341, penalty=0.0000
+[Device d7 | Beta 1] energy_term=0.1592, ratio=0.6970, penalty=0.0000
+[Device d7 | Beta 2] energy_term=1.3506, ratio=1.1097, penalty=0.1097
+[Device d7 | Beta 3] energy_term=6.0248, ratio=1.5667, penalty=0.5667
+[Device d7 | Beta 4] energy_term=11.3765, ratio=2.0899, penalty=1.0899
+[Device d7 | Beta 5] energy_term=18.5410, ratio=2.7903, penalty=1.7903
+[Device d7 | Beta 6] energy_term=26.6972, ratio=3.5878, penalty=2.5878
+[Device d7 | Beta 7] energy_term=34.7694, ratio=4.3769, penalty=3.3769
+[Device d8 | Beta 0] energy_term=0.0992, ratio=0.7323, penalty=0.0000
+[Device d8 | Beta 1] energy_term=1.9172, ratio=1.1758, penalty=0.1758
+[Device d8 | Beta 2] energy_term=8.9742, ratio=1.8721, penalty=0.8721
+[Device d8 | Beta 3] energy_term=16.7879, ratio=2.6430, penalty=1.6430
+[Device d8 | Beta 4] energy_term=25.7340, ratio=3.5256, penalty=2.5256
+[Device d8 | Beta 5] energy_term=37.7105, ratio=4.7073, penalty=3.7073
+[Device d8 | Beta 6] energy_term=51.3448, ratio=6.0525, penalty=5.0525
+[Device d8 | Beta 7] energy_term=64.8386, ratio=7.3839, penalty=6.3839
+[Device d9 | Beta 0] energy_term=15.2840, ratio=2.5185, penalty=1.5185
+[Device d9 | Beta 1] energy_term=30.5945, ratio=4.0435, penalty=3.0435
+[Device d9 | Beta 2] energy_term=54.6333, ratio=6.4380, penalty=5.4380
+[Device d9 | Beta 3] energy_term=81.2496, ratio=9.0892, penalty=8.0892
+[Device d9 | Beta 4] energy_term=111.7233, ratio=12.1246, penalty=11.1246
+[Device d9 | Beta 5] energy_term=152.5198, ratio=16.1882, penalty=15.1882
+[Device d9 | Beta 6] energy_term=198.9633, ratio=20.8144, penalty=19.8144
+[Device d9 | Beta 7] energy_term=244.9286, ratio=25.3929, penalty=24.3929
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+NumericFocus  3
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 132 rows, 180 columns and 470 nonzeros
+Model fingerprint: 0xaa9375f3
+Model has 80 quadratic objective terms
+Model has 2 quadratic constraints
+Variable types: 80 continuous, 100 integer (90 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  QMatrix range    [3e+07, 8e+08]
+  QLMatrix range   [8e+08, 8e+08]
+  Objective range  [4e+00, 4e+02]
+  QObjective range [2e+01, 2e+01]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [7e-02, 1e+09]
+  QRHS range       [2e+11, 2e+11]
+Warning: Model contains large matrix coefficients
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+Presolve removed 80 rows and 156 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 0
+
+Model is infeasible or unbounded
+Best objective -, best bound -, gap -
+
+================ DEBUG: SOLUTION =================
+[WARNING] No solution available for device d0
+[Device d0] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d1
+[Device d1] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d2
+[Device d2] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d3
+[Device d3] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d4
+[Device d4] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d5
+[Device d5] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d6
+[Device d6] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d7
+[Device d7] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d8
+[Device d8] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+[WARNING] No solution available for device d9
+[Device d9] z=0, k=0
+  ❌ DROPPED (energy too high OR reward too low)
+================================================
+
+{'status': 'STATUS_4', 'obj': inf, 'active_devices': 0, 'total_energy_J': 0, 'total_latency_s': 0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {}, 'z': {}, 'k': {}, 'batches_used': {}, 'energy_J': {}, 'latency_s': {}, 'upload_bytes': {}, 'reasons': {}}
+Training complete

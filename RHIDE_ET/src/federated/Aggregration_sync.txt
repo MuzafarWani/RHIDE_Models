@@ -1,0 +1,209 @@
+train_federated_vgg16.py  (MAIN ENTRY)
+│
+│ 1. Initialization
+│ ───────────────────────────────────────────────
+│ - Build dataset (CIFAR10)
+│ - Build global model (VGG16)
+│ - Initialize:
+│     • MessagingBus
+│     • Device models (edge_models[e][d])
+│     • EdgeAggregators (edge_server/aggregator.py)
+│     • CloudAggregator (cloud_server/global_aggregator.py)
+│     • RL agents (edge + cloud)
+│
+│
+├──▶ 2. FOR EACH ROUND t
+│
+│   │
+│   │ 2.1 Build Solver Inputs
+│   │ ───────────────────────────────────────────
+│   │ - DeviceStatic (energy, latency, memory)
+│   │ - BetaCoeffs (split parameters)
+│   │ - RoundCoeffs (rc)
+│   │
+│   │
+│   ├──▶ 2.2 SOLVER EXECUTION
+│   │       (src/solver/gurobi_solver.py)
+│   │
+│   │       sol = RoundMILPSolver(...).solve()
+│   │
+│   │       OUTPUT:
+│   │       - z[i] → device participation
+│   │       - beta[i] → split choice
+│   │       - k[i] → transfer decision
+│   │
+│   │
+│   ├──▶ 2.3 DEVICE TRAINING (LOCAL)
+│   │       (train_federated_vgg16.py)
+│   │
+│   │       For each selected device:
+│   │
+│   │       device_net, _ = create_vgg16_submodels(...)
+│   │       forward / train
+│   │
+│   │       uploader.upload(...)
+│   │
+│   │       ────────────────
+│   │       MESSAGE SENT:
+│   │       device → edge
+│   │       topic:
+│   │       "device_to_edge_activations" OR "device_to_edge_raw"
+│   │       ────────────────
+│   │
+│   │
+│   ├──▶ 2.4 EDGE AGGREGATION ENTRY
+│   │       (CALLED FROM TRAIN SCRIPT)
+│   │
+│   │       for agg in edge_aggs:
+│   │           agg.step_round(t)
+│   │
+│   │
+│   │       ▼ INSIDE EdgeAggregator.step_round()
+│   │       (src/federated/edge_server/aggregator.py)
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP A: Apply global model (if broadcasted)
+│   │       ─────────────────────────────────────────────
+│   │       _apply_cloud_broadcasts()
+│   │       → updates edge + device models
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP B: Read device updates
+│   │       ─────────────────────────────────────────────
+│   │       bus.drain("device_to_edge_*")
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP C: Train edge model
+│   │       ─────────────────────────────────────────────
+│   │       trainer.train_from_activations()
+│   │       OR trainer.train_from_raw()
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP D: Update system state
+│   │       ─────────────────────────────────────────────
+│   │       EdgeState:
+│   │       - queue length
+│   │       - pending updates
+│   │       - rounds_since_agg
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP E: RL AGENT (EDGE LEVEL)
+│   │       ─────────────────────────────────────────────
+│   │       obs = state.obs_vector()
+│   │
+│   │       O_e = EdgeRLAggregationAgent.select_action(obs)
+│   │
+│   │       (src/federated/edge_server/rl_agent.py)
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP F: Compute model drift
+│   │       ─────────────────────────────────────────────
+│   │       delta = model_delta(current, last_sent)
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP G: TRIGGER CONDITION
+│   │       ─────────────────────────────────────────────
+│   │       IF:
+│   │         rounds_since_agg ≥ O_e
+│   │         OR
+│   │         delta ≥ τ_e
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP H: EDGE AGGREGATION (FedAvg)
+│   │       ─────────────────────────────────────────────
+│   │       _aggregate_device_models()
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP I: SEND TO CLOUD
+│   │       ─────────────────────────────────────────────
+│   │       bus.publish("edge_to_cloud_update")
+│   │
+│   │
+│   ├──▶ 2.5 CLOUD AGGREGATION ENTRY
+│   │
+│   │       cloud_agg.maybe_aggregate_and_update(t)
+│   │
+│   │
+│   │       ▼ INSIDE CloudAggregator
+│   │       (src/federated/cloud_server/global_aggregator.py)
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP A: Receive edge updates
+│   │       ─────────────────────────────────────────────
+│   │       bus.drain("edge_to_cloud_update")
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP B: Compute candidate model
+│   │       ─────────────────────────────────────────────
+│   │       FedAvg across edges
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP C: Compute global drift
+│   │       ─────────────────────────────────────────────
+│   │       delta_l = model_delta(candidate, last_global)
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP D: RL AGENT (CLOUD LEVEL)
+│   │       ─────────────────────────────────────────────
+│   │       obs = {
+│   │           num_edge_updates,
+│   │           model_delta,
+│   │           rounds_since_agg
+│   │       }
+│   │
+│   │       O_l = CloudRLAggregationAgent.select_action(obs)
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP E: TRIGGER CONDITION
+│   │       ─────────────────────────────────────────────
+│   │       IF:
+│   │         rounds_since_agg ≥ O_l
+│   │         OR
+│   │         delta_l ≥ τ_l
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP F: CLOUD AGGREGATION
+│   │       ─────────────────────────────────────────────
+│   │       global_weights = FedAvg(edge_models)
+│   │
+│   │
+│   │       ─────────────────────────────────────────────
+│   │       STEP G: BROADCAST
+│   │       ─────────────────────────────────────────────
+│   │       bus.publish("cloud_to_edges_broadcast")
+│   │
+│   │
+│   ├──▶ 2.6 EDGE RECEIVES GLOBAL MODEL
+│   │
+│   │       Next round:
+│   │       EdgeAggregator._apply_cloud_broadcasts()
+│   │
+│   │       → updates:
+│   │         - edge_root_model
+│   │         - all device_models
+│   │
+│   │
+│   ├──▶ 2.7 RL LEARNING STEP
+│   │
+│   │       cloud_rl.learn(...)
+│   │       edge_rl.learn(...) (if called externally)
+│   │
+│   │
+│   ├──▶ 2.8 RESOURCE UPDATE
+│   │
+│   │       - battery updated
+│   │       - edge load updated
+│   │
+│
+└──▶ 3. END TRAINING
+    - Save final model

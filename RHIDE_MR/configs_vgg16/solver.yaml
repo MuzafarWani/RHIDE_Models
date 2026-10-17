@@ -1,0 +1,16 @@
+eta: 200.0
+xi: 1.0
+lambda_energy: 1.0
+gamma_edge: 0.5
+alpha_future: 20.0
+lambda_comm: 1e-7
+
+edge_power_w: 120.0
+
+mip_gap: 0.01
+time_limit_s: 30
+threads: 0
+integer_k: true
+
+use_warm_start: false
+

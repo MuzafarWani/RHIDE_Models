@@ -1,0 +1,1211 @@
+2026-05-26 11:33:17.892242: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-05-26 11:33:17.892306: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-05-26 11:33:17.917718: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-05-26 11:33:17.966376: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-05-26 11:33:18.700505: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+================ ROUND 0 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter Username
+Set parameter LicenseID to value 2810616
+Academic license - for non-commercial use only - expires 2027-04-20
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 0] RL selected aggregation period O_e = 16
+[cloud][round 0] model_delta = inf, tau_cloud = 0.05
+[cloud][round 0] Aggregating 1 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 0] Broadcasting new global model to all edges
+
+================ ROUND 1 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1779775405.8177247)
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 2 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 3 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 3] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 4 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 4] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 5 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 5] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 6 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 6] RL selected aggregation period O_e = 1
+[cloud][round 6] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 6] Aggregation SKIPPED (rounds_since_agg=0, O_e=1, delta=0.000000 < tau_cloud)
+
+================ ROUND 7 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 7] RL selected aggregation period O_e = 2
+[cloud][round 7] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 7] Aggregation SKIPPED (rounds_since_agg=1, O_e=2, delta=0.000000 < tau_cloud)
+
+================ ROUND 8 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 8] No edge updates received (rounds_since_agg=2)
+
+================ ROUND 9 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 9] No edge updates received (rounds_since_agg=2)
+
+================ ROUND 10 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 10] RL selected aggregation period O_e = 4
+[cloud][round 10] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 10] Aggregation SKIPPED (rounds_since_agg=2, O_e=4, delta=0.000000 < tau_cloud)
+
+================ ROUND 11 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 11] No edge updates received (rounds_since_agg=3)
+
+================ ROUND 12 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 12] No edge updates received (rounds_since_agg=3)
+
+================ ROUND 13 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 13] RL selected aggregation period O_e = 16
+[cloud][round 13] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 13] Aggregation SKIPPED (rounds_since_agg=3, O_e=16, delta=0.000000 < tau_cloud)
+
+================ ROUND 14 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 14] RL selected aggregation period O_e = 1
+[cloud][round 14] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 14] Aggregating 1 edge updates using FedAvg (trigger: cadence)
+[cloud][round 14] Broadcasting new global model to all edges
+
+================ ROUND 15 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0xcb1f039a
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+09]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[edge:e0] applied new global model from cloud (ts=1779775421.577983)
+[cloud][round 15] No edge updates received (rounds_since_agg=0)
+
+================ ROUND 16 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 16] RL selected aggregation period O_e = 8
+[cloud][round 16] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 16] Aggregation SKIPPED (rounds_since_agg=0, O_e=8, delta=0.000000 < tau_cloud)
+
+================ ROUND 17 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x070f5463
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+09]
+  Objective range  [8e+01, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 17] No edge updates received (rounds_since_agg=1)
+
+================ ROUND 18 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 18] No edge updates received (rounds_since_agg=1)
+
+================ ROUND 19 =================
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0']
+Number of betas: 8
+lambda_energy: 0.5
+gamma_edge: 1.0
+eta: 0.0
+xi: 0.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1000000000
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 8 rows, 10 columns and 56 nonzeros
+Model fingerprint: 0x1d561acc
+Variable types: 0 continuous, 10 integer (9 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+09]
+  Objective range  [3e+02, 5e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficients
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': 0.0, 'active_devices': 0, 'total_energy_J': 0.0, 'total_latency_s': 0.0, 'total_upload_bytes': 0, 'total_batches': 0, 'beta_choice': {'d0': ''}, 'z': {'d0': 0}, 'k': {'d0': 0}, 'batches_used': {'d0': 0}, 'energy_J': {'d0': 0.0}, 'latency_s': {'d0': 0.0}, 'upload_bytes': {'d0': 0}, 'reasons': {'d0': 'TRANSFER'}}
+[cloud][round 19] RL selected aggregation period O_e = 16
+[cloud][round 19] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 19] Aggregation SKIPPED (rounds_since_agg=1, O_e=16, delta=0.000000 < tau_cloud)
+Training complete

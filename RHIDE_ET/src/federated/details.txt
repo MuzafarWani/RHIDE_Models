@@ -1,0 +1,17 @@
+accounting/
+Tracks realized system costs during execution. Modules here accumulate per-device energy, latency, and other resource usage and publish them on the messaging bus so that the training loop and RL agents can observe what actually happened in a round.
+
+device_client/
+Implements the device-side behavior. A device receives its decision (β, participate or not, raw-transfer count), runs the local part of the model if selected, generates activations or updates, and publishes messages (activations, model updates, raw batches) to the bus. It is where on-device training and split learning are simulated.
+
+edge_server/
+Represents edge nodes. Edge servers receive data or updates from devices, complete split forward/backward passes, aggregate device updates, maintain per-edge state, and interact with RL agents. They are the intermediate layer between devices and the cloud.
+
+cloud_server/
+Implements cloud-side logic: global aggregation, distribution of updated global models to edges, system-wide accounting, and the RL controller that adapts cloud aggregation cadence. This layer performs FedAvg across edges and broadcasts the global model.
+
+messaging/
+Provides a lightweight in-process communication fabric. The MessagingBus and message types (Activations, ModelUpdate, RawBatch, etc.) define how all layers exchange information. This decouples devices, edges, and cloud while keeping the simulation simple and deterministic.
+
+priority.py
+Maintains the mapping between devices and edges and exposes edge-level priorities to the rest of the system.

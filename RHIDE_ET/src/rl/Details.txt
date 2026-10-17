@@ -1,0 +1,8 @@
+agents.py
+This module implements the learning agents used by SPHERE at the edge layer. It provides two  agents. Each agent decides actions such as aggregation periods based on an observation vector coming from the system. The module also handles saving and loading agent state (networks, optimizers, and training progress) so experiments can be resumed. Inputs to these agents are numeric observations built from system signals (energy, latency, queue depth, etc.), and outputs are discrete actions that control edge behavior.
+
+madrl_env.py
+This module defines a lightweight environment wrapper for edge-level control similar to MADRL policy. It connects the SPHERE training loop to the RL agent. Each round, the training loop provides the next observation and reward, and the environment advances one step.
+
+replay.py
+This module implements a simple replay buffer for algorithms such as DQN. It stores transitions of the form (observation, action, reward, next_observation, done) in a fixed-size ring buffer for training. The DQN agent uses this buffer to learn from past experience. Inputs are transitions produced during training, and outputs are random mini-batches used during gradient updates.

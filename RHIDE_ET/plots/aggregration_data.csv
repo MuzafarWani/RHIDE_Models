@@ -1,0 +1,25 @@
+rounds,model,layer,frequency,Scenario
+1-400,MADRL,O_l,2,base100 
+1-400,MADRL,O_e,2,base100 
+1-400,SPHERE,O_l,2,base100 
+1-400,SPHERE,O_e,1,base100 
+1-400,MADRL,O_l,2,many_batches
+1-400,MADRL,O_e,2,many_batches
+1-100,SPHERE,O_l,2,many_batches
+100-200,SPHERE,O_l,4,many_batches
+200-300,SPHERE,O_l,8,many_batches
+300-400,SPHERE,O_l,8,many_batches
+1-100,SPHERE,O_e,2,many_batches
+100-200,SPHERE,O_e,2,many_batches
+200-300,SPHERE,O_e,4,many_batches
+300-400,SPHERE,O_e,4,many_batches
+1-400,MADRL,O_l,4,"edge_congestion_adaptive(100 devices, 1 edge)"
+1-400,MADRL,O_e,4,"edge_congestion_adaptive(100 devices, 1 edge)"
+1-100,SPHERE,O_l,4,"edge_congestion_adaptive(100 devices, 1 edge)"
+100-200,SPHERE,O_l,8,"edge_congestion_adaptive(100 devices, 1 edge)"
+200-300,SPHERE,O_l,8,"edge_congestion_adaptive(100 devices, 1 edge)"
+300-400,SPHERE,O_l,8,"edge_congestion_adaptive(100 devices, 1 edge)"
+1-100,SPHERE,O_e,2,"edge_congestion_adaptive(100 devices, 1 edge)"
+100-200,SPHERE,O_e,4,"edge_congestion_adaptive(100 devices, 1 edge)"
+200-300,SPHERE,O_e,8,"edge_congestion_adaptive(100 devices, 1 edge)"
+300-400,SPHERE,O_e,8,"edge_congestion_adaptive(100 devices, 1 edge)"

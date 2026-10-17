@@ -1,0 +1,8 @@
+The accounting modules does tracking of energy usage, latency, and communication volume during training and inference.
+
+energy_latency_log.py
+This module keeps track of how much energy and time (latency) each device spends during training and communication. Other parts of the system call add_energy() and add_latency() whenever a device consumes energy or time. Internally, it accumulates these values per device and can return a snapshot of the totals at any moment.
+
+
+upload_counter.py
+This module counts how many bytes each device uploads during the experiment. Whenever a device sends data or model updates, other components call record_device_upload() with the device ID and number of bytes sent. The counter maintains per-device totals as well as the global total upload size.

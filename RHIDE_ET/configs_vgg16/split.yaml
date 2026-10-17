@@ -1,0 +1,48 @@
+# ==================================
+# VGG16 Split Points & Payload Sizes
+# ==================================
+
+# Allowed split points (β) — shallow → deep
+allowed:
+  - block1_pool
+  - block2_conv1
+  - block3_conv1
+  - block3_conv2
+  - block3_conv3
+  - block4_conv3
+  - block5_conv2
+  - block5_conv3
+
+# ----------------------------------
+# Activation payload per β (bytes)
+# (taken from measured activation_bytes_per_batch)
+# ----------------------------------
+A_size_bytes:
+  block1_pool:   44690112
+  block2_conv1:  55675648
+  block3_conv1:  57870784
+  block3_conv2:  50050432
+  block3_conv3:  45050432
+  block4_conv3:  40284288
+  block5_conv2:  12650496
+  block5_conv3:  12650496
+  output:        40
+
+# ----------------------------------
+# Device memory footprint per β
+# (same as activation)
+# ----------------------------------
+memory_bytes:
+  block1_pool:   44690112
+  block2_conv1:  55675648
+  block3_conv1:  57870784
+  block3_conv2:  50050432
+  block3_conv3:  45050432
+  block4_conv3:  40284288
+  block5_conv2:  12650496
+  block5_conv3:  12650496
+  output:        40
+
+# Optional (not used currently)
+Delta_model_bytes: 0
+

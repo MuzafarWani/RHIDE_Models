@@ -1,0 +1,32 @@
+This directory contains all YAML configuration files for running SPHERE with the XEvenetNet model. Each file defines one logical aspect of the system: data, model training, splitting, energy/latency constraints, federation topology, solver behavior, and RL control. Together, these files fully describe what is trained, where it runs, and under which system constraints.
+
+Each file has a role:
+data.yaml
+Describes the dataset and input format.
+For XEvenetNet this typically points to WRF-style 2D/3D grids or preprocessed arrays. It defines: dataset type (e.g., weather grids), input shapes, feature keys, paths for training/validation/test data, optional caching of prebuilt arrays.
+
+energy_latency.yaml
+Encodes per-device system constraints and per-split costs.
+For each device it specifies: memory limits, energy budgets, upload limits, latency bounds, uplink rate and energy-per-byte,raw-batch size, per-β coefficients: compute energy, communication energy, compute time, communication time, and memory usage.
+
+federated.yaml
+Defines the federation topology: edges and their priorities, which devices belong to which edge, default batch counts, logical messaging topics.
+It establishes the device → edge → cloud hierarchy.
+
+rl.yaml
+Configures reinforcement learning controllers: reward weights, discrete action spaces for edge and cloud agents, which global statistics form the observation vector.
+This file controls how the system learns adaptive aggregation behavior.
+
+solver.yaml
+Specifies MILP solver behavior: objective weights (eta, xi), MIP gap, time limit, and threads, whether variables are integer, warm-start usage.
+It tunes how aggressively and how accurately the optimizer runs each round.
+
+split.yaml
+Defines valid split points (β) and their payload characteristics: allowed cut names, activation sizes per β, memory footprint per β, optional model delta sizes.
+This file links the neural architecture to the optimization model.
+
+train.yaml
+Describes model training: input shapes, number of classes, optimizer, loss, and metrics, batch size, epochs, shuffling, caching, output directories and checkpoints, default inference split,
+
+evaluation cadence.
+It controls how the model is trained and evaluated.

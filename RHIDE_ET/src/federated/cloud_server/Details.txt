@@ -1,0 +1,15 @@
+distributor.py
+This module is responsible for sending the latest global model from the cloud to all edge servers. After the cloud finishes aggregation, it wraps the model weights in a ModelUpdate message and broadcasts it on a shared bus topic. Edge servers listen to this topic and update their local models. The input comes from the cloud aggregator in the form of model weights.
+
+energy_latency_log.py
+This module collects the total energy usage and latency reported by devices and edges during training. Other components publish partial values to the bus, and this logger accumulates them per device. It then publishes the merged dictionaries (energy_used and latency_used) back to the bus so that the cloud can observe global resource consumption. it only aggregates what other modules report.
+
+global_aggregator.py
+
+This module maintains the global model at the cloud and performs aggregation of edge updates. At each round, it checks the aggregation cadence Oe. If the round matches the value, it pulls all edge model updates from the message bus and performs FedAvg to produce new global weights. If the value is not met or no updates are available, aggregation is skipped. Its inputs are model updates sent by edge servers. its output is the updated global model.
+
+rl_agent.py
+This module implements a reinforcement learning agent that controls how often the cloud aggregates. It observes simple global statistics (passed as a small dictionary) and selects an aggregation period Oe from a fixed set of actions. Internally, it uses a policy to learn which values works best over time. Each round, it receives observations from the training loop, outputs a chosen Oe, and later learns from the reward and next observation.
+
+upload_counter.py
+This module tracks noting how many bytes each device uploads during a round. Whenever an upload happens, other components call record_device_upload(). The counter accumulates per-device totals and publishes them as a single dictionary on the message bus. The cloud uses this information to monitor communication cost. It only records values provided by other modules and can be reset between rounds.

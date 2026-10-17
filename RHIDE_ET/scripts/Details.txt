@@ -1,0 +1,20 @@
+This directory contains runnable helper scripts that glue together the core SPHERE components. These are the user-facing commands for training, inference, evaluation, and data preparation. Each script loads the YAML configs, builds the system, and calls into the modules under src/.
+
+create_vgg16_eval_npz.py
+Prepares an evaluation dataset for VGG16 and saves it as a single .npz file.
+It loads images from the configured directories, converts them into arrays, and stores them in a format that can be quickly used for validation or inference experiments.
+
+train_federated.py (XEvenetNet)
+Main training entry point for the XEvenetNet model.
+It reads the config/ YAML files, initializes the SPHERE training loop, builds the split model, solver, and RL components, and runs the full hierarchical federated training process across devices, edges, and cloud.
+
+predict_federated.py (XEvenetNet)
+Runs inference using a trained XEvenetNet model in a federated or split mode.
+It loads the trained model, applies the chosen split (β), executes device–edge style inference, and writes predictions and probabilities to disk.
+
+train_federated_vgg16.py
+Main training entry point for the VGG16-based SPHERE system.
+It mirrors train_federated.py, but uses the configs_vgg16/ YAML files and the VGG16 model. This script runs end-to-end hierarchical federated training with split learning and optimization.
+
+predict_federated_vgg16.py
+Runs split or full inference for VGG16. It loads a trained VGG16 model, applies the configured split point, performs device-side and edge-side inference, and exports predictions and probabilities for evaluation.

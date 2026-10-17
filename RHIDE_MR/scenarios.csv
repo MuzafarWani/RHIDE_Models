@@ -1,0 +1,2 @@
+scenario,seed,devices,edges,Erem_low,Erem_high,Emax_round_J,uplink_low,uplink_high,Tmax_low,Tmax_high,comm_cost_per_byte_J,harvest_J_per_round,Umax_bytes,mem_max_bytes,priority,sync_overhead_s,batches_per_device,ram_edge_s
+base1,1,500,10,480,480,18,35000000,35000000,110,110,4E-07,0,6200000,990000000,1,0.02,2,221836200000

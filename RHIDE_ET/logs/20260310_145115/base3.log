@@ -1,0 +1,129 @@
+2026-03-10 14:51:54.562497: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-10 14:51:54.562526: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-10 14:51:54.563311: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-10 14:51:54.567393: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-10 14:51:55.118362: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+[VGG16] Global model built
+
+[DEBUG] Edge RAM capacities loaded from federated.yaml:
+  Edge e0: ram_edge_s = 221836200000
+
+[DEBUG] Solver weights: lambda=1.0, eta=40.0, xi=1.0
+
+[VGG16][Round 0]
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2761103
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 10 rows, 50 columns and 55 nonzeros
+Model fingerprint: 0x98edb5aa
+Model has 5 quadratic objective terms
+Model has 11 quadratic constraints
+Variable types: 0 continuous, 50 integer (45 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [2e+00, 3e+02]
+  QObjective range [4e+00, 4e+00]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [2e+00, 4e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective 0.0000000
+Presolve removed 8 rows and 40 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Found heuristic solution: objective -20.0000000
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -28.0000000
+
+Explored 1 nodes (0 simplex iterations) in 0.04 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: -28 -20 0 
+No other solutions better than -28
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -2.800000000000e+01, best bound -2.800000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -28.0, 'active_devices': 0, 'total_energy_J': 56.7986356, 'total_latency_s': 324.563632, 'total_upload_bytes': 11359727120.0, 'total_batches': 14, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0}, 'k': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 8.1140908, 'd2': 16.2281816, 'd3': 16.2281816, 'd4': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 46.36623314285714, 'd2': 92.73246628571428, 'd3': 92.73246628571428, 'd4': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 1622818160.0, 'd2': 3245636320.0, 'd3': 3245636320.0, 'd4': 1622818160.0}, 'reasons': {}}
+[cloud][round 0] No edge updates received (rounds_since_agg=0)
+[battery] {'d0': 171.886, 'd1': 171.886, 'd2': 163.772, 'd3': 163.772, 'd4': 171.886}
+[edge-load] {'e0': 0}
+[VGG16][Round 0] completed
+
+[VGG16][Round 1]
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Academic license 2761103 - for non-commercial use only - registered to mu___@cse.iitk.ac.in
+Optimize a model with 12 rows, 50 columns and 57 nonzeros
+Model fingerprint: 0x1cb1d3c7
+Model has 5 quadratic objective terms
+Model has 11 quadratic constraints
+Variable types: 0 continuous, 50 integer (45 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  QMatrix range    [4e+00, 1e+09]
+  QLMatrix range   [4e+00, 8e+08]
+  Objective range  [2e+00, 5e+02]
+  QObjective range [4e+00, 4e+00]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 6e+00]
+  QRHS range       [2e+02, 2e+11]
+Warning: Quadratic constraints contain large coefficients
+Warning: Quadratic constraints contain large coefficients on linear part
+Warning: Model contains large rhs on quadratic constraints
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 10 rows and 40 columns
+Presolve time: 0.00s
+Presolved: 15 rows, 19 columns, 62 nonzeros
+Variable types: 0 continuous, 19 integer (17 binary)
+Found heuristic solution: objective -32.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: -32 
+No other solutions better than -32
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.200000000000e+01, best bound -3.200000000000e+01, gap 0.0000%
+[solver] {'status': 'OPTIMAL', 'obj': -32.0, 'active_devices': 0, 'total_energy_J': 64.9127264, 'total_latency_s': 370.9298651428571, 'total_upload_bytes': 12982545280.0, 'total_batches': 16, 'beta_choice': {'d0': '', 'd1': '', 'd2': '', 'd3': '', 'd4': ''}, 'z': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0}, 'k': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 6, 'd3': 2, 'd4': 2}, 'energy_J': {'d0': 8.1140908, 'd1': 16.2281816, 'd2': 24.3422724, 'd3': 8.1140908, 'd4': 8.1140908}, 'latency_s': {'d0': 46.36623314285714, 'd1': 92.73246628571428, 'd2': 139.09869942857142, 'd3': 46.36623314285714, 'd4': 46.36623314285714}, 'upload_bytes': {'d0': 1622818160.0, 'd1': 3245636320.0, 'd2': 4868454480.0, 'd3': 1622818160.0, 'd4': 1622818160.0}, 'reasons': {}}
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 1] RL selected aggregation period O_e = 16
+[cloud][round 1] model_delta = inf, tau_cloud = 0.05
+[cloud][round 1] Aggregating 1 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 1] Broadcasting new global model to all edges
+[cloud] Broadcasting new global model to all edges
+[battery] {'d0': 163.772, 'd1': 155.658, 'd2': 139.43, 'd3': 155.658, 'd4': 163.772}
+[edge-load] {'e0': 0}
+[edge:e0] applied new global model from cloud (ts=1773134522.4332652)
+[VGG16][Round 1] completed
+[VGG16] Training complete

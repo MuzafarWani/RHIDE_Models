@@ -1,0 +1,57 @@
+edges:
+  - id: "e0"
+    priority: 2.0
+    ram_edge_s: 221836200000
+    energy_budget_per_round: 4000
+    devices: ["d0", "d1", "d2", "d3", "d4"]
+  - id: "e1"
+    priority: 1.0
+    ram_edge_s: 221836200000
+    energy_budget_per_round: 4000
+    devices: ["d5", "d6", "d7", "d8", "d9"]
+
+devices:
+  d0:
+    edge: "e0"
+  d1:
+    edge: "e0"
+  d2:
+    edge: "e0"
+  d3:
+    edge: "e0"
+  d4:
+    edge: "e0"
+  d5:
+    edge: "e1"
+  d6:
+    edge: "e1"
+  d7:
+    edge: "e1"
+  d8:
+    edge: "e1"
+  d9:
+    edge: "e1"
+
+batches_per_device_default: 1
+min_batches_if_active: 1
+
+topics:
+  activations: "device_to_edge_activations"
+  raw:         "device_to_edge_raw"
+  edge2cloud:  "edge_to_cloud_update"
+  cloud2edges: "cloud_to_edges_broadcast"
+
+links:
+  device_to_edge:
+    use_zstd: true
+    zstd_level: 7
+    zstd_level_activ: 7
+    zstd_level_raw: 5
+    cast_dtype: "float16"
+    activations_dtype: "float16"
+    raw_dtype: "float32"
+    use_zstd_activ: true
+    use_zstd_raw: true
+
+  edge_to_cloud:
+    use_zstd: false

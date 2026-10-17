@@ -1,0 +1,934 @@
+2026-04-20 12:02:59.260165: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 12:02:59.260193: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 12:02:59.262126: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 12:02:59.269092: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 12:02:59.922192: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+[XEVENTNET][ROUND 0]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter Username
+Set parameter LicenseID to value 2810616
+Academic license - for non-commercial use only - expires 2027-04-20
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0xb29a7bee
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -589.859 -6 
+No other solutions better than -589.859
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.898589905260e+02, best bound -5.898589905260e+02, gap 0.0000%
+WARNING:tensorflow:5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f39584b41f0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+{'status': 'OPTIMAL', 'obj': -589.8589905260001, 'active_devices': 5, 'total_energy_J': 410.14100589, 'total_latency_s': 278.65594200000004, 'total_upload_bytes': 3584.0, 'total_batches': 14, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 4, 'd3': 4, 'd4': 2}, 'energy_J': {'d0': 58.59157227, 'd1': 58.59157227, 'd2': 117.18314454, 'd3': 117.18314454, 'd4': 58.59157227}, 'latency_s': {'d0': 39.813706, 'd1': 39.813706, 'd2': 79.607412, 'd3': 79.607412, 'd4': 39.813706}, 'upload_bytes': {'d0': 512.0, 'd1': 512.0, 'd2': 1024.0, 'd3': 1024.0, 'd4': 512.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[RL WARNING] action 5 out of bounds → clamped to 4
+[cloud][round 0] RL selected aggregation period O_e = 16
+[cloud][round 0] model_delta = inf, tau_cloud = 0.05
+[cloud][round 0] Aggregating 1 edge updates using FedAvg (trigger: model-delta)
+[cloud][round 0] Broadcasting new global model to all edges
+
+[XEVENTNET][ROUND 1]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x978060ff
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -509.042 -6 
+No other solutions better than -509.042
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -5.090421360900e+02, best bound -5.090421360900e+02, gap 0.0000%
+WARNING:tensorflow:6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x7f3938521bd0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+{'status': 'OPTIMAL', 'obj': -509.04213608999993, 'active_devices': 4, 'total_energy_J': 295.90987017500004, 'total_latency_s': 217.59858515624998, 'total_upload_bytes': 590404325.0, 'total_batches': 11, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': '', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 2, 'd1': 4, 'd2': 1, 'd3': 2, 'd4': 2}, 'energy_J': {'d0': 58.59157227, 'd1': 117.18314454, 'd2': 2.952008825, 'd3': 58.59157227, 'd4': 58.59157227}, 'latency_s': {'d0': 39.833706, 'd1': 79.64741199999999, 'd2': 18.45005515625, 'd3': 39.833706, 'd4': 39.833706}, 'upload_bytes': {'d0': 512.0, 'd1': 1024.0, 'd2': 590401765, 'd3': 512.0, 'd4': 512.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[edge:e0] applied new global model from cloud (ts=1776666788.4976637)
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 1] No edge updates received (rounds_since_agg=0)
+
+[XEVENTNET][ROUND 2]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x89346cfc
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -369.634 -6 
+No other solutions better than -369.634
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.696337088720e+02, best bound -3.696337088720e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -369.63370887199994, 'active_devices': 3, 'total_energy_J': 240.27030673000002, 'total_latency_s': 196.19893431249997, 'total_upload_bytes': 1180805578.0, 'total_batches': 10, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': '', 'd3': 'combined_dense', 'd4': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 1}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 1, 'd3': 4, 'd4': 1}, 'energy_J': {'d0': 58.59157227, 'd1': 58.59157227, 'd2': 2.952008825, 'd3': 117.18314454, 'd4': 2.952008825}, 'latency_s': {'d0': 39.829706, 'd1': 39.829706, 'd2': 18.45005515625, 'd3': 79.639412, 'd4': 18.45005515625}, 'upload_bytes': {'d0': 512.0, 'd1': 512.0, 'd2': 590401765, 'd3': 1024.0, 'd4': 590401765}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRANSFER'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 2] No edge updates received (rounds_since_agg=0)
+
+[XEVENTNET][ROUND 3]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x455324f6
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -369.634 -6 
+No other solutions better than -369.634
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.696337088720e+02, best bound -3.696337088720e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -369.63370887199994, 'active_devices': 3, 'total_energy_J': 240.27030673000002, 'total_latency_s': 196.18293431249998, 'total_upload_bytes': 1180805578.0, 'total_batches': 10, 'beta_choice': {'d0': 'combined_dense', 'd1': '', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': ''}, 'z': {'d0': 1, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 0}, 'k': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 1}, 'batches_used': {'d0': 2, 'd1': 1, 'd2': 4, 'd3': 2, 'd4': 1}, 'energy_J': {'d0': 58.59157227, 'd1': 2.952008825, 'd2': 117.18314454, 'd3': 58.59157227, 'd4': 2.952008825}, 'latency_s': {'d0': 39.825706000000004, 'd1': 18.45005515625, 'd2': 79.631412, 'd3': 39.825706000000004, 'd4': 18.45005515625}, 'upload_bytes': {'d0': 512.0, 'd1': 590401765, 'd2': 1024.0, 'd3': 512.0, 'd4': 590401765}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 3] RL selected aggregation period O_e = 1
+[cloud][round 3] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 3] Aggregation SKIPPED (rounds_since_agg=0, O_e=1, delta=0.000000 < tau_cloud)
+
+[XEVENTNET][ROUND 4]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x07221615
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -369.634 -6 
+No other solutions better than -369.634
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.696337088720e+02, best bound -3.696337088720e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -369.63370887199994, 'active_devices': 3, 'total_energy_J': 240.27030673000002, 'total_latency_s': 196.18293431249998, 'total_upload_bytes': 1180805578.0, 'total_batches': 10, 'beta_choice': {'d0': '', 'd1': '', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 0, 'd1': 0, 'd2': 1, 'd3': 1, 'd4': 1}, 'k': {'d0': 1, 'd1': 1, 'd2': 0, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 1, 'd1': 1, 'd2': 2, 'd3': 2, 'd4': 4}, 'energy_J': {'d0': 2.952008825, 'd1': 2.952008825, 'd2': 58.59157227, 'd3': 58.59157227, 'd4': 117.18314454}, 'latency_s': {'d0': 18.45005515625, 'd1': 18.45005515625, 'd2': 39.825706000000004, 'd3': 39.825706000000004, 'd4': 79.631412}, 'upload_bytes': {'d0': 590401765, 'd1': 590401765, 'd2': 512.0, 'd3': 512.0, 'd4': 1024.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRANSFER', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 4] No edge updates received (rounds_since_agg=1)
+
+[XEVENTNET][ROUND 5]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0xc56d6dd6
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -428.225 -6 
+No other solutions better than -428.225
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.282252816540e+02, best bound -4.282252816540e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -428.22528165399996, 'active_devices': 3, 'total_energy_J': 181.67873446, 'total_latency_s': 156.3772283125, 'total_upload_bytes': 1180805066.0, 'total_batches': 8, 'beta_choice': {'d0': '', 'd1': 'combined_dense', 'd2': '', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1}, 'k': {'d0': 1, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 1, 'd1': 2, 'd2': 1, 'd3': 2, 'd4': 2}, 'energy_J': {'d0': 2.952008825, 'd1': 58.59157227, 'd2': 2.952008825, 'd3': 58.59157227, 'd4': 58.59157227}, 'latency_s': {'d0': 18.45005515625, 'd1': 39.825706000000004, 'd2': 18.45005515625, 'd3': 39.825706000000004, 'd4': 39.825706000000004}, 'upload_bytes': {'d0': 590401765, 'd1': 512.0, 'd2': 590401765, 'd3': 512.0, 'd4': 512.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 5] No edge updates received (rounds_since_agg=1)
+
+[XEVENTNET][ROUND 6]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x574683e9
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 4e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -648.451 -6 
+No other solutions better than -648.451
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -6.484505633080e+02, best bound -6.484505633080e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -648.450563308, 'active_devices': 5, 'total_energy_J': 351.54943362000006, 'total_latency_s': 238.934236, 'total_upload_bytes': 3072.0, 'total_batches': 12, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2}, 'energy_J': {'d0': 117.18314454, 'd1': 58.59157227, 'd2': 58.59157227, 'd3': 58.59157227, 'd4': 58.59157227}, 'latency_s': {'d0': 79.631412, 'd1': 39.825706000000004, 'd2': 39.825706000000004, 'd3': 39.825706000000004, 'd4': 39.825706000000004}, 'upload_bytes': {'d0': 1024.0, 'd1': 512.0, 'd2': 512.0, 'd3': 512.0, 'd4': 512.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 6] RL selected aggregation period O_e = 4
+[cloud][round 6] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 6] Aggregation SKIPPED (rounds_since_agg=1, O_e=4, delta=0.000000 < tau_cloud)
+
+[XEVENTNET][ROUND 7]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 2
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0xf7aa6e60
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -707.042 -6 
+No other solutions better than -707.042
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -7.070421360900e+02, best bound -7.070421360900e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -707.04213609, 'active_devices': 5, 'total_energy_J': 292.95786135000003, 'total_latency_s': 199.16853, 'total_upload_bytes': 2560.0, 'total_batches': 10, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 1}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 2, 'd1': 2, 'd2': 2, 'd3': 2, 'd4': 2}, 'energy_J': {'d0': 58.59157227, 'd1': 58.59157227, 'd2': 58.59157227, 'd3': 58.59157227, 'd4': 58.59157227}, 'latency_s': {'d0': 39.833706, 'd1': 39.833706, 'd2': 39.833706, 'd3': 39.833706, 'd4': 39.833706}, 'upload_bytes': {'d0': 512.0, 'd1': 512.0, 'd2': 512.0, 'd3': 512.0, 'd4': 512.0}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 7] No edge updates received (rounds_since_agg=2)
+
+[XEVENTNET][ROUND 8]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 6
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0xffbeb55e
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -450.451 -6 
+No other solutions better than -450.451
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -4.504505633080e+02, best bound -4.504505633080e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -450.45056330799997, 'active_devices': 4, 'total_energy_J': 354.501442445, 'total_latency_s': 257.41229115625, 'total_upload_bytes': 590404837.0, 'total_batches': 13, 'beta_choice': {'d0': 'combined_dense', 'd1': 'combined_dense', 'd2': 'combined_dense', 'd3': 'combined_dense', 'd4': ''}, 'z': {'d0': 1, 'd1': 1, 'd2': 1, 'd3': 1, 'd4': 0}, 'k': {'d0': 0, 'd1': 0, 'd2': 0, 'd3': 0, 'd4': 1}, 'batches_used': {'d0': 4, 'd1': 2, 'd2': 2, 'd3': 4, 'd4': 1}, 'energy_J': {'d0': 117.18314454, 'd1': 58.59157227, 'd2': 58.59157227, 'd3': 117.18314454, 'd4': 2.952008825}, 'latency_s': {'d0': 79.64741199999999, 'd1': 39.833706, 'd2': 39.833706, 'd3': 79.64741199999999, 'd4': 18.45005515625}, 'upload_bytes': {'d0': 1024.0, 'd1': 512.0, 'd2': 512.0, 'd3': 1024.0, 'd4': 590401765}, 'reasons': {'d0': 'TRAIN', 'd1': 'TRAIN', 'd2': 'TRAIN', 'd3': 'TRAIN', 'd4': 'TRANSFER'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 8] No edge updates received (rounds_since_agg=2)
+
+[XEVENTNET][ROUND 9]
+
+================ SOLVER INPUT DEBUG ================
+Devices: ['d0', 'd1', 'd2', 'd3', 'd4']
+Number of betas: 7
+lambda_energy: 1.0
+gamma_edge: 1.0
+eta: 100.0
+xi: 1.0
+====================================================
+
+Set parameter MIPGap to value 0.01
+Set parameter TimeLimit to value 30
+
+----- DEVICE d0 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1004549656
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d1 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 996978347
+Latency limit: 100.0
+Batches: 4
+
+----- DEVICE d2 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 998522457
+Latency limit: 100.0
+Batches: 6
+
+----- DEVICE d3 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 1002260626
+Latency limit: 100.0
+Batches: 2
+
+----- DEVICE d4 PROFILE -----
+Remaining energy: 620.0
+Memory limit: 999468285
+Latency limit: 100.0
+Batches: 4
+
+EDGE e0 RAM LIMIT: 2147483648
+
+EDGE e0 ENERGY BUDGET: 1000.0
+
+========= STARTING SOLVER =========
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Non-default parameters:
+TimeLimit  30
+MIPGap  0.01
+
+Optimize a model with 32 rows, 45 columns and 250 nonzeros
+Model fingerprint: 0x2c8a83c2
+Variable types: 0 continuous, 45 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [5e-07, 6e+08]
+  Objective range  [2e+00, 2e+02]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 2e+09]
+Warning: Model contains large matrix coefficient range
+Warning: Model contains large rhs
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Found heuristic solution: objective -6.0000000
+Presolve removed 32 rows and 45 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: -311.042 -6 
+No other solutions better than -311.042
+
+Optimal solution found (tolerance 1.00e-02)
+Best objective -3.110421360900e+02, best bound -3.110421360900e+02, gap 0.0000%
+{'status': 'OPTIMAL', 'obj': -311.04213609, 'active_devices': 3, 'total_energy_J': 298.86187900000004, 'total_latency_s': 236.0086403125, 'total_upload_bytes': 1180806090.0, 'total_batches': 12, 'beta_choice': {'d0': '', 'd1': 'combined_dense', 'd2': '', 'd3': 'combined_dense', 'd4': 'combined_dense'}, 'z': {'d0': 0, 'd1': 1, 'd2': 0, 'd3': 1, 'd4': 1}, 'k': {'d0': 1, 'd1': 0, 'd2': 1, 'd3': 0, 'd4': 0}, 'batches_used': {'d0': 1, 'd1': 4, 'd2': 1, 'd3': 2, 'd4': 4}, 'energy_J': {'d0': 2.952008825, 'd1': 117.18314454, 'd2': 2.952008825, 'd3': 58.59157227, 'd4': 117.18314454}, 'latency_s': {'d0': 18.45005515625, 'd1': 79.639412, 'd2': 18.45005515625, 'd3': 39.829706, 'd4': 79.639412}, 'upload_bytes': {'d0': 590401765, 'd1': 1024.0, 'd2': 590401765, 'd3': 512.0, 'd4': 1024.0}, 'reasons': {'d0': 'TRANSFER', 'd1': 'TRAIN', 'd2': 'TRANSFER', 'd3': 'TRAIN', 'd4': 'TRAIN'}}
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[split] Using cut: combined_dense → 3d_dense
+[cloud][round 9] RL selected aggregation period O_e = 2
+[cloud][round 9] model_delta = 0.000000, tau_cloud = 0.05
+[cloud][round 9] Aggregating 1 edge updates using FedAvg (trigger: cadence)
+[cloud][round 9] Broadcasting new global model to all edges
+Training complete

@@ -1,0 +1,140 @@
+2026-04-21 10:44:08.042636: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-21 10:44:08.042662: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-21 10:44:08.043501: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-21 10:44:08.047685: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-21 10:44:08.581249: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+[DEBUG MODULE] src.data.dataset_builder
+def build_labeled_arrays(
+    *,
+    wrf: Dict[str, np.ndarray],
+    locations_csv: str,
+    window_hw: int,
+    feature2d_keys: List[str],
+    feature3d_keys: List[str],
+    classes: List[str],
+    label_encoder,   # SimpleLabelEncoder or None
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray, List[dict]]:
+    """
+    Build (X2, X3, y, meta) from a WRF variable dict and a label CSV.
+      X2: (N, H, W, C2) for 2D channels
+      X3: (N, H, W, Z, C3) for 3D channels  <-- NOTE: final layout after transpose
+      y:  (N,)
+      meta: list of dicts for traceability: {"t": t, "i": i, "j": j}
+    CSV columns required: timestep, xlat, xlong, label
+    - timestep should be 0-based. If your file is 1-based, subtract 1 before training.
+    """
+    df = pd.read_csv(locations_csv)
+    # Be generous with column names (lowercase matching)
+    cols = {c.lower(): c for c in df.columns}
+    for need in ("timestep", "xlat", "xlong", "label"):
+        if need not in cols:
+            raise ValueError(f"Label CSV missing required column '{need}'. Found: {list(df.columns)}")
+
+    t_col = cols["timestep"]; lat_col = cols["xlat"]; lon_col = cols["xlong"]; lab_col = cols["label"]
+
+    # Shapes
+    # Determine T, Y, X, and Z (if any)
+    # Use first 2D var to infer T,Y,X
+    T = None; Y = None; X = None
+    for k in feature2d_keys:
+        if k in wrf:
+            v = wrf[k]
+            if v.ndim != 3:
+                raise ValueError(f"2D var {k} must be (T,Y,X); got {v.shape}")
+            T, Y, X = v.shape
+            break
+    if T is None:
+        # if no 2D, look into a 3D var
+        for k in feature3d_keys:
+            if k in wrf:
+                v = wrf[k]
+                if v.ndim != 4:
+                    raise ValueError(f"3D var {k} must be (T,Z,Y,X); got {v.shape}")
+                T, Z, Y, X = v.shape
+                break
+    if T is None:
+        raise ValueError("Cannot infer (T,Y,X) from wrf dict; no known 2D/3D variables present.")
+
+    # Collect samples
+    X2_list: List[np.ndarray] = []
+    X3_list: List[np.ndarray] = []
+    y_list:  List[str] = []
+    meta:    List[dict] = []
+
+    for _, row in df.iterrows():
+        t = int(row[t_col])
+        lat = float(row[lat_col])
+        lon = float(row[lon_col])
+        lab = str(row[lab_col])
+
+        if not (0 <= t < T):
+            # Skip out-of-range sample
+            continue
+
+        lat2d, lon2d = _ensure_latlon_2d(wrf, t)
+        i, j = _closest_ij(lat2d, lon2d, lat, lon)
+
+        # 2D features
+        two_d_channels = []
+        for k in feature2d_keys:
+            arr = wrf.get(k)
+            if arr is None:
+                continue
+            if arr.ndim != 3:
+                raise ValueError(f"2D var {k} expected shape (T,Y,X); got {arr.shape}")
+            tile = _crop_hw(arr[t], i, j, window_hw)  # (H,W)
+            two_d_channels.append(tile)
+        X2 = _stack_2d(two_d_channels) if two_d_channels else np.zeros((2*window_hw+1, 2*window_hw+1, 0), dtype=np.float32)
+
+        # 3D features
+        three_d_channels = []
+        z_depth = None
+        for k in feature3d_keys:
+            arr = wrf.get(k)
+            if arr is None:
+                continue
+            if arr.ndim != 4:
+                raise ValueError(f"3D var {k} expected shape (T,Z,Y,X); got {arr.shape}")
+            _, Z, _, _ = arr.shape
+            if z_depth is None:
+                z_depth = Z
+            elif Z != z_depth:
+                raise ValueError(f"Inconsistent Z among 3D vars: expected {z_depth}, got {Z} for {k}")
+            tile3d = _crop_hw(arr[t], i, j, window_hw)  # (Z,H,W)
+            three_d_channels.append(tile3d)
+        if three_d_channels:
+            X3 = _stack_3d(three_d_channels)  # (Z,H,W,C3)
+        else:
+            X3 = np.zeros((0, 2*window_hw+1, 2*window_hw+1, 0), dtype=np.float32)
+
+        X2_list.append(X2)
+        X3_list.append(X3)
+        y_list.append(lab)
+        meta.append({"t": t, "i": i, "j": j})
+
+    if not X2_list and not X3_list:
+        raise ValueError("No samples built from the label CSV; check timestep range and coordinates.")
+
+    # Stack to arrays
+    X2_arr = np.stack(X2_list, axis=0)  # (N,H,W,C2)
+    # For X3, ensure consistent Z,H,W across samples
+    if any(x.shape != X3_list[0].shape for x in X3_list):
+        raise ValueError("3D crops differ in shape across samples (near borders?). Check padding logic.")
+    if X3_list and X3_list[0].size > 0:
+        X3_arr = np.stack(X3_list, axis=0)  # (N,Z,H,W,C3)
+        # ---- Transpose to (N, H, W, Z, C3) to match model IO ----
+        X3_arr = np.transpose(X3_arr, (0, 2, 3, 1, 4))
+    else:
+        X3_arr = np.zeros((len(X2_arr), 0, 2*window_hw+1, 2*window_hw+1, 0), dtype=np.float32)
+
+    y_arr = _encode_labels(y_list, classes, label_encoder)
+
+    return X2_arr, X3_arr, y_arr, meta
+
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_xeventnet.py", line 280, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_multi_round_version/scripts/train_federated_xeventnet.py", line 88, in main
+    X2, X3, y, _ = build_labeled_arrays(
+TypeError: build_labeled_arrays() takes 0 positional arguments but 7 were given

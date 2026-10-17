@@ -1,0 +1,14 @@
+2026-04-20 11:17:23.052894: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-04-20 11:17:23.052924: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-04-20 11:17:23.054710: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-04-20 11:17:23.060951: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-20 11:17:23.721019: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Traceback (most recent call last):
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 275, in <module>
+    main()
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/scripts/train_federated_xeventnet.py", line 80, in main
+    enc = SimpleLabelEncoder.load(data_cfg["label_encoder_out"])
+  File "/home/muzafar/FedML/my_examples/Sphere_Latency_version/src/data/encoders.py", line 43, in load
+    with open(path, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'runs/expA/label_encoder.json'

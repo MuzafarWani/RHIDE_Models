@@ -1,0 +1,98 @@
+weather-xeventnet/
+├─ configs/
+│  ├─ data.yaml
+│  ├─ train.yaml
+│  ├─ federated.yaml              # edges, device→edge map, edge priorities p_e
+│  ├─ split.yaml                  # allowed β set; layer↔index; A_size(β), Δ_model
+│  ├─ energy_latency.yaml         # e_{i,ℓ}, C_{i,t}, R_{i,t}, T_*, M_max, U_max
+│  ├─ solver.yaml                 # η, ξ, MIP gap/time, warm-start, presolve flags
+│  └─ rl.yaml                     # O_ℓ/O_e agent settings
+│
+├─ src/
+│  ├─ data/
+│  │  ├─ wrf_reader.py
+│  │  ├─ grid_builder.py
+│  │  ├─ dataset_builder.py
+│  │  ├─ tf_dataset.py
+│  │  ├─ encoders.py
+│  │  └─ normalization.py
+│  │
+│  ├─ models/
+│  │  ├─ xeventnet.py             # build_model(...)
+│  │  ├─ split_graph.py           # create_submodels(model, β) → (device_net, edge_net)
+│  │  ├─ serialization.py
+│  │  └─ metrics_losses.py
+|  |  |_vgg16.py
+|  |  
+│  │
+│  ├─ solver/
+│  │  ├─ gurobi_solver.py         # MILP for (x_{i,t,β}, z_{i,t}, k_{i,t})
+│  │  ├─ param_feeds.py           # builds coeffs: E_comp(β), U(β), T(β), M(β)
+│  │  ├─ mappings.py              # β↔layer maps; activation/model sizes
+│  │  ├─ warm_start.py
+│  │  └─ postprocess.py
+│  │
+│  ├─ federated/
+│  │  ├─ priority.py              # edge priority registry; p_i := p_edge(device)
+│  │  ├─ messaging/
+│  │  │  ├─ bus.py                # in-proc channels; can swap to ZeroMQ/gRPC later
+│  │  │  ├─ messages.py           # dataclasses: Activations, RawBatch, ModelUpdate
+│  │  │  └─ codecs.py             # npz/zstd compression, checksums, sizes
+│  │  ├─ device_client/
+│  │  │  ├─ energy_model.py
+│  │  │  ├─ memory_model.py
+│  │  │  ├─ latency_model.py
+│  │  │  ├─ splitter.py           # run device_net forward; package Activations
+│  │  │  ├─ trainer.py            # local train if β=L; else handle backward on cut
+│  │  │  └─ uploader.py           # send Activations or RawBatch via messaging
+│  │  ├─ edge_server/
+│  │  │  ├─ aggregator.py         # per-edge: train on activations/raw; agg by O_ℓ
+│  │  │  ├─ trainer.py            # edge train step; computes cut grads for device
+│  │  │  ├─ rl_agent.py           # chooses O_ℓ
+│  │  │  └─ edge_state.py         # queues, rates, summary for RL obs
+│  │  ├─ cloud_server/
+│  │  │  ├─ global_aggregator.py  # FedAvg/FedOpt; gated by O_e
+│  │  │  └─ distributor.py        # broadcast updated weights to edges/devices
+│  │  └─ accounting/
+│  │     ├─ upload_counter.py     # bytes for energy accounting
+│  │     └─ energy_latency_log.py # per-round device/edge logs
+│  │
+│  ├─ training/
+│  │  ├─ train_loop.py            # Rounds: build coeffs → solve → execute → RL update
+│  │  ├─ round_scheduler.py       # shard batches to devices per edge (uses p_edge)
+│  │  ├─ constraints.py           # assert decisions satisfy constraints (sanity)
+│  │  ├─ reward.py
+│  │  ├─ logging_hooks.py
+│  │  └─ checkpoints.py           # includes model, encoder, norms, RL, solver warmstart
+│  │
+│  ├─ inference/
+│  │  ├─ build_grids.py
+│  │  ├─ predictor.py             # split inference using solver-chosen β
+│  │  └─ postprocess.py
+│  │
+│  ├─ rl/
+│  │  ├─ madrl_env.py
+│  │  ├─ agents.py
+│  │  └─ replay.py
+│  │
+│  ├─ utils/
+│  │  ├─ seeding.py
+│  │  ├─ timers.py
+│  │  ├─ io_helpers.py
+│  │  └─ typing_aliases.py
+│  │
+│  └─ eval/
+│     ├─ metrics.py
+│     └─ reports.py
+│
+├─ scripts/
+│  ├─ prepare_data.py
+│  ├─ train_federated.py          # orchestrates real training with solver+RL
+│  ├─ run_inference.py
+│  ├─ export_savedmodel.py
+│  └─ profile_energy_latency.py
+│
+├─ runs/
+├─ tests/
+└─ docs/
+
