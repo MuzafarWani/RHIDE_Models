@@ -13,14 +13,11 @@ RHiDE uses a Mixed-Integer Linear Programming (MILP) formulation and has two ver
 ## RHiDE-ET
 
 RHiDE-ET makes optimization decisions for one training round at a time. It selects the model split point and decides which devices can participate based on the available resources.
-
 The main aim is to reduce resource consumption while meeting the execution-time and other resource constraints.
 
 ## RHiDE-MR
 
-RHiDE-MR considers multiple training rounds instead of optimizing only the current round. It considers the remaining energy of devices and tries to preserve energy so that devices can continue participating in future rounds.
-
-The model uses a planned training horizon to make these decisions. If the available resources are not sufficient to complete all the planned rounds, the number of completed rounds may be lower than the requested horizon.
+RHiDE-MR considers multiple training rounds instead of optimizing only the current round. It considers the remaining energy of devices and tries to preserve energy so that devices can continue participating in future rounds. The model uses a planned training horizon to make these decisions. If the available resources are not sufficient to complete all the planned rounds, the number of completed rounds may be lower than the requested horizon.
 
 ## Deep Learning Models
 
