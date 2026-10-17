@@ -8,7 +8,7 @@ RHiDE uses split federated learning across IoT devices and edge servers. The mod
 
 ## Installation
 
-Run the commands from the relevant ET or MR model directory.
+Run the commands from the directory.
 
 
 python3 -m pip install -r requirements.txt
@@ -29,8 +29,8 @@ VGG16 is the image-classification model used in the RHiDE evaluation. It uses th
 
 Place the dataset under the model's `data/` directory, then prepare it using:
 
-
 python scripts/prepare_cifar10_vgg16.py
+
 python3 scripts/prepare_vgg16_val_npz.py
 
 The second command converts the prepared validation data into the compact NPZ file used by the scripts.
